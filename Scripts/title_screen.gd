@@ -31,7 +31,11 @@ func _on_quit_button_down() -> void:
 
 
 func _on_discord_pressed() -> void:
-	OS.shell_open("https://discord.gg/U6ZdUxb4")
+	OS.shell_open("https://discord.gg/r7VMt2cBCV")
 
 func _on_youtube_pressed() -> void:
 	OS.shell_open("https://www.youtube.com/@JeanJuniorJams")
+
+
+func _on_github_pressed() -> void:
+	OS.shell_open("https://github.com/jaytheoff/uglyduck")

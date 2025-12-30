@@ -237,14 +237,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Logo" type="TextureRect" parent="Logo"]
+[node name="Logo" type="TextureButton" parent="Logo"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -33.0
 offset_top = -21.0
 offset_right = 31.0
 offset_bottom = 37.0
-texture = ExtResource("1_lkwaw")
+texture_normal = ExtResource("1_lkwaw")
 
 [node name="JJJ Presents" type="Label" parent="Logo"]
 layout_mode = 0
@@ -262,15 +262,15 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Logo" type="TextureRect" parent="Godot Logo"]
+[node name="Godot Icon" type="TextureButton" parent="Godot Logo"]
 layout_mode = 0
 offset_left = -21.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
-texture = ExtResource("3_msigr")
+texture_normal = ExtResource("3_msigr")
 
-[node name="Godot Logo" type="Label" parent="Godot Logo"]
+[node name="Text" type="Label" parent="Godot Logo"]
 layout_mode = 0
 offset_left = -58.0
 offset_top = -43.0
@@ -284,4 +284,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_nnrbh")
 }
 
+[connection signal="pressed" from="Logo/Logo" to="." method="_on_logo_pressed"]
+[connection signal="pressed" from="Godot Logo/Godot Icon" to="." method="_on_godot_icon_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

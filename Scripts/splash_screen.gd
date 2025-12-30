@@ -12,3 +12,11 @@ func _process(delta: float) -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_file("res://Scenes/Title Screen.tscn")
+
+
+func _on_logo_pressed() -> void:
+	OS.shell_open("https://jaytheoff.github.io/")
+
+
+func _on_godot_icon_pressed() -> void:
+	OS.shell_open("https://godotengine.org/")

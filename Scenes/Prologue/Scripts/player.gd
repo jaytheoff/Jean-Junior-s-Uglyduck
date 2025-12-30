@@ -83,7 +83,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		# Normal movement
 		# Handle jump.
-		if Input.is_action_just_pressed("Up") and jump_count < 2:
+		if Input.is_action_just_pressed("Jump") and jump_count < 2:
 			jump_count += 1
 			velocity.y = jump_velocity
 			target_scale_y = stretch_amount  # Stretch when jumping

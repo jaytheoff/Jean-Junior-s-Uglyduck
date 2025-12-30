@@ -8,6 +8,7 @@
 *.aseprite
 *.godot/
 *.md
+*.zip
 # OS-specific
 .DS_Store
 Thumbs.db

@@ -18,6 +18,10 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://bu4455b0enxp3"
 config/icon="uid://bodf1e3t2hss3"
 
+[autoload]
+
+Global_Player_Variables="*res://Scripts/Global/Global_Player_Variables.gd"
+
 [display]
 
 window/subwindows/embed_subwindows=false

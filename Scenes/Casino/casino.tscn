@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2lrr7gfenpcb"]
+
+[ext_resource type="Script" uid="uid://bfd3xuitxpk5s" path="res://Scripts/casino_game.gd" id="1_lnixx"]
+[ext_resource type="Script" uid="uid://bal2nnlakntgw" path="res://Scripts/slot_machine.gd" id="2_a7spw"]
+[ext_resource type="FontFile" uid="uid://brxd6h13my1ky" path="res://Fonts/Born2bSportyV2.ttf" id="3_ioq3x"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a7spw"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lnixx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mucla"]
+font = ExtResource("3_ioq3x")
+font_size = 48
+
+[node name="Casino" type="Node2D"]
+script = ExtResource("1_lnixx")
+
+[node name="Slot Machine" type="Node2D" parent="."]
+position = Vector2(976, -251)
+script = ExtResource("2_a7spw")
+
+[node name="Machine" type="Sprite2D" parent="Slot Machine"]
+modulate = Color(0.2159017, 0.21590173, 0.2159017, 1)
+position = Vector2(-4.5, -2.5)
+scale = Vector2(978.99994, 801)
+texture = SubResource("PlaceholderTexture2D_a7spw")
+
+[node name="Slot1" type="Sprite2D" parent="Slot Machine"]
+position = Vector2(-290.625, 1.625)
+scale = Vector2(230.75, 351.24997)
+texture = SubResource("PlaceholderTexture2D_lnixx")
+
+[node name="Slot2" type="Sprite2D" parent="Slot Machine"]
+position = Vector2(1.375, 1.625)
+scale = Vector2(230.75, 351.24997)
+texture = SubResource("PlaceholderTexture2D_lnixx")
+
+[node name="Slot3" type="Sprite2D" parent="Slot Machine"]
+position = Vector2(301.375, 1.625)
+scale = Vector2(230.75, 351.24997)
+texture = SubResource("PlaceholderTexture2D_lnixx")
+
+[node name="Gamble" type="Button" parent="Slot Machine"]
+offset_left = -138.0
+offset_top = 237.0
+offset_right = -42.0
+offset_bottom = 268.0
+scale = Vector2(3, 3)
+text = "GAMBLE!!!!!"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(979, -204)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Money Display" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Your MoneY:"
+label_settings = SubResource("LabelSettings_mucla")
+
+[connection signal="pressed" from="Slot Machine/Gamble" to="Slot Machine" method="_on_gamble_pressed"]

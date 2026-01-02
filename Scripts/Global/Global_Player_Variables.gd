@@ -1,6 +1,6 @@
 extends Node
 
-var money: float = 0.10
+var money: float = 12.10
 var luck: float = 0.5
 var charisma: float = 0.5
 var debt: float = 0.0
@@ -12,7 +12,7 @@ var casino_unlocked: bool = false
 var casino_games_unlocked: Dictionary = {
 	"slot_machine": false,
 	"heads_or_tails": false,
-	"poker": false,
+	"dice_roll": false,
 	"roulette": false,
 }
 
@@ -31,7 +31,7 @@ var casino_game_stats: Dictionary = {
 		"total_won": 0.0,
 		"total_lost": 0.0,
 	},
-	"poker": {
+	"dice_roll": {
 		"games_played": 0,
 		"total_won": 0.0,
 		"total_lost": 0.0,

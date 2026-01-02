@@ -1,19 +1,41 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2lrr7gfenpcb"]
+[gd_scene load_steps=13 format=3 uid="uid://c2lrr7gfenpcb"]
 
 [ext_resource type="Script" uid="uid://bfd3xuitxpk5s" path="res://Scripts/casino_game.gd" id="1_lnixx"]
 [ext_resource type="Script" uid="uid://bal2nnlakntgw" path="res://Scripts/slot_machine.gd" id="2_a7spw"]
 [ext_resource type="FontFile" uid="uid://brxd6h13my1ky" path="res://Fonts/Born2bSportyV2.ttf" id="3_ioq3x"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a7spw"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lnixx"]
+[ext_resource type="Script" uid="uid://bpm8g8rsslr47" path="res://Scripts/heads_or_tails.gd" id="4_mucla"]
+[ext_resource type="Script" uid="uid://y8ste5vyj4kw" path="res://Scripts/dice_roll.gd" id="5_swjqy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mucla"]
 font = ExtResource("3_ioq3x")
 font_size = 48
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a7spw"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lnixx"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mucla"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swjqy"]
+bg_color = Color(0.2051174, 0.20511746, 0.20511732, 1)
+border_width_bottom = 12
+border_color = Color(0.15127605, 0.15127608, 0.15127596, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_swjqy"]
+font = ExtResource("3_ioq3x")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_swjqy"]
+
 [node name="Casino" type="Node2D"]
 script = ExtResource("1_lnixx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Money Display" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Your MoneY:"
+label_settings = SubResource("LabelSettings_mucla")
 
 [node name="Slot Machine" type="Node2D" parent="."]
 position = Vector2(976, -251)
@@ -41,22 +63,69 @@ scale = Vector2(230.75, 351.24997)
 texture = SubResource("PlaceholderTexture2D_lnixx")
 
 [node name="Gamble" type="Button" parent="Slot Machine"]
-offset_left = -138.0
-offset_top = 237.0
-offset_right = -42.0
-offset_bottom = 268.0
-scale = Vector2(3, 3)
+offset_left = -356.0
+offset_top = 206.0
+offset_right = 350.0
+offset_bottom = 389.0
+theme_override_font_sizes/font_size = 64
 text = "GAMBLE!!!!!"
 
+[node name="Coin Flip" type="Node2D" parent="."]
+position = Vector2(2089, -252)
+script = ExtResource("4_mucla")
+
+[node name="Sprite2D" type="Sprite2D" parent="Coin Flip"]
+modulate = Color(0.14509805, 1, 0.5058824, 1)
+position = Vector2(13.999992, 28.999985)
+scale = Vector2(364.0001, 357.00003)
+texture = SubResource("PlaceholderTexture2D_mucla")
+
+[node name="Heads" type="Button" parent="Coin Flip"]
+offset_left = -291.0
+offset_top = 241.0
+offset_right = -90.0
+offset_bottom = 337.0
+theme_override_font_sizes/font_size = 64
+text = "Heads"
+
+[node name="Tails" type="Button" parent="Coin Flip"]
+offset_left = 118.0
+offset_top = 241.0
+offset_right = 319.0
+offset_bottom = 337.0
+theme_override_font_sizes/font_size = 64
+text = "Tails"
+
+[node name="Dice Roll" type="Node2D" parent="."]
+position = Vector2(3285, -252)
+script = ExtResource("5_swjqy")
+
+[node name="Input" type="LineEdit" parent="Dice Roll"]
+offset_left = -160.0
+offset_top = 281.0
+offset_right = 164.5625
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("3_ioq3x")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_swjqy")
+placeholder_text = "Insert an value from 1 - 6"
+
+[node name="Display" type="Label" parent="Dice Roll"]
+offset_left = -160.0
+offset_top = 281.0
+offset_right = 164.0
+offset_bottom = 352.0
+label_settings = SubResource("LabelSettings_swjqy")
+
+[node name="Dice" type="Sprite2D" parent="Dice Roll"]
+position = Vector2(-2.9999847, -0.99998474)
+scale = Vector2(321.5, 321.5)
+texture = SubResource("PlaceholderTexture2D_swjqy")
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(979, -204)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Money Display" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Your MoneY:"
-label_settings = SubResource("LabelSettings_mucla")
+position = Vector2(3277, -204)
 
 [connection signal="pressed" from="Slot Machine/Gamble" to="Slot Machine" method="_on_gamble_pressed"]
+[connection signal="pressed" from="Coin Flip/Heads" to="Coin Flip" method="_on_heads_pressed"]
+[connection signal="pressed" from="Coin Flip/Tails" to="Coin Flip" method="_on_tails_pressed"]
+[connection signal="set_bet" from="Dice Roll" to="Dice Roll" method="_on_set_bet"]

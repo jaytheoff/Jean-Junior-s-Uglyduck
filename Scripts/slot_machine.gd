@@ -1,4 +1,5 @@
 extends Node2D
+var cost := 10.0
 
 var random:= RandomNumberGenerator.new()
 enum Symbols {
@@ -33,30 +34,34 @@ func evaluate_spin(results: Array) -> int:
 		#adds one win
 		Global_Player_Variables.casino_game_stats["slot_machine"]["total_won"] += 1
 		#adds 100 dollars to your money
-		Global_Player_Variables.money += 50.0
-		print("Jackpot! You won 50!")
-		return 100 # Jackpot
+		Global_Player_Variables.money += 25.00
+		print("Jackpot! You won 25!")
+		return 25 # Jackpot
 
-	elif results[0] == results[1] or results[1] == results[2] or results[0] == results[2]:
+	elif results[0] == results[1] and results[1] == results[2] or results[0] == results[2]:
 		#adds one game played
 		Global_Player_Variables.casino_game_stats["slot_machine"]["games_played"] += 1
 		#adds one win
 		Global_Player_Variables.casino_game_stats["slot_machine"]["total_won"] += 1
 		#gives you 20 dollars
-		Global_Player_Variables.money += 10.0
-		print("You won a small prize!, added 10 to your money")
-		return 20 # Small win
+		Global_Player_Variables.money += 15.00
+
+		print("You won a small prize!, added 15 to your money")
+		return 15 # Small win
 	else:
+		Global_Player_Variables.casino_game_stats["slot_machine"]["games_played"] += 1
+		Global_Player_Variables.casino_game_stats["slot_machine"]["total_lost"] += 1
 		print("You Lost your money lol")
 		return 0 # No win
 
-
+# Triggered when the player presses the "Gamble" button
 func _on_gamble_pressed() -> void:
-	if Global_Player_Variables.money < 10.0:
-		print("Not enough money to play!")
+	if Global_Player_Variables.money < cost or not Global_Player_Variables.casino_games_unlocked["slot_machine"]:
+		print("Not enough money to play!, or game not unlocked!")
 		return
+
 	else:
-		Global_Player_Variables.money -= 10.0
+		Global_Player_Variables.money -= cost 
 		Global_Player_Variables.casino_game_stats["slot_machine"]["games_played"] += 1
 		random.randomize()
 		spin_reels()

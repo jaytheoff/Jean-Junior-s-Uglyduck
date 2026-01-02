@@ -4,16 +4,14 @@
 [ext_resource type="Script" uid="uid://bal2nnlakntgw" path="res://Scripts/slot_machine.gd" id="2_a7spw"]
 [ext_resource type="FontFile" uid="uid://brxd6h13my1ky" path="res://Fonts/Born2bSportyV2.ttf" id="3_ioq3x"]
 [ext_resource type="Script" uid="uid://bpm8g8rsslr47" path="res://Scripts/heads_or_tails.gd" id="4_mucla"]
+[ext_resource type="Texture2D" uid="uid://di8kn2xksymju" path="res://Images/Sprites/Slot_machine_cover.png" id="4_napil"]
+[ext_resource type="Texture2D" uid="uid://dyct0g72kur3" path="res://Images/Sprites/Fruit_SpriteSheet.png" id="4_v10yk"]
 [ext_resource type="Script" uid="uid://y8ste5vyj4kw" path="res://Scripts/dice_roll.gd" id="5_swjqy"]
 [ext_resource type="Texture2D" uid="uid://dukedruyohyxg" path="res://Images/Sprites/Dice_🎲_SpriteSheet.png" id="6_rm51h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mucla"]
 font = ExtResource("3_ioq3x")
 font_size = 48
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a7spw"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lnixx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggxt4"]
 bg_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
@@ -64,31 +62,38 @@ position = Vector2(976, -251)
 script = ExtResource("2_a7spw")
 
 [node name="Machine" type="Sprite2D" parent="Slot Machine"]
-modulate = Color(0.2159017, 0.21590173, 0.2159017, 1)
-position = Vector2(-4.5, -2.5)
-scale = Vector2(978.99994, 801)
-texture = SubResource("PlaceholderTexture2D_a7spw")
+z_index = 5
+position = Vector2(11.000008, 49.999996)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_napil")
 
 [node name="Slot1" type="Sprite2D" parent="Slot Machine"]
-position = Vector2(-290.625, 1.625)
-scale = Vector2(230.75, 351.24997)
-texture = SubResource("PlaceholderTexture2D_lnixx")
+z_index = 3
+position = Vector2(-212, 21.999998)
+scale = Vector2(5, 5)
+texture = ExtResource("4_v10yk")
+hframes = 3
 
 [node name="Slot2" type="Sprite2D" parent="Slot Machine"]
-position = Vector2(1.375, 1.625)
-scale = Vector2(230.75, 351.24997)
-texture = SubResource("PlaceholderTexture2D_lnixx")
+z_index = 3
+position = Vector2(9.00003, 22.999998)
+scale = Vector2(5, 5)
+texture = ExtResource("4_v10yk")
+hframes = 3
 
 [node name="Slot3" type="Sprite2D" parent="Slot Machine"]
-position = Vector2(301.375, 1.625)
-scale = Vector2(230.75, 351.24997)
-texture = SubResource("PlaceholderTexture2D_lnixx")
+z_index = 3
+position = Vector2(237.99994, 25)
+scale = Vector2(5, 5)
+texture = ExtResource("4_v10yk")
+hframes = 3
 
 [node name="Gamble" type="Button" parent="Slot Machine"]
-offset_left = -184.0
-offset_top = 225.0
-offset_right = 173.0
-offset_bottom = 321.0
+z_index = 5
+offset_left = -166.0
+offset_top = 255.0
+offset_right = 191.0
+offset_bottom = 351.0
 theme_override_fonts/font = ExtResource("3_ioq3x")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_ggxt4")
@@ -96,6 +101,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2codh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ggxt4")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ggxt4")
 text = "GAMBLE!!!!!"
+
+[node name="Background" type="ColorRect" parent="Slot Machine"]
+offset_left = -324.0
+offset_top = -171.0
+offset_right = 343.0
+offset_bottom = 188.0
 
 [node name="Coin Flip" type="Node2D" parent="."]
 position = Vector2(2089, -252)
@@ -170,7 +181,8 @@ text = "Roll
 "
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(3286, -204)
+z_index = 5
+position = Vector2(3278, -204)
 
 [connection signal="pressed" from="Slot Machine/Gamble" to="Slot Machine" method="_on_gamble_pressed"]
 [connection signal="pressed" from="Coin Flip/Heads" to="Coin Flip" method="_on_heads_pressed"]

@@ -1,6 +1,18 @@
-[gd_scene format=3 uid="uid://byf3vgnvncvx6"]
+[gd_scene load_steps=2 format=3 uid="uid://byf3vgnvncvx6"]
+
+[ext_resource type="Texture2D" uid="uid://pht37rtu4kab" path="res://Images/Sprites/Return_Icon.png" id="1_s486e"]
 
 [node name="Map" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Return" type="TextureButton" parent="CanvasLayer"]
+offset_left = 28.0
+offset_top = 25.000002
+offset_right = 60.0
+offset_bottom = 57.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("1_s486e")

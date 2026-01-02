@@ -14,7 +14,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	pass # Replace with function body.
 
 #this function will spin the reels and then like return the results
 func spin_reels() -> Array:
@@ -27,6 +27,7 @@ func spin_reels() -> Array:
 
 #this one checks the results of the spin and returns rewards
 func evaluate_spin(results: Array) -> int:
+	
 	#checks if all three symbols match, Just incase i get confused 0 is cherry, 1 is lemon, 2 is orange
 	if results[0] == results[1] and results[1] == results[2] and results[0] == results[2]:
 		#adds one game played
@@ -35,8 +36,14 @@ func evaluate_spin(results: Array) -> int:
 		Global_Player_Variables.casino_game_stats["slot_machine"]["total_won"] += 1
 		#adds 100 dollars to your money
 		Global_Player_Variables.money += 25.00
+
+		$Slot1.frame = results[0]
+		$Slot2.frame = results[1]
+		$Slot3.frame = results[2]
+
 		print("Jackpot! You won 25!")
 		return 25 # Jackpot
+		
 
 	elif results[0] == results[1] and results[1] == results[2] or results[0] == results[2]:
 		#adds one game played
@@ -46,11 +53,20 @@ func evaluate_spin(results: Array) -> int:
 		#gives you 20 dollars
 		Global_Player_Variables.money += 15.00
 
+		$Slot1.frame = results[0]
+		$Slot2.frame = results[1]
+		$Slot3.frame = results[2]
+
 		print("You won a small prize!, added 15 to your money")
 		return 15 # Small win
 	else:
 		Global_Player_Variables.casino_game_stats["slot_machine"]["games_played"] += 1
 		Global_Player_Variables.casino_game_stats["slot_machine"]["total_lost"] += 1
+
+		$Slot1.frame = results[0]
+		$Slot2.frame = results[1]
+		$Slot3.frame = results[2]
+
 		print("You Lost your money lol")
 		return 0 # No win
 

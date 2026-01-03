@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdlg0yiek1824"]
+
+[ext_resource type="Texture2D" uid="uid://c17lq6me110r" path="res://Images/Sprites/Balloon-Sheet.png" id="1_8y6a1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fauhl"]
+radius = 6.0
+height = 34.0
+
+[node name="Red Balloon" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8y6a1")
+hframes = 4
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_fauhl")
+debug_color = Color(0.99726564, 0, 0.1793904, 0.41960785)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba4x52xehm4lh"]
+
+[ext_resource type="Texture2D" uid="uid://c17lq6me110r" path="res://Images/Sprites/Balloon-Sheet.png" id="1_h3v74"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fauhl"]
+radius = 6.0
+height = 34.0
+
+[node name="Blue Balloon" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h3v74")
+hframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_fauhl")
+debug_color = Color(1.8770993e-06, 0.34710312, 0.47382575, 0.41960785)

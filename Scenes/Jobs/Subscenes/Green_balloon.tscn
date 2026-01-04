@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhgmtckra7hho"]
+[gd_scene load_steps=4 format=3 uid="uid://bhgmtckra7hho"]
 
 [ext_resource type="Texture2D" uid="uid://c17lq6me110r" path="res://Images/Sprites/Balloon-Sheet.png" id="1_bfaes"]
+[ext_resource type="Script" uid="uid://dwsaqfc4fdyw3" path="res://Scripts/green_balloon.gd" id="1_obdl2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fauhl"]
 radius = 6.0
 height = 34.0
 
 [node name="Green Balloon" type="Area2D"]
+script = ExtResource("1_obdl2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bfaes")
@@ -15,3 +17,5 @@ hframes = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_fauhl")
 debug_color = Color(0.2248615, 0.3660875, 9.62615e-08, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,17 +1,74 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6nv3p3b1dhu0"]
+[gd_scene load_steps=3 format=3 uid="uid://c6nv3p3b1dhu0"]
+
+[ext_resource type="Script" uid="uid://bgujpisrpesim" path="res://Scripts/thunder.gd" id="1_0wqoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5d4o"]
 size = Vector2(95, 655)
 
 [node name="Thunder" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_0wqoq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -39.0
 offset_right = 40.0
 offset_bottom = 653.0
-color = Color(1, 1, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 327.5)
 shape = SubResource("RectangleShape2D_t5d4o")
 debug_color = Color(0.99999994, 0.007172685, 0.07558925, 0.41960785)
+
+[node name="Warning" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -39.0
+offset_right = 40.0
+offset_bottom = 655.0
+
+[node name="ColorRect" type="ColorRect" parent="Warning"]
+layout_mode = 0
+offset_left = -8.0
+offset_right = 5.0
+offset_bottom = 655.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Warning"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 639.0
+offset_right = 74.0
+offset_bottom = 655.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Warning"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 74.0
+offset_bottom = 15.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Warning"]
+layout_mode = 0
+offset_left = 74.0
+offset_right = 87.0
+offset_bottom = 655.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Warning"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 376.0
+offset_right = 60.0
+offset_bottom = 416.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Warning"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 180.0
+offset_right = 60.0
+offset_bottom = 352.0
+color = Color(1, 0, 0, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]

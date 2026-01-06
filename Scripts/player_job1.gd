@@ -63,3 +63,11 @@ func _physics_process(delta: float) -> void:
 		velocity = direction.normalized() * speed
 	move_and_slide()
 
+func _take_damage(amount: int) -> void:
+	HP -= amount
+	print("Player HP: %d" % HP)
+	if HP <= 0:
+		_die()
+
+func _die():
+	queue_free()

@@ -30,7 +30,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$CanvasLayer/Score.text = "Score: %d" % get_node("Player").score
-
+	$CanvasLayer/HP_display.text = "HP: %d" % get_node("Player").HP
 func _event():
 
 	event_active = false
@@ -60,7 +60,7 @@ func _event():
 	
 	# Slide out animation
 	var tween2 = create_tween()
-	tween2.tween_property($"CanvasLayer/Wheater Alert", "position", Vector2(0, -127), 1.0)
+	tween2.tween_property($"CanvasLayer/Wheater Alert", "position", Vector2(0, -127), 1.0).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	await tween2.finished
 	$"CanvasLayer/Wheater Alert".hide()
 

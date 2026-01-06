@@ -72,3 +72,5 @@ offset_bottom = 352.0
 color = Color(1, 0, 0, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

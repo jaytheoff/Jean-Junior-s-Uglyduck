@@ -15,8 +15,9 @@ func _physics_process(delta: float) -> void:
 	if position.y > 600:  # If the icicle goes off-screen (assuming screen height is 600)
 		queue_free()  # Remove it from the scene
 
-func _on_icicle_body_entered(body):
+func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		print("Player hit by icicle!")
+		body._take_damage(3)
 		#body.take_damage(10)  # Assuming the player has a take_damage method
 		queue_free()  # Remove the icicle after hitting the player

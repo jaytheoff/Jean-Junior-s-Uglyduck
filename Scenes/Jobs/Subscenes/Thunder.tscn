@@ -1,6 +1,82 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6nv3p3b1dhu0"]
+[gd_scene load_steps=13 format=3 uid="uid://c6nv3p3b1dhu0"]
 
 [ext_resource type="Script" uid="uid://bgujpisrpesim" path="res://Scripts/thunder.gd" id="1_0wqoq"]
+[ext_resource type="Texture2D" uid="uid://c64rjgmxghymb" path="res://Images/Sprites/Job 1/Thunder-shock-Sheet.png" id="2_yrfs0"]
+[ext_resource type="Texture2D" uid="uid://blq0qxiwsbquq" path="res://Images/Sprites/Job 1/Warning-Area-Sheet.png" id="3_cckp2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrfs0"]
+atlas = ExtResource("2_yrfs0")
+region = Rect2(0, 0, 34, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cckp2"]
+atlas = ExtResource("2_yrfs0")
+region = Rect2(34, 0, 34, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e4wx"]
+atlas = ExtResource("2_yrfs0")
+region = Rect2(68, 0, 34, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hds3"]
+atlas = ExtResource("2_yrfs0")
+region = Rect2(102, 0, 34, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ialwq"]
+atlas = ExtResource("2_yrfs0")
+region = Rect2(136, 0, 34, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8xqx"]
+atlas = ExtResource("3_cckp2")
+region = Rect2(0, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk2ub"]
+atlas = ExtResource("3_cckp2")
+region = Rect2(32, 0, 32, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d8xqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrfs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cckp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e4wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hds3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ialwq")
+}],
+"loop": false,
+"name": &"shock",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8xqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk2ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8xqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk2ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8xqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk2ub")
+}],
+"loop": false,
+"name": &"warning",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5d4o"]
 size = Vector2(95, 655)
@@ -9,68 +85,24 @@ size = Vector2(95, 655)
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_0wqoq")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -39.0
-offset_right = 40.0
-offset_bottom = 653.0
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(2.0325725, 2.0325725, 2.0325725, 1)
+z_index = 2
+position = Vector2(0, 319.99997)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_d8xqx")
+animation = &"shock"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 327.5)
 shape = SubResource("RectangleShape2D_t5d4o")
+disabled = true
 debug_color = Color(0.99999994, 0.007172685, 0.07558925, 0.41960785)
-
-[node name="Warning" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -39.0
-offset_right = 40.0
-offset_bottom = 655.0
-
-[node name="ColorRect" type="ColorRect" parent="Warning"]
-layout_mode = 0
-offset_left = -8.0
-offset_right = 5.0
-offset_bottom = 655.0
-color = Color(1, 0, 0, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Warning"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 639.0
-offset_right = 74.0
-offset_bottom = 655.0
-color = Color(1, 0, 0, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Warning"]
-layout_mode = 0
-offset_left = 5.0
-offset_right = 74.0
-offset_bottom = 15.0
-color = Color(1, 0, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Warning"]
-layout_mode = 0
-offset_left = 74.0
-offset_right = 87.0
-offset_bottom = 655.0
-color = Color(1, 0, 0, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="Warning"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 376.0
-offset_right = 60.0
-offset_bottom = 416.0
-color = Color(1, 0, 0, 1)
-
-[node name="ColorRect6" type="ColorRect" parent="Warning"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 180.0
-offset_right = 60.0
-offset_bottom = 352.0
-color = Color(1, 0, 0, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="shock" from="." to="." method="_on_shock"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

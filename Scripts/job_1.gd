@@ -29,8 +29,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
 	$CanvasLayer/Score.text = "Score: %d" % get_node("Player").score
 	$CanvasLayer/HP_display.text = "HP: %d" % get_node("Player").HP
+
 func _event():
 
 	event_active = false
@@ -52,7 +54,7 @@ func _event():
 	$"CanvasLayer/Wheater Alert".show()
 	
 	var tween = create_tween()
-	tween.tween_property($"CanvasLayer/Wheater Alert", "position", Vector2(0, 1), 1.0)
+	tween.tween_property($"CanvasLayer/Wheater Alert", "position", Vector2(0, 1), 1.0).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	await tween.finished
 	
 	# Wait for 3 seconds
@@ -95,8 +97,7 @@ func _thunder_event():
 			_thunder_bolt(Vector2.ZERO)
 			_thunder_bolt(Vector2.ZERO)
 			_thunder_bolt(Vector2.ZERO)
-			_thunder_bolt(Vector2.ZERO) 
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(4).timeout
 		return
 
 func _sunshine():

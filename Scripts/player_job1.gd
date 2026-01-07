@@ -70,4 +70,5 @@ func _take_damage(amount: int) -> void:
 		_die()
 
 func _die():
-	queue_free()
+	get_tree().paused = true
+	print("Game Over!")

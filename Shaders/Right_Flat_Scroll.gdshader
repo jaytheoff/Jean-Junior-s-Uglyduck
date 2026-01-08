@@ -1,7 +1,7 @@
 shader_type canvas_item;
-
+uniform vec2 speed = vec2(0.02, 0.01);
 void vertex() {
-	UV.x += TIME;
+	UV.x += speed.x * TIME;
 }
 
 void fragment() {

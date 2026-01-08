@@ -32,7 +32,7 @@ region = Rect2(0, 0, 32, 128)
 atlas = ExtResource("3_cckp2")
 region = Rect2(32, 0, 32, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_d8xqx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0wqoq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -52,7 +52,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"shock",
-"speed": 18.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -72,37 +72,37 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jk2ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8xqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk2ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8xqx")
 }],
 "loop": false,
 "name": &"warning",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5d4o"]
-size = Vector2(95, 655)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wqoq"]
+size = Vector2(62, 235)
 
 [node name="Thunder" type="Area2D"]
-scale = Vector2(0.3, 0.3)
 script = ExtResource("1_0wqoq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(2.0325725, 2.0325725, 2.0325725, 1)
-z_index = 2
-position = Vector2(0, 319.99997)
-scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_d8xqx")
-animation = &"shock"
-frame = 4
-frame_progress = 1.0
+position = Vector2(0, 107)
+scale = Vector2(1.828, 1.828)
+sprite_frames = SubResource("SpriteFrames_0wqoq")
+animation = &"warning"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 327.5)
-shape = SubResource("RectangleShape2D_t5d4o")
+position = Vector2(0, 107.5)
+shape = SubResource("RectangleShape2D_0wqoq")
 disabled = true
-debug_color = Color(0.99999994, 0.007172685, 0.07558925, 0.41960785)
+debug_color = Color(0.980086, 0, 0.38657612, 0.41960785)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="shock" from="." to="." method="_on_shock"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

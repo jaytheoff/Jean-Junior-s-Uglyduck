@@ -186,3 +186,8 @@ func _on_red_balloon_spawn_timeout() -> void:
 	var red_balloon_instance = red_balloon.instantiate()
 	add_child(red_balloon_instance)
 	red_balloon_instance.position = Vector2(rng.randi_range(-186, 186), 109)
+
+
+func _on_player__death() -> void:
+	event_active = false
+	print("Player has died, stopping events.")

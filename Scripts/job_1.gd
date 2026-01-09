@@ -15,7 +15,6 @@ var events = [
 	"Thunder Incoming!",
 	"Hotass Sunshine",
 	"Freezing Winds",
-	'Tornado Shenanigans',
 	"Neutral"
 ]
 var event_active:bool = false
@@ -25,7 +24,7 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$"CanvasLayer/Wheater Alert".hide()
+	$AnimationPlayer.play("Intro")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -38,7 +37,7 @@ func _event():
 	event_active = false
 	#picks events
 	rng.randomize()
-	var event_index = rng.randi_range(0, 4)
+	var event_index = rng.randi_range(0, 3) # Adjusted to 3 to exclude "Neutral" from random selection
 	var selected_event = events[event_index]
 	print(event_index)
 	$"CanvasLayer/Wheater Alert/Event".text = selected_event
@@ -151,6 +150,7 @@ func _thunder_bolt(pos):
 
 func _on_event_cooldown_timeout() -> void:
 	_event()
+	$Timer/event_cooldown.stop()
 	print("Event Incoming!")
 
 
@@ -191,3 +191,13 @@ func _on_red_balloon_spawn_timeout() -> void:
 func _on_player__death() -> void:
 	event_active = false
 	print("Player has died, stopping events.")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "Intro":
+		$Timer/event_cooldown.start()
+		$Timer/blue_balloon_spawn.start()
+		$Timer/yellow_balloon_spawn.start()
+		$Timer/green_balloon_spawn.start()
+		$Timer/red_balloon_spawn.start()
+		$"CanvasLayer/Wheater Alert".hide()

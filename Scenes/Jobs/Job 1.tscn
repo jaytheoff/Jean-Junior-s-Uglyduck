@@ -1,15 +1,20 @@
-[gd_scene load_steps=46 format=3 uid="uid://c4u7kbyywevv8"]
+[gd_scene load_steps=50 format=3 uid="uid://c4u7kbyywevv8"]
 
 [ext_resource type="Script" uid="uid://cgya26b1edyja" path="res://Scripts/job_1.gd" id="1_5e65r"]
 [ext_resource type="Script" uid="uid://bd5ntomj6u8bw" path="res://Scripts/player_job1.gd" id="1_xvaxy"]
 [ext_resource type="FontFile" uid="uid://brxd6h13my1ky" path="res://Fonts/Born2bSportyV2.ttf" id="2_ul05c"]
 [ext_resource type="Shader" uid="uid://cnc3jlkl10vc5" path="res://Shaders/Outline_image.gdshader" id="3_hkxa0"]
 [ext_resource type="Texture2D" uid="uid://kpm2nf2a2jm2" path="res://Images/Sprites/Player/Sky_cleaner_Player-Sheet.png" id="3_jbsbw"]
+[ext_resource type="Texture2D" uid="uid://bgmjo1oyaeqkc" path="res://Images/Sprites/Job 1/timer_bar.png" id="3_nqyt1"]
 [ext_resource type="AudioStream" uid="uid://rertsmvv7i82" path="res://Music/alert.wav" id="3_tyth5"]
 [ext_resource type="Texture2D" uid="uid://sl450magnj4a" path="res://Images/Sprites/Player/Ultralight_Aircraft-Sheet.png" id="4_acqsx"]
 [ext_resource type="Texture2D" uid="uid://c8cwfvsx7x14b" path="res://Images/Sprites/Cloud_Tile.png" id="5_dgxjr"]
 [ext_resource type="Shader" uid="uid://ctq38p7f7uydh" path="res://Shaders/Right_Flat_Scroll.gdshader" id="6_jko6a"]
 [ext_resource type="Shader" uid="uid://d8u5cgqsk83g" path="res://Shaders/Fog_Shader.gdshader" id="9_tyth5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nqyt1"]
+font = ExtResource("2_ul05c")
+font_size = 128
 
 [sub_resource type="LabelSettings" id="LabelSettings_tyth5"]
 font = ExtResource("2_ul05c")
@@ -174,9 +179,11 @@ shader_parameter/speed = Vector2(0.8, 0)
 fractal_octaves = 10
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ul05c"]
+height = 128
 generate_mipmaps = false
 noise = SubResource("FastNoiseLite_ul05c")
 seamless = true
+seamless_blend_skirt = 0.204
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tyth5"]
 shader = ExtResource("9_tyth5")
@@ -229,6 +236,54 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 214)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Intro:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 700)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Intro/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3.."]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Intro:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1151, 141.0003)]
+}
 
 [sub_resource type="Animation" id="Animation_hkxa0"]
 resource_name = "Tornado"
@@ -243,12 +298,95 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1, 14.020352, 15),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.26853514, 0.28017288, 0.28296536, 1), Color(0.26853514, 0.28017288, 0.28296536, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(0.23947039, 0.17306629, 0.095582716, 1), Color(0.26853514, 0.28017288, 0.28296536, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_22553"]
+resource_name = "Intro"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 3.58),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 214), Vector2(0, -20), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasModulate:color")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 3.7666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1.40068e-08, 0.0002023366, 0.006082092, 1), Color(0.087962426, 1.0348112e-05, 0.38916758, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Intro:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.4333334, 5, 8, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 683), Vector2(0, 237), Vector2(0, 237), Vector2(0, 672)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Intro/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5, 6, 7, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["3..", "2.", "1
+", "GO!"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Intro:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1151, 141.0003)]
+}
+
+[sub_resource type="Animation" id="Animation_c7u4u"]
+resource_name = "Bloody Moon"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 2.9333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.71417046, 0.42221993, 0.0026529669, 1), Color(0.28627452, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nqyt1"]
 _data = {
+&"Bloody Moon": SubResource("Animation_c7u4u"),
 &"Hot Sun": SubResource("Animation_nqyt1"),
+&"Intro": SubResource("Animation_22553"),
 &"Neutral": SubResource("Animation_ul05c"),
 &"RESET": SubResource("Animation_tyth5"),
 &"Tornado": SubResource("Animation_hkxa0")
@@ -259,12 +397,43 @@ script = ExtResource("1_5e65r")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Intro" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 700.0
+offset_right = 1151.0
+offset_bottom = 841.0003
+
+[node name="Color" type="ColorRect" parent="CanvasLayer/Intro"]
+z_index = 1
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 141.0
+color = Color(0.5137255, 0, 0.20784314, 1)
+
+[node name="Shadow" type="ColorRect" parent="CanvasLayer/Intro"]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 1153.0
+offset_bottom = 148.0
+color = Color(0.39215687, 0, 0.15294118, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Intro"]
+z_index = 2
+layout_mode = 0
+offset_left = 519.0
+offset_top = 15.0
+offset_right = 623.0
+offset_bottom = 143.0
+text = "3.."
+label_settings = SubResource("LabelSettings_nqyt1")
+
 [node name="Wheater Alert" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = -126.0
+offset_top = -131.0
 offset_right = 1151.0
-offset_bottom = 2.0
+offset_bottom = -3.0
 
 [node name="Alert" type="Label" parent="CanvasLayer/Wheater Alert"]
 z_index = 2
@@ -318,6 +487,19 @@ offset_bottom = 646.0
 text = "HP: 0"
 label_settings = SubResource("LabelSettings_srni4")
 
+[node name="Timer" type="TextureProgressBar" parent="CanvasLayer"]
+visible = false
+offset_left = 10.999999
+offset_right = 27.0
+offset_bottom = 21.0
+scale = Vector2(5, 5)
+value = 100.0
+fill_mode = 4
+texture_under = ExtResource("3_nqyt1")
+texture_progress = ExtResource("3_nqyt1")
+tint_under = Color(0.9999998, 0.090942286, 0.05946441, 1)
+tint_progress = Color(0, 0.6784312, 0.31500205, 1)
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
 [node name="Borders" type="StaticBody2D" parent="."]
@@ -343,6 +525,12 @@ debug_color = Color(2.3102762e-06, 0.6462857, 0.24797752, 0.41960785)
 position = Vector2(0.5, -117)
 shape = SubResource("RectangleShape2D_tyth5")
 debug_color = Color(0, 0.53676426, 0.9734761, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 100
+position = Vector2(0, 214)
+zoom = Vector2(3, 3)
+editor_draw_limits = true
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(-133, -1)
@@ -376,29 +564,31 @@ position = Vector2(15, -3)
 shape = SubResource("RectangleShape2D_xvaxy")
 debug_color = Color(0.35423374, 0.61901045, 0, 0.41960785)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
-
 [node name="Timer" type="Node" parent="."]
 
 [node name="event_cooldown" type="Timer" parent="Timer"]
 wait_time = 15.0
-autostart = true
 
 [node name="blue_balloon_spawn" type="Timer" parent="Timer"]
 wait_time = 1.5
-autostart = true
 
 [node name="yellow_balloon_spawn" type="Timer" parent="Timer"]
 wait_time = 5.0
-autostart = true
 
 [node name="green_balloon_spawn" type="Timer" parent="Timer"]
 wait_time = 2.5
 
 [node name="red_balloon_spawn" type="Timer" parent="Timer"]
 wait_time = 3.0
-autostart = true
+
+[node name="wave_1_timer" type="Timer" parent="Timer"]
+wait_time = 50.0
+
+[node name="wave_2_timer" type="Timer" parent="Timer"]
+wait_time = 50.0
+
+[node name="wave_3_timer" type="Timer" parent="Timer"]
+wait_time = 50.0
 
 [node name="SFX" type="Node" parent="."]
 
@@ -422,7 +612,7 @@ offset_bottom = 108.0
 texture = ExtResource("5_dgxjr")
 stretch_mode = 1
 
-[node name="Cloud2" type="TextureRect" parent="Background"]
+[node name="Cloud_" type="TextureRect" parent="Background"]
 z_index = 4
 material = SubResource("ShaderMaterial_q2j08")
 layout_mode = 0
@@ -453,6 +643,22 @@ offset_top = -108.0
 offset_right = 191.0
 offset_bottom = 92.0
 
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = -192.0
+offset_top = 108.0
+offset_right = 192.0
+offset_bottom = 492.0
+color = Color(0.8901961, 0.95686275, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = -192.0
+offset_top = -492.0
+offset_right = 192.0
+offset_bottom = -108.0
+color = Color(0.8901961, 0.95686275, 1, 1)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_nqyt1")
@@ -464,3 +670,4 @@ libraries = {
 [connection signal="timeout" from="Timer/yellow_balloon_spawn" to="." method="_on_yellow_balloon_spawn_timeout"]
 [connection signal="timeout" from="Timer/green_balloon_spawn" to="." method="_on_green_balloon_spawn_timeout"]
 [connection signal="timeout" from="Timer/red_balloon_spawn" to="." method="_on_red_balloon_spawn_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

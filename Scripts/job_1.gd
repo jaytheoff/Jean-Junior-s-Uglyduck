@@ -1,5 +1,5 @@
 extends Node2D
-
+@onready var anim: AnimationPlayer = $AnimationPlayer
 #elements used for events
 var icicle = preload("res://Scenes/Jobs/Subscenes/Icicle.tscn")
 var beam = preload("res://Scenes/Jobs/Subscenes/Beam.tscn")
@@ -19,6 +19,17 @@ var events = [
 ]
 var event_active:bool = false
 
+var game_over_message = [
+	"pineapple pizza tastes good ngl",
+	"are we deaduzz",
+	"lock in twin",
+	"Maybe dont die..?",
+	"ALright dude.. just focus ",
+	"Maybe i shouldve made a tutorial... ",
+	"🥀 your buns gng"
+]
+var game_over_active:bool = false
+
 var rng = RandomNumberGenerator.new()
 
 
@@ -28,9 +39,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-
 	$CanvasLayer/Score.text = "Score: %d" % get_node("Player").score
 	$CanvasLayer/HP_display.text = "HP: %d" % get_node("Player").HP
+
+	if game_over_active and Input.is_action_just_pressed("Any"):
+		get_tree().reload_current_scene()
 
 func _event():
 
@@ -153,7 +166,6 @@ func _on_event_cooldown_timeout() -> void:
 	$Timer/event_cooldown.stop()
 	print("Event Incoming!")
 
-
 func _on_blue_balloon_spawn_timeout() -> void:
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
@@ -178,7 +190,6 @@ func _on_green_balloon_spawn_timeout() -> void:
 	add_child(green_balloon_instance)
 	green_balloon_instance.position = Vector2(rng.randi_range(-186, 186), 109)
 
-
 func _on_red_balloon_spawn_timeout() -> void:
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
@@ -187,11 +198,14 @@ func _on_red_balloon_spawn_timeout() -> void:
 	add_child(red_balloon_instance)
 	red_balloon_instance.position = Vector2(rng.randi_range(-186, 186), 109)
 
-
 func _on_player__death() -> void:
 	event_active = false
+	game_over_active = true
 	print("Player has died, stopping events.")
 
+	_game_over()
+	anim.play("Game Over")
+	
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Intro":
@@ -201,3 +215,10 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		$Timer/green_balloon_spawn.start()
 		$Timer/red_balloon_spawn.start()
 		$"CanvasLayer/Wheater Alert".hide()
+
+func _game_over():
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var message_index = rng.randi_range(0, game_over_message.size() - 1)
+	var selected_message = game_over_message[message_index]
+	$"CanvasLayer/Game over/Text".text = selected_message

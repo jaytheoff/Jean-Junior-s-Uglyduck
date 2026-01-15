@@ -24,4 +24,4 @@ func _beam_Flash():
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		print("Player got cooked!")
-		body._take_damage(25)
+		body._take_damage(100)

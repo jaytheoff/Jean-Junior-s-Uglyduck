@@ -1,13 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://c2lrr7gfenpcb"]
+[gd_scene load_steps=19 format=3 uid="uid://c2lrr7gfenpcb"]
 
 [ext_resource type="Script" uid="uid://bfd3xuitxpk5s" path="res://Scripts/casino_game.gd" id="1_lnixx"]
 [ext_resource type="Script" uid="uid://bal2nnlakntgw" path="res://Scripts/slot_machine.gd" id="2_a7spw"]
 [ext_resource type="FontFile" uid="uid://brxd6h13my1ky" path="res://Fonts/Born2bSportyV2.ttf" id="3_ioq3x"]
 [ext_resource type="Script" uid="uid://bpm8g8rsslr47" path="res://Scripts/heads_or_tails.gd" id="4_mucla"]
-[ext_resource type="Texture2D" uid="uid://di8kn2xksymju" path="res://Images/Sprites/Slot_machine_cover.png" id="4_napil"]
-[ext_resource type="Texture2D" uid="uid://dyct0g72kur3" path="res://Images/Sprites/Fruit_SpriteSheet.png" id="4_v10yk"]
+[ext_resource type="Texture2D" uid="uid://c4qhbru7627e3" path="res://Images/Sprites/Casino/Slot_machine_cover.png" id="4_napil"]
+[ext_resource type="Texture2D" uid="uid://cbpoe3k08jh47" path="res://Images/Sprites/Casino/Fruit_SpriteSheet.png" id="4_v10yk"]
 [ext_resource type="Script" uid="uid://y8ste5vyj4kw" path="res://Scripts/dice_roll.gd" id="5_swjqy"]
-[ext_resource type="Texture2D" uid="uid://dukedruyohyxg" path="res://Images/Sprites/Dice_🎲_SpriteSheet.png" id="6_rm51h"]
+[ext_resource type="Texture2D" uid="uid://sq6xvsoc1pi0" path="res://Images/Sprites/Casino/Dice_🎲_SpriteSheet.png" id="6_rm51h"]
+[ext_resource type="Texture2D" uid="uid://d0cpxhc7u2nv6" path="res://Images/Sprites/Casino/Casino_Table.png" id="9_ggxt4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mucla"]
 font = ExtResource("3_ioq3x")
@@ -56,6 +57,26 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Your MoneY:"
 label_settings = SubResource("LabelSettings_mucla")
+
+[node name="Left" type="Button" parent="CanvasLayer"]
+offset_left = 18.0
+offset_top = 281.0
+offset_right = 83.0
+offset_bottom = 377.0
+theme_override_font_sizes/font_size = 64
+text = "<-"
+
+[node name="Right" type="Button" parent="CanvasLayer"]
+offset_left = 1074.0
+offset_top = 286.0
+offset_right = 1139.0
+offset_bottom = 382.0
+theme_override_font_sizes/font_size = 64
+text = "->"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="Slot Machine" type="Node2D" parent="."]
 position = Vector2(976, -251)
@@ -143,18 +164,24 @@ position = Vector2(3285, -252)
 script = ExtResource("5_swjqy")
 
 [node name="Dice" type="Sprite2D" parent="Dice Roll"]
-position = Vector2(-3, 42)
+position = Vector2(-3, -52)
 scale = Vector2(6, 6)
 texture = ExtResource("6_rm51h")
 hframes = 3
 vframes = 3
 frame = 1
 
+[node name="CasinoTable" type="Sprite2D" parent="Dice Roll"]
+z_index = -2
+position = Vector2(3.0002441, 50.999985)
+scale = Vector2(5, 5)
+texture = ExtResource("9_ggxt4")
+
 [node name="Input" type="LineEdit" parent="Dice Roll"]
-offset_left = -395.0
-offset_top = 281.0
-offset_right = 136.0
-offset_bottom = 352.0
+offset_left = -276.0
+offset_top = 133.0
+offset_right = 255.0
+offset_bottom = 204.0
 theme_override_fonts/font = ExtResource("3_ioq3x")
 theme_override_font_sizes/font_size = 27
 theme_override_styles/normal = SubResource("StyleBoxFlat_swjqy")
@@ -162,17 +189,17 @@ placeholder_text = "Insert an value from 1 - 6 (Press enter to confirm)"
 expand_to_text_length = true
 
 [node name="Display" type="Label" parent="Dice Roll"]
-offset_left = -396.0
-offset_top = 281.0
-offset_right = 90.0
-offset_bottom = 352.0
+offset_left = -277.0
+offset_top = 133.0
+offset_right = 209.0
+offset_bottom = 204.0
 label_settings = SubResource("LabelSettings_swjqy")
 
 [node name="Roll" type="Button" parent="Dice Roll"]
-offset_left = 177.0
-offset_top = 278.0
-offset_right = 345.0
-offset_bottom = 347.0
+offset_left = -76.0
+offset_top = 241.0
+offset_right = 92.0
+offset_bottom = 310.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_ioq3x")
 theme_override_font_sizes/font_size = 39
@@ -182,7 +209,7 @@ text = "Roll
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 5
-position = Vector2(3278, -204)
+position = Vector2(3262, -204)
 
 [connection signal="pressed" from="Slot Machine/Gamble" to="Slot Machine" method="_on_gamble_pressed"]
 [connection signal="pressed" from="Coin Flip/Heads" to="Coin Flip" method="_on_heads_pressed"]

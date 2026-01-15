@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var anim: AnimationPlayer = $anim
 @onready var play_button: Button = $Menu/Play
 @onready var quit_button: Button = $Menu/Quit
 
@@ -38,7 +38,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Intro":
 		tween.tween_property($Menu, "position", Vector2(-24, 26), 0.5)
 	elif anim_name == "Fade":
-		get_tree().change_scene_to_file("Scenes/Prologue/Traffic Game.tscn")
+		LoadScreen.load_scene("res://Scenes/Jobs/Job 1.tscn")
 	
 
 

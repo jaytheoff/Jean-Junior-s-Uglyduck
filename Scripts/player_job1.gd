@@ -2,7 +2,7 @@ extends CharacterBody2D
 signal _death
 var score: int = 0
 @export var speed: float = 150.0
-@export var HP: int = 100
+@export var HP = 100
 
 @export var dash_speed: float = 325.0
 @export var dash_duration: float = 0.5
@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		dash_cooldown_timer -= delta
 	
 	# Handle dash input and store dash direction
-	if Input.is_action_just_pressed("Dash") and not is_dashing and dash_cooldown_timer <= 0:
+	if Input.is_action_just_pressed("Dash") and not is_dashing and dash_cooldown_timer <= 0 and HP > 0:
 		var dash_direction = Vector2.ZERO
 		if Input.is_action_pressed("Left"):
 			dash_direction.x -= 1
@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 			dash_cooldown_timer = dash_cooldown
 	
 	# Only process normal movement when not dashing
-	if not is_dashing:
+	if not is_dashing and HP > 0:
 		$Plane.play("Idle")
 		if Input.is_action_pressed("Left"):
 			direction.x -= 1
@@ -65,7 +65,6 @@ func _physics_process(delta: float) -> void:
 
 func _take_damage(amount: int) -> void:
 	HP -= amount
-	print("Player HP: %d" % HP)
 	if HP <= 0:
 		emit_signal("_death")
 

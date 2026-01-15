@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1i6j0acecnxc"]
 
 [ext_resource type="Script" uid="uid://bp7qhww4ip00l" path="res://Scripts/icicle.gd" id="1_evepf"]
-[ext_resource type="Texture2D" uid="uid://d3eww0ruac81v" path="res://Images/Sprites/Icicle.png" id="1_yt8hq"]
+[ext_resource type="Texture2D" uid="uid://b603m8q2w68fh" path="res://Images/Sprites/Job 1/Icicle.png" id="2_evepf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_evepf"]
 radius = 6.0
@@ -10,7 +10,7 @@ radius = 6.0
 script = ExtResource("1_evepf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_yt8hq")
+texture = ExtResource("2_evepf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_evepf")

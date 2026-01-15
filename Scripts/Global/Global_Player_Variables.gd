@@ -1,6 +1,13 @@
 extends Node
 
+var currencies: Dictionary = {
+	"dollars": 0.0,
+	"euros": 0.0,
+	"yen": 0.0,
+	"pounds": 0.0,
+}
 var money: float = 12.10
+var payout: float = 0.0
 var luck: float = 0.5
 var charisma: float = 0.5
 var debt: float = 0.0

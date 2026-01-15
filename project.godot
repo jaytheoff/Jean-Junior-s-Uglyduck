@@ -21,6 +21,7 @@ config/icon="uid://bodf1e3t2hss3"
 [autoload]
 
 Global_Player_Variables="*res://Scripts/Global/Global_Player_Variables.gd"
+LoadScreen="*res://Scripts/Global/load_screen.gd"
 
 [display]
 

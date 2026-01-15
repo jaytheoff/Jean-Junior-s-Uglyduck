@@ -18,6 +18,5 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		print("Player hit by icicle!")
-		body._take_damage(3)
-		#body.take_damage(10)  # Assuming the player has a take_damage method
+		body._take_damage(15)
 		queue_free()  # Remove the icicle after hitting the player

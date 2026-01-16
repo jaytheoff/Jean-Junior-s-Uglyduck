@@ -254,6 +254,7 @@ func payout_calculation() -> float:
 	return calculated_payout
 
 func _game_over():
+	$"CanvasLayer/Wheater Alert".hide()
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	var message_index = rng.randi_range(0, game_over_message.size() - 1)

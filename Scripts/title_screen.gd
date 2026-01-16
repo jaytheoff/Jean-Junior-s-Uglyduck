@@ -38,7 +38,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Intro":
 		tween.tween_property($Menu, "position", Vector2(-24, 26), 0.5)
 	elif anim_name == "Fade":
-		LoadScreen.load_scene("res://Scenes/Jobs/Job 1.tscn")
+		get_tree().change_scene_to_packed(load("res://Scenes/Loaders/Job_1_Loader.tscn"))
 	
 
 

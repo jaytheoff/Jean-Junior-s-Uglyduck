@@ -66,13 +66,14 @@ shadow_offset = Vector2(1, 8)
 [sub_resource type="LabelSettings" id="LabelSettings_ul05c"]
 font = ExtResource("2_ul05c")
 font_size = 48
-font_color = Color(0, 0, 0, 1)
-shadow_size = 0
-shadow_offset = Vector2(0, 0)
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_srni4"]
 font = ExtResource("2_ul05c")
 font_size = 48
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ul05c"]
 size = Vector2(20, 216)
@@ -582,9 +583,9 @@ offset_bottom = 128.0
 color = Color(0.39254335, 8.4228816e-07, 0.15183744, 1)
 
 [node name="Score" type="Label" parent="CanvasLayer"]
-offset_left = 4.0
+offset_left = 12.0
 offset_top = 597.0
-offset_right = 253.0
+offset_right = 261.0
 offset_bottom = 645.0
 text = "Your Score: 0"
 label_settings = SubResource("LabelSettings_ul05c")
@@ -613,7 +614,7 @@ layout_mode = 0
 offset_right = 19.0
 offset_bottom = 18.0
 scale = Vector2(5, 5)
-value = 50.0
+value = 35.0
 texture_under = ExtResource("6_ujn70")
 texture_progress = ExtResource("6_c7u4u")
 

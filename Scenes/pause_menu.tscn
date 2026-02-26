@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://4idp8y5na0t4"]
+
+[ext_resource type="FontFile" uid="uid://cubj10gv7xuui" path="res://Fonts/Schoolbell-Regular.ttf" id="1_emv3i"]
+[ext_resource type="Script" uid="uid://ccf00blce0r7v" path="res://Scripts/Global/pause_menu.gd" id="1_k0w1u"]
+[ext_resource type="AudioStream" uid="uid://sagoyr42sfyx" path="res://SFX/select4.wav" id="3_1och7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5q5lh"]
+font = ExtResource("1_emv3i")
+font_size = 22
+stacked_outline_count = 1
+stacked_outline_0/size = 2
+stacked_outline_0/color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pxyof"]
+font = ExtResource("1_emv3i")
+
+[node name="Pause Menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_k0w1u")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 409.0
+color = Color(0, 0, 0, 0.85882354)
+
+[node name="Text" type="VBoxContainer" parent="."]
+offset_left = 75.0
+offset_right = 556.0
+offset_bottom = 411.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Text"]
+z_index = 2
+layout_mode = 2
+text = "Paused"
+label_settings = SubResource("LabelSettings_5q5lh")
+horizontal_alignment = 1
+
+[node name="Tip" type="Label" parent="Text"]
+layout_mode = 2
+text = "\"ESC\" to resume"
+label_settings = SubResource("LabelSettings_pxyof")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tip2" type="Label" parent="Text"]
+layout_mode = 2
+text = "\"X\" to Quit"
+label_settings = SubResource("LabelSettings_pxyof")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1och7")

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dk61iaogqjgjc" path="res://Images/Logo/New-Game-Logo (straight)1.png" id="3_qyra1"]
 [ext_resource type="Texture2D" uid="uid://cc8sta0wkfowm" path="res://Images/UI/Cube-Tile.png" id="4_lyuk6"]
 [ext_resource type="Shader" uid="uid://bellw4ocsmfhq" path="res://Shaders/Right Scroll.gdshader" id="4_xdkfq"]
-[ext_resource type="AudioStream" uid="uid://kwspkkyt6ev6" path="res://select2.wav" id="6_x2sej"]
+[ext_resource type="AudioStream" uid="uid://c53p6m5ovkwq6" path="res://SFX/select1.wav" id="6_x2sej"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_po227"]
 font = ExtResource("1_po227")

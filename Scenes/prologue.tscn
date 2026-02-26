@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b5faqw3lq4s2x" path="res://Images/Boss Portait.png" id="5_30pd2"]
 [ext_resource type="Texture2D" uid="uid://brvtt75n40mtm" path="res://Images/Scene 2 (Turned Off).png" id="5_vns27"]
 [ext_resource type="Texture2D" uid="uid://cspmyojvxf27n" path="res://Images/Scene 3.png" id="6_jiqjm"]
-[ext_resource type="AudioStream" uid="uid://kwspkkyt6ev6" path="res://select2.wav" id="6_vns27"]
+[ext_resource type="AudioStream" uid="uid://coa72wt1p7jm5" path="res://SFX/select2.wav" id="6_vns27"]
 [ext_resource type="Texture2D" uid="uid://dn63prk701kyb" path="res://Images/Scene 4.png" id="7_nim4c"]
 [ext_resource type="Texture2D" uid="uid://d0l6ycktnkfkn" path="res://Images/Foreground_house.png" id="10_30pd2"]
 [ext_resource type="Texture2D" uid="uid://dk61iaogqjgjc" path="res://Images/Logo/New-Game-Logo (straight)1.png" id="12_t2qym"]

@@ -63,9 +63,10 @@ func _process(delta: float) -> void:
 
 
 func _on_skip_pressed() -> void:
-	_next()
-func _next():
 	$Skip.play()
+	_next()
+	
+func _next():
 	$CanvasLayer/Skip.hide()
 	$CanvasLayer/Fade.show()
 
@@ -73,3 +74,5 @@ func _next():
 	var t1 = create_tween()
 
 	t1.tween_property($CanvasLayer/Fade, "modulate", Color.WHITE, 2.0)
+	await t1.finished
+	get_tree().change_scene_to_file("res://Scenes/Car Rush.tscn")

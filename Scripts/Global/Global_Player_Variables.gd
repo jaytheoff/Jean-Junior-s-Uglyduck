@@ -23,6 +23,11 @@ var casino_games_unlocked: Dictionary = {
 	"roulette": false,
 }
 
+#cheating variables
+var casino_cheats_enabled: bool = false
+var debug_mode_enabled: bool = false
+var debug_menu_accessible: bool = true
+
 # able to track casino game statistics
 # Just in Case i forget how to update tables, here is an example:
 # Global_Player_Variables.casino_game_stats["slot_machine"]["games_played"] += 1

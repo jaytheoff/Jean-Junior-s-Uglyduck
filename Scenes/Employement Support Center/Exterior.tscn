@@ -215,6 +215,8 @@ radius = 17.029387
 [node name="Exterior" type="Node2D" unique_id=1609272567]
 script = ExtResource("1_2rm3j")
 
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=25579712]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=972555366]
 
 [node name="Location" type="Label" parent="CanvasLayer" unique_id=1614288407]

@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://noydurvhdojm"]
 
 [ext_resource type="Script" uid="uid://bkwd3p6japib2" path="res://Scripts/prologue.gd" id="1_ctcux"]
-[ext_resource type="Texture2D" path="res://Images/Cutscenes/Prologue/Scene 1.png" id="2_u0vu3"]
 [ext_resource type="FontFile" uid="uid://nor5b56h36pc" path="res://Fonts/Schoolbell-Regular.ttf" id="2_wl3ap"]
 [ext_resource type="Shader" uid="uid://b7nflkrrpkp3s" path="res://Shaders/Outline_image.gdshader" id="4_ghkf2"]
 [ext_resource type="AudioStream" uid="uid://bqycrketeadq2" path="res://SFX/select2.wav" id="6_vns27"]
 [ext_resource type="Texture2D" uid="uid://ccyvf2b2qevxy" path="res://Images/Cutscenes/Finzalied Intro/Scene 4 - Uglyduck Being left out.png" id="7_nim4c"]
 [ext_resource type="Texture2D" uid="uid://dic8al8nh2nas" path="res://Images/Cutscenes/Finzalied Intro/Scene 3 - Uglyduck birth.png" id="7_rt4ci"]
 [ext_resource type="Texture2D" uid="uid://exckda0e4lqq" path="res://Images/Cutscenes/Finzalied Intro/Scene 1 - Exposition.png" id="7_t2qym"]
-[ext_resource type="Texture2D" uid="uid://eag3yo7imi8m" path="res://Images/Cutscenes/Finzalied Intro/Scene 2 - Hospital.png" id="8_30pd2"]
+[ext_resource type="VideoStream" uid="uid://kuny18nt3wv" path="res://Uglyduck Introduction Video.ogv" id="9_wivcu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ghkf2"]
 shader = ExtResource("4_ghkf2")
@@ -17,8 +16,8 @@ shader_parameter/line_thickness = 10.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ckav"]
 
-[sub_resource type="Animation" id="Animation_ghkf2"]
-resource_name = "Outro"
+[sub_resource type="Resource" id="Resource_y1jr1"]
+metadata/__load_path__ = "res://Images/Cutscenes/Prologue/Scene 1.png"
 
 [sub_resource type="Animation" id="Animation_u0vu3"]
 length = 0.001
@@ -56,7 +55,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_u0vu3")]
+"values": [SubResource("Resource_y1jr1")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -85,7 +84,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_4ckav"]
 resource_name = "Scene 1"
-length = 3.0
+length = 14.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -96,187 +95,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0.015955262, 0.07154516, 1), Color(0.7724414, 0.870263, 1, 1)]
+"values": [Color(0, 0.015955262, 0.07154516, 1), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Camera2D:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(25, 4), Vector2(54, 4)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Cutscene:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("7_t2qym")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sky:color")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.16078432, 0, 0.31764707, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_wl3ap"]
-resource_name = "Scene 2"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasModulate:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.1666666),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.3246445, 0.6117754, 0.8954122, 1), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera2D:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(42, -80), Vector2(52, 4)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Cutscene:texture")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("8_30pd2")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sky:color")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.16078432, 0, 0.31764707, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Camera2D:zoom")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.2, 1.2)]
-}
-
-[sub_resource type="Animation" id="Animation_jiqjm"]
-resource_name = "Scene 3"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasModulate:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera2D:zoom")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1.1, 1.1), Vector2(1.8, 1.8)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Camera2D:position")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(80, -32), Vector2(-77, -28)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Cutscene:texture")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("7_rt4ci")]
-}
-
-[sub_resource type="Animation" id="Animation_rt4ci"]
-resource_name = "Scene 4"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.23),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(51, -1), Vector2(50, -30)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera2D:zoom")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.23),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 3, 7.5666666, 8.2, 9.6, 9.8, 11.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 0, 1, 1),
 "update": 0,
-"values": [Vector2(1.1, 1.1), Vector2(1.1, 1.1)]
+"values": [Vector2(25, 4), Vector2(54, 4), Vector2(54, 4), Vector2(24, -35), Vector2(24, -35), Vector2(24, 5), Vector2(24, -33)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -285,32 +116,28 @@ tracks/2/path = NodePath("Cutscene:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4.468198, 9.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("7_nim4c")]
+"values": [ExtResource("7_t2qym"), ExtResource("7_rt4ci"), ExtResource("7_nim4c")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasModulate:color")
-tracks/3/interp = 2
+tracks/3/path = NodePath("Sky:color")
+tracks/3/interp = 0
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.06),
+"times": PackedFloat32Array(0, 4.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0.05882353, 1), Color(1, 1, 1, 1)]
+"values": [Color(0.16078432, 0, 0.31764707, 1), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wl3ap"]
 _data = {
-&"Outro": SubResource("Animation_ghkf2"),
 &"RESET": SubResource("Animation_u0vu3"),
-&"Scene 1": SubResource("Animation_4ckav"),
-&"Scene 2": SubResource("Animation_wl3ap"),
-&"Scene 3": SubResource("Animation_jiqjm"),
-&"Scene 4": SubResource("Animation_rt4ci")
+&"Scene 1": SubResource("Animation_4ckav")
 }
 
 [node name="Prologue" type="Node2D" unique_id=398897730]
@@ -320,10 +147,10 @@ script = ExtResource("1_ctcux")
 color = Color(0, 0, 0, 1)
 
 [node name="Sky" type="ColorRect" parent="." unique_id=1596075499]
-offset_left = -266.0
+offset_left = -592.0
 offset_top = -614.0
-offset_right = 373.0
-offset_bottom = -218.0
+offset_right = 765.0
+offset_bottom = 501.0
 color = Color(0.16078432, 0, 0.31764707, 1)
 
 [node name="Cutscene" type="TextureRect" parent="." unique_id=1770580562]
@@ -333,12 +160,16 @@ offset_left = -266.0
 offset_top = -218.0
 offset_right = 374.0
 offset_bottom = 190.0
-texture = ExtResource("2_u0vu3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=342061725]
 z_index = 4
 position = Vector2(-14, 4)
 zoom = Vector2(1.1, 1.1)
+limit_left = -291
+limit_top = -219
+limit_right = 374
+limit_bottom = 191
+position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1358081339]
 
@@ -373,5 +204,12 @@ stream = ExtResource("6_vns27")
 [node name="Label" type="Label" parent="." unique_id=288662233]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=541988798]
+offset_right = 1280.0
+offset_bottom = 816.0
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("9_wivcu")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Skip" to="." method="_on_skip_pressed"]

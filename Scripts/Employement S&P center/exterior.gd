@@ -1,5 +1,5 @@
 extends Node2D
-
+@onready var http_request: HTTPRequest = $HTTPRequest
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
@@ -15,8 +15,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
 func _on_entrance_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player"):
 		print("Player entered the entrance area")

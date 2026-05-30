@@ -193,8 +193,9 @@ size = Vector2(35, 103)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tvsy3"]
 particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -37.99, 0)
 emission_shape = 3
-emission_box_extents = Vector3(200, 1, 1)
+emission_box_extents = Vector3(200, -8.9, 1)
 angle_min = -20.69999
 angle_max = -20.69999
 spread = 90.0
@@ -214,8 +215,6 @@ radius = 17.029387
 
 [node name="Exterior" type="Node2D" unique_id=1609272567]
 script = ExtResource("1_2rm3j")
-
-[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=25579712]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=972555366]
 
@@ -310,8 +309,20 @@ z_index = 6
 position = Vector2(-139, -173)
 texture = ExtResource("5_anhu8")
 lifetime = 2.9099999999999997
-visibility_rect = Rect2(-180, 0, 500, 200)
+visibility_rect = Rect2(-180, 0, 500, 200.635)
 process_material = SubResource("ParticleProcessMaterial_tvsy3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=479883202]
+z_index = 2
+position = Vector2(-189, -149)
+zoom = Vector2(3, 3)
+limit_left = -320
+limit_top = -187
+limit_right = 94
+limit_bottom = 32
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_horizontal_offset = 0.04
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2096901729 groups=["Player"]]
 z_index = 2
@@ -329,15 +340,6 @@ color = Color(0.72464263, 0.7246426, 0.7246426, 1)
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_anhu8")
 debug_color = Color(0.94432527, 6.7383053e-06, 0.5998465, 0.41960785)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=479883202]
-z_index = 2
-position = Vector2(63, -29)
-zoom = Vector2(3, 3)
-limit_left = -320
-limit_top = -187
-limit_right = 94
-limit_bottom = 32
 
 [node name="Entrance" type="Node2D" parent="." unique_id=1262312580]
 position = Vector2(78, -78)

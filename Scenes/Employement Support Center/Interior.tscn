@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cu0hhbwmcbml3" path="res://Images/Employement Support & Assistance Center/Interior/Flower-pot.png" id="4_s2kih"]
 [ext_resource type="Texture2D" uid="uid://cdey20yuxdmgw" path="res://Images/Employement Support & Assistance Center/Interior/Mini-Table.png" id="5_pudod"]
 [ext_resource type="Texture2D" uid="uid://xevwd3dp448f" path="res://Images/Employement Support & Assistance Center/Interior/Computer Register Desk.png" id="6_ds418"]
+[ext_resource type="Texture2D" uid="uid://b0jeq3elx5q1v" path="res://Images/Employement Support & Assistance Center/Interior/Desks.png" id="7_d6iey"]
+[ext_resource type="Texture2D" uid="uid://bckd5qqf7xvyy" path="res://Images/Employement Support & Assistance Center/Interior/Hallway.png" id="8_ds418"]
+[ext_resource type="Texture2D" uid="uid://h36xeqcxrwre" path="res://Images/Employement Support & Assistance Center/Interior/Vertical-Cabinet.png" id="9_pi0rf"]
+[ext_resource type="Texture2D" uid="uid://cx1wuth5c0ovb" path="res://Images/Employement Support & Assistance Center/Interior/OfficeHallway.png" id="11_u1wv5"]
+[ext_resource type="Texture2D" uid="uid://bjgqyub1tslcp" path="res://Images/Employement Support & Assistance Center/Interior/Job-Listings.png" id="12_retxh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_phjn4"]
 radius = 8.0
@@ -21,8 +26,67 @@ radius = 9.219544
 [sub_resource type="CircleShape2D" id="CircleShape2D_7usxb"]
 radius = 13.038404
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ls5fk"]
+size = Vector2(160, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7icrr"]
+size = Vector2(20, 129)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d6iey"]
+height = 28.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1wv5"]
+size = Vector2(185, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6iey"]
+size = Vector2(20, 153)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_vchhe"]
 radius = 14.3178215
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_retxh"]
+size = Vector2(20, 45)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ls5fk"]
+radius = 9.055386
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7icrr"]
+radius = 12.0415945
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vajp6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_132yf"]
+radius = 11.045361
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vajp6"]
+size = Vector2(480, 24.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_132yf"]
+size = Vector2(20, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02ev5"]
+size = Vector2(23, 479)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6dsl"]
+size = Vector2(130, 11)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_retxh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u1wv5"]
+radius = 12.165525
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_retxh"]
+radius = 13.0
+height = 52.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vo17a"]
+size = Vector2(23, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7csnp"]
+size = Vector2(20, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tytls"]
+size = Vector2(151, 8.5)
 
 [node name="Interior" type="Node2D" unique_id=1163089483]
 process_mode = 3
@@ -40,8 +104,8 @@ color = Color(0, 0, 0, 1)
 [node name="Backdrop" type="ColorRect" parent="." unique_id=515812511]
 offset_left = -2120.0
 offset_top = -1252.0
-offset_right = -200.0
-offset_bottom = -404.0
+offset_right = -778.0
+offset_bottom = -100.0
 pivot_offset = Vector2(196, 129)
 color = Color(0.18267405, 0.093141906, 0.13794747, 1)
 
@@ -50,12 +114,16 @@ process_mode = 3
 z_index = 8
 position = Vector2(-1972, -1088)
 zoom = Vector2(3, 3)
+limit_left = -2120
+limit_top = -1252
+limit_right = -778
+limit_bottom = -100
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 drag_horizontal_offset = 0.04
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1096949037 groups=["Player"]]
-z_index = 2
+z_index = 4
 position = Vector2(-1700, -1095)
 scale = Vector2(0.5, 0.5)
 
@@ -76,6 +144,10 @@ position = Vector2(-1641, -1096)
 
 [node name="LobbyVisible" type="VisibleOnScreenNotifier2D" parent="Lobby" unique_id=1067617839]
 rect = Rect2(-93, -64, 176, 136)
+
+[node name="Room" type="Sprite2D" parent="Lobby" unique_id=1006310790]
+position = Vector2(-5, 4)
+texture = ExtResource("3_vchhe")
 
 [node name="Hallway" type="Area2D" parent="Lobby" unique_id=1942966034]
 z_index = 2
@@ -105,54 +177,191 @@ debug_color = Color(0.9986326, 0, 0.1487447, 0.41960785)
 [node name="Teleport" type="Node2D" parent="Lobby" unique_id=1185881296]
 z_index = 4
 
-[node name="Marker2D" type="Marker2D" parent="Lobby/Teleport" unique_id=710452405]
+[node name="Destination" type="Marker2D" parent="Lobby/Teleport" unique_id=710452405]
 position = Vector2(-59, 1)
 
-[node name="Marker2D2" type="Marker2D" parent="Lobby/Teleport" unique_id=1027230540]
+[node name="Destination2" type="Marker2D" parent="Lobby/Teleport" unique_id=1027230540]
 position = Vector2(-4, 30)
 
-[node name="Marker2D3" type="Marker2D" parent="Lobby/Teleport" unique_id=1512921874]
+[node name="Destination3" type="Marker2D" parent="Lobby/Teleport" unique_id=1512921874]
 position = Vector2(48, 4)
 
-[node name="PointLight2D" type="PointLight2D" parent="Lobby" unique_id=2029741009]
+[node name="Objects" type="Node2D" parent="Lobby" unique_id=2009429121]
+z_index = 3
+
+[node name="FlowerPot" type="Sprite2D" parent="Lobby/Objects" unique_id=1833872012]
+position = Vector2(32, -33)
+texture = ExtResource("4_s2kih")
+
+[node name="MiniTable" type="Sprite2D" parent="Lobby/Objects" unique_id=1605027220]
+position = Vector2(-8, -37)
+texture = ExtResource("5_pudod")
+
+[node name="ComputerRegisterDesk" type="Sprite2D" parent="Lobby/Objects" unique_id=1402241035]
+position = Vector2(-55, -16)
+texture = ExtResource("6_ds418")
+
+[node name="Lights" type="Node2D" parent="Lobby" unique_id=817508469]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lobby/Lights" unique_id=2029741009]
 position = Vector2(-8, -51)
 energy = 0.68
 texture = ExtResource("3_anw7d")
 texture_scale = 0.8
 
-[node name="PointLight2D2" type="PointLight2D" parent="Lobby" unique_id=1278616227]
+[node name="PointLight2D2" type="PointLight2D" parent="Lobby/Lights" unique_id=1278616227]
 position = Vector2(-65, -49)
 energy = 0.68
 texture = ExtResource("3_anw7d")
 texture_scale = 0.8
 
-[node name="PointLight2D3" type="PointLight2D" parent="Lobby" unique_id=996289388]
+[node name="PointLight2D3" type="PointLight2D" parent="Lobby/Lights" unique_id=996289388]
 position = Vector2(57, -49)
 energy = 0.68
 texture = ExtResource("3_anw7d")
 texture_scale = 0.8
 
-[node name="Room" type="Sprite2D" parent="Lobby" unique_id=1006310790]
-position = Vector2(-5, 4)
-texture = ExtResource("3_vchhe")
+[node name="Collisons" type="StaticBody2D" parent="Lobby" unique_id=1880619132]
+position = Vector2(-5, 2)
 
-[node name="FlowerPot" type="Sprite2D" parent="Lobby" unique_id=1833872012]
-position = Vector2(32, -33)
-texture = ExtResource("4_s2kih")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lobby/Collisons" unique_id=345250092]
+position = Vector2(0, 61.5)
+shape = SubResource("RectangleShape2D_ls5fk")
+debug_color = Color(0.90694875, 0.00012648762, 0.743377, 0.41960785)
 
-[node name="MiniTable" type="Sprite2D" parent="Lobby" unique_id=1605027220]
-position = Vector2(-8, -37)
-texture = ExtResource("5_pudod")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Lobby/Collisons" unique_id=548825705]
+position = Vector2(0, -53)
+shape = SubResource("RectangleShape2D_ls5fk")
+debug_color = Color(0.90694875, 0.00012648762, 0.743377, 0.41960785)
 
-[node name="ComputerRegisterDesk" type="Sprite2D" parent="Lobby" unique_id=1402241035]
-position = Vector2(-55, -16)
-texture = ExtResource("6_ds418")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Lobby/Collisons" unique_id=733681593]
+position = Vector2(-80, 4.5)
+shape = SubResource("RectangleShape2D_7icrr")
+debug_color = Color(0.5487559, 0.40302747, 1, 0.41960785)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Lobby/Collisons" unique_id=751464181]
+position = Vector2(80, 4.5)
+shape = SubResource("RectangleShape2D_7icrr")
+debug_color = Color(0.5487559, 0.40302747, 1, 0.41960785)
 
 [node name="Classroom" type="Node2D" parent="." unique_id=2097056508]
 position = Vector2(-1642, -829)
 
+[node name="ClassroomVisblity" type="VisibleOnScreenNotifier2D" parent="Classroom" unique_id=1912960949]
+position = Vector2(-106, 68)
+rect = Rect2(8, -157, 197, 153)
+
+[node name="Room" type="Sprite2D" parent="Classroom" unique_id=961372388]
+position = Vector2(0, -15)
+texture = ExtResource("3_pudod")
+
 [node name="Marker2D" type="Marker2D" parent="Classroom" unique_id=310682052]
 position = Vector2(-4, -42)
+
+[node name="Objects" type="Node2D" parent="Classroom" unique_id=1114076593]
+
+[node name="Desk1" type="StaticBody2D" parent="Classroom/Objects" unique_id=38278835]
+position = Vector2(-27, -25)
+
+[node name="Sprite" type="Sprite2D" parent="Classroom/Objects/Desk1" unique_id=109710638]
+z_index = 3
+texture = ExtResource("7_d6iey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Objects/Desk1" unique_id=382530608]
+z_index = 4
+shape = SubResource("CapsuleShape2D_d6iey")
+debug_color = Color(0.977182, 0, 0.40977353, 0.41960785)
+
+[node name="Desk2" type="StaticBody2D" parent="Classroom/Objects" unique_id=318463118]
+position = Vector2(-29, 9)
+
+[node name="Sprite" type="Sprite2D" parent="Classroom/Objects/Desk2" unique_id=1701052166]
+z_index = 3
+texture = ExtResource("7_d6iey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Objects/Desk2" unique_id=632641839]
+z_index = 4
+shape = SubResource("CapsuleShape2D_d6iey")
+debug_color = Color(0.977182, 0, 0.40977353, 0.41960785)
+
+[node name="Desk3" type="StaticBody2D" parent="Classroom/Objects" unique_id=1715095532]
+position = Vector2(13, 10)
+
+[node name="Sprite" type="Sprite2D" parent="Classroom/Objects/Desk3" unique_id=1634614419]
+z_index = 3
+texture = ExtResource("7_d6iey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Objects/Desk3" unique_id=160905415]
+z_index = 4
+shape = SubResource("CapsuleShape2D_d6iey")
+debug_color = Color(0.977182, 0, 0.40977353, 0.41960785)
+
+[node name="Desk4" type="StaticBody2D" parent="Classroom/Objects" unique_id=1374788199]
+position = Vector2(18, -25)
+
+[node name="Sprite" type="Sprite2D" parent="Classroom/Objects/Desk4" unique_id=2086835091]
+z_index = 3
+texture = ExtResource("7_d6iey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Objects/Desk4" unique_id=2019282360]
+z_index = 4
+shape = SubResource("CapsuleShape2D_d6iey")
+debug_color = Color(0.977182, 0, 0.40977353, 0.41960785)
+
+[node name="Cabinet" type="Sprite2D" parent="Classroom/Objects" unique_id=581423285]
+position = Vector2(-3, 42)
+texture = ExtResource("9_pi0rf")
+
+[node name="FlowerPot2" type="Sprite2D" parent="Classroom/Objects" unique_id=905428755]
+position = Vector2(-47, -52)
+texture = ExtResource("4_s2kih")
+flip_h = true
+
+[node name="FlowerPot" type="Sprite2D" parent="Classroom/Objects" unique_id=385863693]
+position = Vector2(49, -53)
+texture = ExtResource("4_s2kih")
+
+[node name="Lights" type="Node2D" parent="Classroom" unique_id=1859990614]
+
+[node name="PointLight2D" type="PointLight2D" parent="Classroom/Lights" unique_id=1235044902]
+position = Vector2(-60, 48)
+texture = ExtResource("3_anw7d")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Classroom/Lights" unique_id=945782429]
+position = Vector2(55, 48)
+texture = ExtResource("3_anw7d")
+
+[node name="Borders" type="Node2D" parent="Classroom" unique_id=574995928]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Classroom/Borders" unique_id=1731745364]
+position = Vector2(-3, 58)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Borders/StaticBody2D3" unique_id=1511074531]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_u1wv5")
+debug_color = Color(0, 0.64887065, 0.17660797, 0.41960785)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Classroom/Borders" unique_id=1391809464]
+position = Vector2(-3, -83)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Classroom/Borders/StaticBody2D4" unique_id=449212864]
+polygon = PackedVector2Array(-70, -6, -70, 22, -62, 30, -51, 30, -50, 36, -37, 36, -35, 29, -17, 29, -14, 25, -14, 6, 13, 6, 13, 26, 16, 29, 43, 29, 46, 35, 57, 35, 59, 29, 67, 29, 75, 21, 75, -6)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Classroom/Borders" unique_id=1351202075]
+position = Vector2(-83, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Borders/StaticBody2D" unique_id=1273772481]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_d6iey")
+debug_color = Color(0.89620066, 0.00020484447, 0.77744585, 0.41960785)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Classroom/Borders" unique_id=1332101321]
+position = Vector2(82, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Borders/StaticBody2D2" unique_id=769397080]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_d6iey")
+debug_color = Color(0.89620066, 0.00020484447, 0.77744585, 0.41960785)
 
 [node name="Return1" type="Area2D" parent="Classroom" unique_id=1356254479]
 z_index = 3
@@ -162,21 +371,288 @@ position = Vector2(-4, -66)
 shape = SubResource("CircleShape2D_vchhe")
 debug_color = Color(0.27417794, 0.6325208, 1.92523e-07, 0.41960785)
 
-[node name="ClassroomVisblity" type="VisibleOnScreenNotifier2D" parent="Classroom" unique_id=1912960949]
-position = Vector2(-106, 68)
-rect = Rect2(8, -157, 197, 153)
+[node name="Board" type="Area2D" parent="Classroom" unique_id=1218887897]
+position = Vector2(-65, -17)
 
-[node name="Sprite2D" type="Sprite2D" parent="Classroom" unique_id=961372388]
-position = Vector2(0, -15)
-texture = ExtResource("3_pudod")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Board" unique_id=1895822088]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_retxh")
+debug_color = Color(0.73521745, 0.4703313, 0, 0.41960785)
 
-[node name="PointLight2D" type="PointLight2D" parent="Classroom" unique_id=1235044902]
-position = Vector2(-60, 48)
+[node name="Hallway" type="Node2D" parent="." unique_id=2100647859]
+position = Vector2(-1203, -1093)
+
+[node name="HallwayVisible" type="VisibleOnScreenNotifier2D" parent="Hallway" unique_id=557331746]
+rect = Rect2(-245, -73, 509, 148)
+
+[node name="Room" type="Sprite2D" parent="Hallway" unique_id=1087626968]
+position = Vector2(10, 1)
+texture = ExtResource("8_ds418")
+
+[node name="Lobby2" type="Area2D" parent="Hallway" unique_id=1135176798]
+position = Vector2(-217, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/Lobby2" unique_id=1954357038]
+shape = SubResource("CircleShape2D_ls5fk")
+debug_color = Color(0.66157687, 0.5142507, 9.62615e-07, 0.41960785)
+
+[node name="Listings" type="Area2D" parent="Hallway" unique_id=180591665]
+position = Vector2(-152, 52)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/Listings" unique_id=514550251]
+shape = SubResource("CircleShape2D_7icrr")
+debug_color = Color(0.32666537, 0.62382233, 0, 0.41960785)
+
+[node name="Bathroom" type="Area2D" parent="Hallway" unique_id=441466906]
+position = Vector2(-13, 52)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/Bathroom" unique_id=1012149749]
+shape = SubResource("CircleShape2D_vajp6")
+debug_color = Color(0.44095892, 0.5989918, 1.92523e-07, 0.41960785)
+
+[node name="Offices" type="Area2D" parent="Hallway" unique_id=1498216725]
+position = Vector2(122, 52)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/Offices" unique_id=2040136104]
+shape = SubResource("CircleShape2D_132yf")
+debug_color = Color(0.31226692, 0.62664026, 0, 0.41960785)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Hallway" unique_id=2137010198]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/StaticBody2D" unique_id=1077642891]
+position = Vector2(10, 61.5)
+shape = SubResource("RectangleShape2D_vajp6")
+debug_color = Color(0.9026459, 0.00016133428, 0.760461, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hallway/StaticBody2D" unique_id=668936494]
+position = Vector2(10, -49.25)
+shape = SubResource("RectangleShape2D_vajp6")
+debug_color = Color(0.8537977, 0.00083285454, 0.89482015, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Hallway/StaticBody2D" unique_id=1464972574]
+position = Vector2(-230, 6)
+shape = SubResource("RectangleShape2D_132yf")
+debug_color = Color(0.5507357, 0.4018728, 1, 0.41960785)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Hallway/StaticBody2D" unique_id=1528769322]
+position = Vector2(250, 6)
+shape = SubResource("RectangleShape2D_132yf")
+debug_color = Color(0.5507357, 0.4018728, 1, 0.41960785)
+
+[node name="Objects" type="Node2D" parent="Hallway" unique_id=640306874]
+
+[node name="FlowerPot" type="Sprite2D" parent="Hallway/Objects" unique_id=839138881]
+position = Vector2(5, -39)
+texture = ExtResource("4_s2kih")
+
+[node name="FlowerPot4" type="Sprite2D" parent="Hallway/Objects" unique_id=490725332]
+position = Vector2(212, -39)
+texture = ExtResource("4_s2kih")
+
+[node name="FlowerPot2" type="Sprite2D" parent="Hallway/Objects" unique_id=892234919]
+position = Vector2(-33, -39)
+texture = ExtResource("4_s2kih")
+flip_h = true
+
+[node name="FlowerPot3" type="Sprite2D" parent="Hallway/Objects" unique_id=1983349177]
+position = Vector2(-192, -39)
+texture = ExtResource("4_s2kih")
+flip_h = true
+
+[node name="MiniTable" type="Sprite2D" parent="Hallway/Objects" unique_id=1060722280]
+position = Vector2(-14, -41)
+texture = ExtResource("5_pudod")
+
+[node name="MiniTable2" type="Sprite2D" parent="Hallway/Objects" unique_id=783507924]
+position = Vector2(190, -41)
+texture = ExtResource("5_pudod")
+
+[node name="MiniTable3" type="Sprite2D" parent="Hallway/Objects" unique_id=123388107]
+position = Vector2(-173, -41)
+texture = ExtResource("5_pudod")
+
+[node name="VerticalCabinet" type="Sprite2D" parent="Hallway/Objects" unique_id=1903822991]
+position = Vector2(-90, 53)
+texture = ExtResource("9_pi0rf")
+
+[node name="VerticalCabinet2" type="Sprite2D" parent="Hallway/Objects" unique_id=1988146502]
+position = Vector2(62, 51)
+texture = ExtResource("9_pi0rf")
+
+[node name="Light" type="Node2D" parent="Hallway" unique_id=1361008072]
+
+[node name="PointLight2D" type="PointLight2D" parent="Hallway/Light" unique_id=2069054626]
+position = Vector2(-211, -55)
 texture = ExtResource("3_anw7d")
 
-[node name="PointLight2D2" type="PointLight2D" parent="Classroom" unique_id=945782429]
-position = Vector2(55, 48)
+[node name="PointLight2D2" type="PointLight2D" parent="Hallway/Light" unique_id=812379784]
+position = Vector2(-11, -61)
 texture = ExtResource("3_anw7d")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Hallway/Light" unique_id=1212404520]
+position = Vector2(232, -61)
+texture = ExtResource("3_anw7d")
+
+[node name="Teleport" type="Node2D" parent="Hallway" unique_id=1804181132]
+
+[node name="Destination" type="Marker2D" parent="Hallway/Teleport" unique_id=1756204848]
+position = Vector2(-189, -1)
+
+[node name="Destination2" type="Marker2D" parent="Hallway/Teleport" unique_id=86352263]
+position = Vector2(-152, 31)
+
+[node name="Destination3" type="Marker2D" parent="Hallway/Teleport" unique_id=1968773568]
+position = Vector2(-13, 31)
+
+[node name="Destination4" type="Marker2D" parent="Hallway/Teleport" unique_id=1716076494]
+position = Vector2(125, 31)
+
+[node name="Offices" type="Node2D" parent="." unique_id=373869711]
+position = Vector2(-1024, -679)
+
+[node name="Room" type="Sprite2D" parent="Offices" unique_id=1095355414]
+position = Vector2(-2, 19)
+texture = ExtResource("11_u1wv5")
+
+[node name="Borders" type="StaticBody2D" parent="Offices" unique_id=1208252512]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Offices/Borders" unique_id=453561912]
+position = Vector2(-64.5, 18.5)
+shape = SubResource("RectangleShape2D_02ev5")
+debug_color = Color(0.9325021, 2.5509298e-05, 0.6505147, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Offices/Borders" unique_id=902369412]
+position = Vector2(56, 17)
+shape = SubResource("RectangleShape2D_02ev5")
+debug_color = Color(0.9325021, 2.5509298e-05, 0.6505147, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Offices/Borders" unique_id=616476026]
+position = Vector2(-2, 251)
+shape = SubResource("RectangleShape2D_p6dsl")
+debug_color = Color(0.4552287, 0.5950943, 0, 0.41960785)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Offices/Borders" unique_id=1465682665]
+polygon = PackedVector2Array(-56, -221, -56, -211, -50, -203, -16, -203, -11, -213, 13, -213, 24, -201, 39, -201, 48, -212, 48, -221)
+
+[node name="Hallway" type="Area2D" parent="Offices" unique_id=1910983366]
+position = Vector2(1, -210)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Offices/Hallway" unique_id=450371610]
+shape = SubResource("CircleShape2D_retxh")
+debug_color = Color(1.0588765e-06, 0.63251066, 0.4541421, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="Offices" unique_id=1595252553]
+position = Vector2(-50, 131)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Offices/Area2D" unique_id=254284948]
+position = Vector2(-3, 0)
+shape = SubResource("CircleShape2D_u1wv5")
+debug_color = Color(0.3423144, 0.6213053, 7.70092e-07, 0.41960785)
+
+[node name="Objects" type="Node2D" parent="Offices" unique_id=1023873705]
+
+[node name="Flowerpot" type="Sprite2D" parent="Offices/Objects" unique_id=396700244]
+position = Vector2(31, -207)
+texture = ExtResource("4_s2kih")
+
+[node name="Flowerpot2" type="Sprite2D" parent="Offices/Objects" unique_id=918711037]
+position = Vector2(42, -63)
+texture = ExtResource("4_s2kih")
+
+[node name="Flowerpot3" type="Sprite2D" parent="Offices/Objects" unique_id=1279175403]
+position = Vector2(-48, 103)
+texture = ExtResource("4_s2kih")
+
+[node name="Table" type="Sprite2D" parent="Offices/Objects" unique_id=568095031]
+position = Vector2(-34, -207)
+texture = ExtResource("5_pudod")
+
+[node name="Light" type="Node2D" parent="Offices" unique_id=1024987276]
+
+[node name="PointLight2D" type="PointLight2D" parent="Offices/Light" unique_id=1816017796]
+position = Vector2(50, -201)
+texture = ExtResource("3_anw7d")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Offices/Light" unique_id=1262267084]
+position = Vector2(50, 242)
+texture = ExtResource("3_anw7d")
+
+[node name="Job Listings" type="Node2D" parent="." unique_id=1495967571]
+position = Vector2(-1351, -843)
+
+[node name="Destination" type="Marker2D" parent="Job Listings" unique_id=160081737]
+position = Vector2(0, -33)
+
+[node name="Light" type="Node2D" parent="Job Listings" unique_id=778622628]
+
+[node name="PointLight2D" type="PointLight2D" parent="Job Listings/Light" unique_id=459509026]
+position = Vector2(-66, 54)
+energy = 0.7
+texture = ExtResource("3_anw7d")
+texture_scale = 2.24
+
+[node name="PointLight2D2" type="PointLight2D" parent="Job Listings/Light" unique_id=1944515851]
+position = Vector2(54, 54)
+energy = 0.7
+texture = ExtResource("3_anw7d")
+texture_scale = 2.24
+
+[node name="Objects" type="Node2D" parent="Job Listings" unique_id=1470236954]
+
+[node name="Room" type="Sprite2D" parent="Job Listings/Objects" unique_id=1301566848]
+position = Vector2(-4, -8)
+texture = ExtResource("12_retxh")
+
+[node name="Cabinet" type="Sprite2D" parent="Job Listings/Objects" unique_id=865614504]
+position = Vector2(31, -53)
+texture = ExtResource("9_pi0rf")
+flip_h = true
+flip_v = true
+
+[node name="Flowerpot" type="Sprite2D" parent="Job Listings/Objects" unique_id=1666920868]
+position = Vector2(52, -47)
+texture = ExtResource("4_s2kih")
+
+[node name="Flowerpot2" type="Sprite2D" parent="Job Listings/Objects" unique_id=376118279]
+position = Vector2(-45, -44)
+texture = ExtResource("4_s2kih")
+flip_h = true
+
+[node name="List" type="Area2D" parent="Job Listings" unique_id=1841905258]
+position = Vector2(54, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Job Listings/List" unique_id=1337890943]
+position = Vector2(2, -2)
+shape = SubResource("CapsuleShape2D_retxh")
+debug_color = Color(0.88394034, 0.3343746, 5.7756904e-07, 0.41960785)
+
+[node name="Hallway2" type="Area2D" parent="Job Listings" unique_id=1840380451]
+position = Vector2(0, -56)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Job Listings/Hallway2" unique_id=463122334]
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_vo17a")
+debug_color = Color(0.99902374, 0, 0.13868842, 0.41960785)
+
+[node name="Borders" type="StaticBody2D" parent="Job Listings" unique_id=1230851370]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Job Listings/Borders" unique_id=221232762]
+position = Vector2(-83, -8)
+shape = SubResource("RectangleShape2D_7csnp")
+debug_color = Color(0.81336784, 0.0020576857, 0.9811905, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Job Listings/Borders" unique_id=1019056194]
+position = Vector2(66, -8)
+shape = SubResource("RectangleShape2D_7csnp")
+debug_color = Color(0.81336784, 0.0020576857, 0.9811905, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Job Listings/Borders" unique_id=802232219]
+position = Vector2(-5.5, 56.5)
+shape = SubResource("RectangleShape2D_tytls")
+debug_color = Color(0.99320966, 0, 0.2722371, 0.41960785)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Job Listings/Borders" unique_id=199630147]
+polygon = PackedVector2Array(-73, -76, -73, -49, -69, -46, -52, -46, -52, -39, -38, -39, -38, -47, -19, -47, -13, -52, -13, -70, 12, -70, 12, -52, 16, -47, 18, -47, 18, -44, 51, -41, 62, -41, 76, -61, 76, -76)
 
 [connection signal="screen_entered" from="Lobby/LobbyVisible" to="." method="_on_lobby_visible_screen_entered"]
 [connection signal="screen_exited" from="Lobby/LobbyVisible" to="." method="_on_lobby_visible_screen_exited"]

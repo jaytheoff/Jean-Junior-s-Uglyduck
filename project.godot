@@ -25,8 +25,8 @@ config/icon="uid://dunyvi2e47a8g"
 
 Global_Player_Variables="*res://Scripts/Global/Global_Player_Variables.gd"
 LoadScreen="*res://Scripts/Global/load_script.gd"
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 PauseMenu="*res://Scripts/Global/pause_menu.gd"
+Dialogue="*res://Scripts/Global/UIManager.gd"
 
 [dialogue_manager]
 
@@ -43,6 +43,12 @@ window/stretch/aspect="keep_width"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Scenes/Employement Support Center/": "red"
+}
 
 [input]
 

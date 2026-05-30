@@ -8,6 +8,7 @@ func _ready() -> void:
 	t1.tween_property($Fade, "modulate", Color.TRANSPARENT, 4.0)
 	await t1.finished
 	$Fade.queue_free()
+	Dialogue.show_text("Once upon a time, in a world much like our own, there lived a duck named Quackers.")	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Debug Key"):
@@ -39,4 +40,4 @@ func _on_github_pressed() -> void:
 
 func _on_start_pressed() -> void:
 	$click.play()
-	get_tree().change_scene_to_file("res://Scenes/prologue.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Prologue.tscn")

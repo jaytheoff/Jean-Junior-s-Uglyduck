@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dxbagqxb0emjd"]
+
+[ext_resource type="Script" uid="uid://bjakp6k27i16d" path="res://Scripts/Global/textbox.gd" id="1_db1ld"]
+[ext_resource type="Texture2D" uid="uid://wfgd3aii46rv" path="res://Images/Fade Gradient (Vertical).png" id="1_ktxlv"]
+[ext_resource type="FontFile" uid="uid://b7gywp6teg277" path="res://Fonts/Born2bSportyV2.ttf" id="2_db1ld"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ktxlv"]
+font = ExtResource("2_db1ld")
+font_color = Color(0.043137256, 0.23921569, 1, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fuvt8"]
+modulate_color = Color(0.74978, 0.74978, 0.74977994, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r742k"]
+texture = ExtResource("1_ktxlv")
+
+[sub_resource type="LabelSettings" id="LabelSettings_db1ld"]
+font = ExtResource("2_db1ld")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_db1ld"]
+
+[node name="TextBox" type="CanvasLayer" unique_id=278584309]
+script = ExtResource("1_db1ld")
+
+[node name="OuterContainer" type="MarginContainer" parent="." unique_id=559484531]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+
+[node name="Name" type="Label" parent="OuterContainer" unique_id=1045098577]
+z_index = 5
+layout_mode = 2
+size_flags_vertical = 0
+text = "Uglyduck (you)"
+label_settings = SubResource("LabelSettings_ktxlv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="OuterContainer" unique_id=1162932821]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_fuvt8")
+
+[node name="InnerContainer" type="MarginContainer" parent="OuterContainer" unique_id=1789910849]
+z_index = 4
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="OuterContainer/InnerContainer" unique_id=350425711]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_r742k")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OuterContainer/InnerContainer/Panel" unique_id=1437707449]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Label" parent="OuterContainer/InnerContainer/Panel/HBoxContainer" unique_id=1099914696]
+layout_mode = 2
+text = "*"
+label_settings = SubResource("LabelSettings_db1ld")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dialogue" type="RichTextLabel" parent="OuterContainer/InnerContainer/Panel/HBoxContainer" unique_id=1044502828]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_db1ld")
+theme_override_fonts/bold_font = ExtResource("2_db1ld")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_db1ld")
+bbcode_enabled = true
+text = "I fuckin' hate you.. With a"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 1
+language = "en_CA"

@@ -23,10 +23,9 @@ config/icon="uid://dunyvi2e47a8g"
 
 [autoload]
 
+Dialogue="*uid://ktqyr6xispjp"
 Global_Player_Variables="*res://Scripts/Global/Global_Player_Variables.gd"
-LoadScreen="*res://Scripts/Global/load_script.gd"
-PauseMenu="*res://Scripts/Global/pause_menu.gd"
-Dialogue="*res://Scripts/Global/UIManager.gd"
+Global="*uid://c0g4lq10envyx"
 
 [dialogue_manager]
 
@@ -40,9 +39,14 @@ window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 
+[editor]
+
+movie_writer/movie_file="/home/jeanjunior/Documents/GitHub/Godot games/uglyduck/Clips/Early Build Showcase.avi"
+movie_writer/disable_vsync=true
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray()
 
 [file_customization]
 

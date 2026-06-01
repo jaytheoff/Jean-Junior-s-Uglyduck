@@ -9,3 +9,17 @@ func get_input():
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
+
+func _on_exterior_player_movable() -> void:
+	speed = 50
+
+
+func _on_interior_player_immovable() -> void:
+	speed = 0
+
+
+func _on_interior_player_movable() -> void:
+	speed = 50
+
+func _on_exterior_player_immovable() -> void:
+	speed = 0

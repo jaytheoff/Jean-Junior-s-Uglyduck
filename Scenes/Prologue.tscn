@@ -547,9 +547,9 @@ texture_scale = 9.42
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2068818925]
 offset_left = -332.0
-offset_top = -282.0
+offset_top = -860.0
 offset_right = 388.0
-offset_bottom = 206.0
+offset_bottom = 900.0
 color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="CanvasLayer/Skip" to="." method="_on_skip_pressed"]

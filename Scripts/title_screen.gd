@@ -8,7 +8,6 @@ func _ready() -> void:
 	t1.tween_property($Fade, "modulate", Color.TRANSPARENT, 4.0)
 	await t1.finished
 	$Fade.queue_free()
-	Dialogue.show_text("Once upon a time, in a world much like our own, there lived a duck named Quackers.")	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Debug Key"):

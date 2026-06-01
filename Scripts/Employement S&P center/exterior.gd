@@ -1,20 +1,32 @@
 extends Node2D
 
+signal player_movable
+signal player_immovable
+
 @onready var anim: AnimationPlayer = $AnimationPlayer
 var follow_player:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("Player Entered Game")
+	# Disable Player
+	emit_signal("player_immovable")
+
+	#let fade in animation happen
 	_fade_in()
 	await get_tree().create_timer(3).timeout
+
+	#Move Camera to player
 	var tween = create_tween()
-	tween.tween_property($Camera2D, "position", Vector2(-222,-83), 6.0)
+	tween.tween_property($Camera2D, "position", Vector2($Player.position.x, $Player.position.y), 6.0)
+
 	await tween.finished
+	#after animation of camera moving player is able to move againnnn twin
+	emit_signal("player_movable")
 	
 	print("Camera tween finished, now following player.")
 	follow_player = true
 
+	#hide fade
 	$CanvasLayer/Fade.hide()
 	anim.play("Exterior")
 
@@ -37,6 +49,8 @@ func _on_entrance_body_entered(body: Node2D) -> void:
 		Enter_Building()
 
 func Enter_Building() -> void:
+	emit_signal("player_immovable")
+	
 	$CanvasLayer/Fade.show()
 	$CanvasLayer/Fade.color = Color(0, 0, 0, 0)
 	var tween = create_tween()
@@ -49,6 +63,7 @@ func Enter_Building() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Employement Support Center/Interior.tscn")
 
 func _fade_in():
+	# Fade In Black to transparent animation block
 	$CanvasLayer/Fade.show()
 	$CanvasLayer/Fade.color = Color(0, 0, 0, 1)
 	var tween = create_tween()

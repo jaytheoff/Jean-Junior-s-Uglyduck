@@ -6,7 +6,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_add_text("Hello, World!")
+	pass
 
 func _show_textbox():
 	_start_symbol.text = "*"
@@ -15,23 +15,30 @@ func _show_textbox():
 	show()
 
 func _hide_textbox():
+	_start_symbol.text = "*"
+	_dialogue.text = ""
+	_name.text = ""
 	hide()
 
-func _add_text(text: String):
+func _add_text(text: String, speaker: String) -> void:
 	var tween = create_tween()
 	_show_textbox()
 	_dialogue.text = text
 	_dialogue.visible_characters = 0
-	_name.text = "Narrator"
+	_name.text = speaker
 	
 	
-	tween.tween_property(_dialogue, "visible_characters", text.length(), 0.5)
+	tween.tween_property(_dialogue, "visible_characters", text.length(), Global.text_scroll_speed)
 	await tween.finished
 	_start_symbol.text = ">"
-
+	while not Input.is_action_just_pressed("Any"):
+		await get_tree().process_frame
+	tween.stop()
+	_dialogue.visible_characters = text.length()
+	
 # Public wrapper so other scripts (or a UI manager) can call this
-func show_text(text: String) -> void:
-	_add_text(text)
+func show_text(text: String, speaker: String) -> void:
+	await _add_text(text, speaker)
 
 func hide_text() -> void:
 	_hide_textbox()

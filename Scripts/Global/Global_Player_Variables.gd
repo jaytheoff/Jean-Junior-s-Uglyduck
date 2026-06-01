@@ -1,5 +1,7 @@
 extends Node
 
+
+# Player Money Variables
 var currencies: Dictionary = {
 	"dollars": 0.0,
 	"euros": 0.0,
@@ -11,6 +13,16 @@ var payout: float = 0.0
 var luck: float = 0.5
 var charisma: float = 0.5
 var debt: float = 0.0
+
+#Job Variables 
+var job_status: String = "unemployed"
+var job_history: Array = []
+var jobs_completed: int = 0
+var job_performance: Dictionary = {
+	"last_job": null,
+	"overall_rating": 0.0,
+	"ratings_count": 0,
+}
 
 # Casino Variables
 var casino_unlocked: bool = false
@@ -27,11 +39,6 @@ var casino_games_unlocked: Dictionary = {
 var casino_cheats_enabled: bool = false
 var debug_mode_enabled: bool = false
 var debug_menu_accessible: bool = true
-
-# able to track casino game statistics
-# Just in Case i forget how to update tables, here is an example:
-# Global_Player_Variables.casino_game_stats["slot_machine"]["games_played"] += 1
-
 var casino_game_stats: Dictionary = {
 	"slot_machine": {
 		"games_played": 0,
@@ -54,3 +61,7 @@ var casino_game_stats: Dictionary = {
 		"total_lost": 0.0,
 	},
 }
+
+# able to track casino game statistics
+# Just in Case i forget how to update tables, here is an example:
+# Global_Player_Variables.casino_game_stats["slot_machine"]["games_played"] += 1

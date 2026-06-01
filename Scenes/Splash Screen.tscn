@@ -243,9 +243,9 @@ script = ExtResource("1_c37q3")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1576919908]
 offset_left = -80.0
-offset_top = -51.0
+offset_top = -254.0
 offset_right = 80.0
-offset_bottom = 51.0
+offset_bottom = 153.0
 color = Color(0, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=549616333]

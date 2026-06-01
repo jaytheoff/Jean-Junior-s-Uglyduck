@@ -68,8 +68,9 @@ texture = ExtResource("3_qyra1")
 
 [node name="Background" type="TextureRect" parent="." unique_id=170944375]
 material = SubResource("ShaderMaterial_x2sej")
+offset_top = -367.0
 offset_right = 640.0
-offset_bottom = 408.0
+offset_bottom = 823.0
 texture = ExtResource("4_lyuk6")
 expand_mode = 1
 stretch_mode = 1
@@ -192,12 +193,17 @@ uri = "https://github.com/jaytheoff/uglyduck"
 
 [node name="Fade" type="ColorRect" parent="." unique_id=1386728844]
 z_index = 8
+offset_top = -368.0
 offset_right = 640.0
-offset_bottom = 408.0
+offset_bottom = 825.0
 
 [node name="click" type="AudioStreamPlayer" parent="." unique_id=1407401827]
 stream = ExtResource("6_x2sej")
 volume_db = 14.596
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2054794464]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Menu/Socials" to="." method="_on_socials_pressed"]

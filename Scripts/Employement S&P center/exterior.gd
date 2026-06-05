@@ -8,33 +8,30 @@ var follow_player:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.current_game_phase = Global.GamePhase.post_prologue
+	
 	# Disable Player
+	anim.play("Exterior")
 	emit_signal("player_immovable")
-
+	
 	#let fade in animation happen
 	_fade_in()
-	await get_tree().create_timer(3).timeout
-
+	
 	#Move Camera to player
 	var tween = create_tween()
 	tween.tween_property($Camera2D, "position", Vector2($Player.position.x, $Player.position.y), 6.0)
-
 	await tween.finished
+	follow_player = true
+	
+
+	
+	await Dialogue.show_text("Finally.. Today is the day my life will change..", "Uglyduck (YOU)")
+	await Dialogue.show_text("Hopefully everything things goes right and i get hired..", "Uglyduck (YOU)")
+	Dialogue.hide_text()
+
 	#after animation of camera moving player is able to move againnnn twin
 	emit_signal("player_movable")
 	
-	print("Camera tween finished, now following player.")
-	follow_player = true
-
-	#hide fade
-	$CanvasLayer/Fade.hide()
-	anim.play("Exterior")
-
-	
-	$CanvasLayer/Location.show()
-	await get_tree().create_timer(5.0).timeout
-	$CanvasLayer/Location.hide()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -68,3 +65,5 @@ func _fade_in():
 	$CanvasLayer/Fade.color = Color(0, 0, 0, 1)
 	var tween = create_tween()
 	tween.tween_property($CanvasLayer/Fade, "color", Color(0, 0, 0, 0), 3.0)
+	await tween.finished
+	$CanvasLayer/Fade.hide()

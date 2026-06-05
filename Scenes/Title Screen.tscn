@@ -37,6 +37,7 @@ shader = ExtResource("4_xdkfq")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gr1ek"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=116923037]
+follow_viewport_enabled = true
 script = ExtResource("1_qyra1")
 
 [node name="Credit" type="Label" parent="." unique_id=2066445513]

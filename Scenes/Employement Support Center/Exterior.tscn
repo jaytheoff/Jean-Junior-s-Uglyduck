@@ -325,7 +325,7 @@ drag_horizontal_enabled = true
 drag_horizontal_offset = 0.04
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2096901729 groups=["Player"]]
-z_index = 2
+z_index = 3
 position = Vector2(-276, -53)
 script = ExtResource("8_goryt")
 
@@ -379,7 +379,7 @@ texture = ExtResource("8_jyxvo")
 
 [node name="Shadow" type="Sprite2D" parent="Entrance/Pillar" unique_id=1202407061]
 modulate = Color(0, 0, 0, 0.48235294)
-z_index = 3
+z_index = 2
 position = Vector2(0, 68.625)
 scale = Vector2(1, 0.5241935)
 texture = ExtResource("8_jyxvo")

@@ -19,7 +19,7 @@ config/description="A Game About an uglyduck hustling threw life"
 run/main_scene="uid://6lo43iblfhtd"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-config/icon="uid://dunyvi2e47a8g"
+config/icon="uid://ciufv6q2nujre"
 
 [autoload]
 

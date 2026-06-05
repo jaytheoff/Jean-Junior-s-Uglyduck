@@ -36,7 +36,7 @@ tracks/0/path = NodePath("Cutscene/Background:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.7333333, 9.9965, 14.366667, 18.666666, 23, 32.8),
+"times": PackedFloat32Array(0, 3.8, 9.9965, 14.366667, 18.666666, 23, 32.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("4_xxa7q"), ExtResource("7_rt4ci"), ExtResource("7_nim4c"), null, ExtResource("7_enbey"), ExtResource("13_wxmny"), null]
@@ -533,9 +533,6 @@ limit_bottom = 166
 position_smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1053857234]
-libraries/ = SubResource("AnimationLibrary_wl3ap")
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1036455857]
 libraries/ = SubResource("AnimationLibrary_wl3ap")
 
 [node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1893855050]

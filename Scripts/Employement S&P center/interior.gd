@@ -4,36 +4,52 @@ extends Node2D
 var room = 1
 var cam_follow: bool = false
 
-enum Completed_Quests {
+enum Completed_Part_1 {
 	None,
 	Talked_to_receptionist,
 	Find_Professer,
-	Get_Quests,
+	Get_First_Job
 }
 
-var none:bool = Completed_Quests.None
-var found_professer: bool = Completed_Quests.Find_Professer
-var got_quests: bool = Completed_Quests.Get_Quests
-var talked_to_receptionist: bool = Completed_Quests.Talked_to_receptionist
+enum Completed_Part_2 {
+	None,
+	Completed_Bathroom_Job,
+	End_demo
+}
+
+#Part 1 
+var none: bool = Completed_Part_1.None
+var found_professer: bool = Completed_Part_1.Find_Professer
+var got_job: bool = Completed_Part_1.Get_First_Job
+var talked_to_receptionist: bool = Completed_Part_1.Talked_to_receptionist
+
+#Part 2
+var none_2: bool = Completed_Part_2.None
+var completed_bathroom_job: bool = Completed_Part_2.Completed_Bathroom_Job
+var end_demo: bool = Completed_Part_2.End_demo
 
 signal player_movable
 signal player_immovable
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Camera2D.position = Vector2(-1931.0,-1091.0)
 	anim.play("Fade out")
-	found_professer = false
-	got_quests = false
-	talked_to_receptionist = false
-	none = true
+
+	if Global.first_game_phase == Global.GamePhase.post_prologue:
+		found_professer = false
+		got_job = false
+		talked_to_receptionist = false
+		none = true
+	else:
+		return
+	
 
 	get_tree().paused = false
 	
 	var tween = create_tween()
 	tween.tween_property($Camera2D, "position", Vector2(-1647,-1092), 1.0)
 
-	if Global.current_game_phase == Global.GamePhase.post_prologue:
+	if Global.first_game_phase == Global.GamePhase.post_prologue:
 		$Player.position = Vector2(-1696.0,-1099.0)
 	else:
 		return
@@ -56,8 +72,8 @@ func _on_classroom_body_entered(body: Node2D) -> void:
 
 #Receptionist Dialogue
 func _on_receptionist_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player") and Global.current_game_phase == Global.GamePhase.post_prologue:
-		if not found_professer and not got_quests and none and not talked_to_receptionist:
+	if body.is_in_group("Player") and Global.first_game_phase == Global.GamePhase.post_prologue:
+		if not found_professer and not got_job  and none and not talked_to_receptionist:
 		
 			# Disables Player to move during dialogues
 			emit_signal("player_immovable")
@@ -81,7 +97,7 @@ func _on_receptionist_body_entered(body: Node2D) -> void:
 			none = false
 			return
 		
-		elif talked_to_receptionist and not found_professer and not got_quests and not none:
+		elif talked_to_receptionist and not found_professer and not got_job and not none:
 			emit_signal("player_immovable")
 			
 			await Dialogue.show_text("Can't you catch a clue?, I'm clearly busy!, Go and find the professor!", "Receptionist")
@@ -90,13 +106,13 @@ func _on_receptionist_body_entered(body: Node2D) -> void:
 			emit_signal("player_movable")
 			return
 
-		elif talked_to_receptionist and found_professer and not got_quests and not none:
+		elif talked_to_receptionist and found_professer and not got_job and not none:
 			emit_signal("player_immovable")
 			await Dialogue.show_text("Seriously go talk to the professor if you want a job.", "Receptionist")
 			Dialogue.hide_text()
 			emit_signal("player_movable")
 		
-		elif talked_to_receptionist and found_professer and got_quests and not none:
+		elif talked_to_receptionist and found_professer and got_job and not none:
 			emit_signal("player_immovable")
 			await Dialogue.show_text("Buddy I bet the professor Already gave you a damn job, FUCK OFF!!", "Receptionist")
 			Dialogue.hide_text()
@@ -110,15 +126,15 @@ func _on_board_body_entered(body: CharacterBody2D) -> void:
 		
 		#Dialogue Block Code
 		await Dialogue.show_text("This is the Job Board (It's actually not a board, you can check for logs and updates here.)", "Developer Note")
-		if found_professer and not got_quests:
+		if found_professer and not got_job:
 			await Dialogue.show_text("I should probably go check on Professor Pop, maybe he has some quests for me..", "Uglyduck (You)")
 			Dialogue.hide_text()
 			
-		elif found_professer and got_quests:
+		elif found_professer and got_job:
 			await Dialogue.show_text("What the fuck AM I DOING HERE?, Professer pop gave me a fucking quest, Maybe the player should have a clue and not go to the bathroom", "Uglyduck (You)")
 			Dialogue.hide_text()
 		
-		elif not found_professer and not got_quests and not none: 
+		elif not found_professer and not got_job and not none: 
 			await Dialogue.show_text("Class is dismissed today, if you need help with anything please come find me either in the job listing room or my office. -Professor Pop", "")
 			await Dialogue.show_text("Guess the professer is not here.., I should check else where..", "Uglyduck (You)")
 			Dialogue.hide_text()
@@ -170,6 +186,10 @@ func _Move_Camera():
 		var tween = create_tween()
 		tween.tween_property($Camera2D, "position", Vector2(-1026, -876), 1.0)
 		cam_follow = true
+	
+	elif room == 6:
+		cam_follow = false
+		$Camera2D.position = Vector2(-1470,-536)
 
 
 func _on_listings_body_entered(body: Node2D) -> void:
@@ -179,18 +199,18 @@ func _on_listings_body_entered(body: Node2D) -> void:
 
 func _on_bathroom_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		if found_professer and not got_quests and not none:
+		if found_professer and not got_job and not none:
 			emit_signal("player_immovable")
-			await Dialogue.show_text("I should go check out professer pop's office", "Uglyduck (You)")
+			await Dialogue.show_text("I should go check out professer pop's office.", "Uglyduck (You)")
 			Dialogue.hide_text()
 			emit_signal("player_movable")
-		elif not found_professer and not got_quests and not none:
+		elif not found_professer and not got_job and not none:
 			emit_signal("player_immovable")
 			await Dialogue.show_text("Huh.. A bathroom?", "Uglyduck (You)")
 			await Dialogue.show_text("Whatever, I should probably look for Professor Pop First.", "Uglyduck (You)")
 			Dialogue.hide_text()
 			emit_signal("player_movable")
-		elif found_professer and got_quests and not none:
+		elif found_professer and got_job and not none:
 			emit_signal("player_immovable")
 			anim.play("Fade in")
 			get_tree().change_scene_to_file("res://Scenes/Employement Support Center/Bathroom.tscn")
@@ -198,20 +218,20 @@ func _on_bathroom_body_entered(body: Node2D) -> void:
 
 func _on_job_pinboard_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		if talked_to_receptionist and not found_professer and not got_quests and not none:
+		if talked_to_receptionist and not found_professer and not got_job and not none:
 			emit_signal("player_immovable")
 			await Dialogue.show_text("Woah, A Job Listing board.., Thats Conveinent", "Uglyduck (You)")
 			await Dialogue.show_text("But I should probably look for Professor Pop First.", "Uglyduck (You)")
 			Dialogue.hide_text()
 			emit_signal("player_movable")
 
-		elif talked_to_receptionist and found_professer and not got_quests and not none:
+		elif talked_to_receptionist and found_professer and not got_job and not none:
 			emit_signal("player_immovable")
 			await Dialogue.show_text("I should probably go check on Professor Pop, maybe he has some quests for me..", "Uglyduck (You)")
 			Dialogue.hide_text()
 			emit_signal("player_movable")
 		
-		elif talked_to_receptionist and found_professer and got_quests and not none:
+		elif talked_to_receptionist and found_professer and got_job and not none:
 			emit_signal("player_immovable")
 			await Dialogue.show_text("What Am I doing here?, The Professor already gave a damn task, maybe the player can catch a clue and go to the bathroom.. maybe", "Uglyduck (You)")
 			Dialogue.hide_text()
@@ -233,7 +253,7 @@ func _on_hallway_2_body_entered(body: Node2D) -> void:
 
 
 func _on_professor_pop_body_entered(body: Node2D) -> void:
-	if not found_professer and not got_quests and not none and talked_to_receptionist and body.is_in_group("Player"):
+	if not found_professer and not got_job and not none and talked_to_receptionist and body.is_in_group("Player"):
 		
 		
 		emit_signal("player_immovable")
@@ -243,19 +263,29 @@ func _on_professor_pop_body_entered(body: Node2D) -> void:
 		await Dialogue.show_text("I am Professor Pop.", "Professor Pop")
 		await Dialogue.show_text("Oh well, I have been looking for you, I heard you might be able to help me get some work.", "Uglyduck (You)")
 		await Dialogue.show_text("Please come meet me in my office.", "Professor Pop")
+		
 		Dialogue.hide_text()
 
 		anim.play("Fade in")
 		await get_tree().create_timer(2).timeout
+		_move_professor_to_marker()
 		anim.play("Fade out")
 		found_professer = true
 
 		emit_signal("player_movable")
 		
-	elif not found_professer and not got_quests and none and not talked_to_receptionist and body.is_in_group("Player"):
+	elif not found_professer and not got_job and none and not talked_to_receptionist and body.is_in_group("Player"):
 		emit_signal("player_immovable")
 		await Dialogue.show_text("Sure Love my job... (Why do i keep doing this..)", "???")
 		emit_signal("player_movable")
+
+func _move_professor_to_marker() -> void:
+	var professor_marker = get_node_or_null("NPCs/Professor_Move_Marker")
+	if professor_marker:
+		$NPCs/Professor_Pop.global_position = professor_marker.global_position
+	else:
+		$NPCs/Professor_Pop.position = Vector2($NPCs/Professor_Move_Marker.position.x, $NPCs/Professor_Move_Marker.position.y)
+
 
 func _on_lobby_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
@@ -275,7 +305,7 @@ func _on_hallway_3_body_entered(body: Node2D) -> void:
 func _on_unemployed_chud_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		
-		if not found_professer and not got_quests and not none and talked_to_receptionist:
+		if not found_professer and not got_job and not none and talked_to_receptionist:
 			emit_signal("player_immovable")
 			await Dialogue.show_text("*Singing* I'm a chud, I'm a fat little chud", "Unemployed Chud")
 			await Dialogue.show_text("Uh Sorry to interrupt your singing, I got a question for ya", "Uglyduck (You)")
@@ -286,22 +316,22 @@ func _on_unemployed_chud_body_entered(body: Node2D) -> void:
 			Dialogue.hide_text()
 			emit_signal("player_movable")
 		
-		elif found_professer and not got_quests and not none and talked_to_receptionist:
+		elif found_professer and not got_job and not none and talked_to_receptionist:
 			emit_signal("player_immovable")
-			await Dialogue.show_text("WHat do yOu Waaant Dammnnit, Haven't you seen the professer leave me alone! let me larp!", "Unemployed Chud")
+			await Dialogue.show_text("WHat do yOu Waaant Dammnnit, Haven't you seen the professer alreaddy? leave me alone! let me larp!", "Unemployed Chud")
 			Dialogue.hide_text()
 			emit_signal("player_movable")
 		
-		elif found_professer and got_quests and not none and talked_to_receptionist:
+		elif found_professer and got_job and not none and talked_to_receptionist:
 			emit_signal("player_immovable")
-			await Dialogue.show_text("Don't talk to me do your quests.", "Unemployed Chud")
+			await Dialogue.show_text("Don't talk to me do your job.", "Unemployed Chud")
 			Dialogue.hide_text()
 			emit_signal("player_movable")
 
 
 func _on_open_office_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		if not found_professer and not got_quests and not none and talked_to_receptionist:
+		if not found_professer and not got_job and not none and talked_to_receptionist:
 			emit_signal("player_immovable")
 			await Dialogue.show_text("*Knock* *Knock*", "Uglyduck (You)")
 			await Dialogue.show_text("Hello? Is anyone in here?", "Uglyduck (You)")
@@ -309,10 +339,17 @@ func _on_open_office_body_entered(body: Node2D) -> void:
 			Dialogue.hide_text()
 			emit_signal("player_movable")
 		
-		elif found_professer and not got_quests and not none and talked_to_receptionist:
-			return
+		elif found_professer and not got_job and not none and talked_to_receptionist:
+			anim.play("Fade in")
+			emit_signal("player_immovable")
+			await get_tree().create_timer(2).timeout
+			room = 6
+			_Move_Camera()
+			$Player.position = Vector2(-1420, -535)
+			anim.play("Fade out")
+			emit_signal("player_movable")
 		
-		elif found_professer and got_quests and not none and talked_to_receptionist:
+		elif found_professer and got_job and not none and talked_to_receptionist:
 			emit_signal("player_immovable")
 			await Dialogue.show_text("What am i doing here, the professer gave me a quest!, maybe the player should get a clue and check the bathroom.. just maybe","Uglyduck (You)")
 			Dialogue.hide_text()
@@ -324,3 +361,40 @@ func _on_lobby_2_body_entered(body: Node2D) -> void:
 		room = 1
 		_Move_Camera()
 		$Player.position = Vector2(-1597,-1093.0)
+
+
+func _on_trigger_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		if found_professer and not got_job and not none and talked_to_receptionist:
+			emit_signal("player_immovable")
+			await Dialogue.show_text("SO I heard you were in need of employement?", "Professor Pop")
+			await Dialogue.show_text("Yeah, I was wondering if you could help me out?", "Uglyduck (You)")
+			await Dialogue.show_text("Sure, But let me some open job listings first", "Professor Pop")
+			Dialogue.hide_text()
+
+			await get_tree().create_timer(2).timeout
+			await Dialogue.show_text("Alright so, we have one job open currently, and that's repairing the bathrooms toliet", "Professor Pop")
+			await Dialogue.show_text("Plumbing? I don't know anything about that..", "Uglyduck (You)")
+			await Dialogue.show_text("Here's an instruction manual.", "Professor Pop")
+			await Dialogue.show_text("Player Has Recieved an instruction manual!
+			(Only Usable in bathroom, press E to use)", "")
+			await Dialogue.show_text("I Have one more question.. ", "Uglyduck (you")
+			await Dialogue.show_text("Sure, What is it?", "Professor Pop")
+			await Dialogue.show_text("What eaxctly am i going to get payed for this job?", "Uglyduck (You)")
+			await Dialogue.show_text("I can't determine that, but I'm sure it's based on your performance, otherwise goodluck.", "Professor Pop")
+			Dialogue.hide_text()
+			got_job = true
+
+			emit_signal("player_movable")
+		elif found_professer and got_job and not none and talked_to_receptionist:
+			emit_signal("player_immovable")
+			await Dialogue.show_text("What am i doing here, the professer already gave me a J*B!, maybe the player should get a clue and check the bathroom.. just maybe","Uglyduck (You)")
+			Dialogue.hide_text()
+			emit_signal("player_movable")
+
+
+func _on_offices_2_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		room = 5
+		_Move_Camera()
+		$Player.position = Vector2(-1053, -550)

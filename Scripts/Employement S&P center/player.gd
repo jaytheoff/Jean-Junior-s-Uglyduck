@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @export var speed = 36
 
 func get_input():
@@ -9,6 +10,7 @@ func get_input():
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
+	anim.play("Idle_R")
 
 func _on_exterior_player_movable() -> void:
 	speed = 36

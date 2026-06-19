@@ -3,7 +3,6 @@ extends Node2D
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
-	Global.current_game_phase = Global.GamePhase.cutscene
 	anim.play("Prologue")
 
 func _finish():

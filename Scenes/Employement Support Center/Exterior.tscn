@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://bi0y6x0co7k2t"]
 
-[ext_resource type="Script" uid="uid://ebh4wwpbobs" path="res://Scripts/Employement S&P center/exterior.gd" id="1_2rm3j"]
-[ext_resource type="Texture2D" uid="uid://bxbivqjyaokc8" path="res://Images/Employement Support & Assistance Center/Exterior/Exterior_Tileset.png" id="1_u75jl"]
-[ext_resource type="Texture2D" uid="uid://bp5vklbf3vexx" path="res://Images/Employement Support & Assistance Center/Exterior/Front_Layer_Tree.png" id="3_2rm3j"]
-[ext_resource type="Texture2D" uid="uid://besesntocfc8i" path="res://Images/Employement Support & Assistance Center/Exterior/Leafs.png" id="5_anhu8"]
+[ext_resource type="Script" uid="uid://djt84n6l0fr74" path="res://Scripts/Employement S&P center/exterior.gd" id="1_2rm3j"]
+[ext_resource type="Texture2D" uid="uid://jx0u76int713" path="res://Images/Employement Support & Assistance Center/Exterior/Exterior_Tileset.png" id="1_u75jl"]
+[ext_resource type="Texture2D" uid="uid://cq4mrdm3x4nt" path="res://Images/Employement Support & Assistance Center/Exterior/Front_Layer_Tree.png" id="3_2rm3j"]
+[ext_resource type="Texture2D" uid="uid://becb0rb6ulfbi" path="res://Images/Employement Support & Assistance Center/Exterior/Leafs.png" id="5_anhu8"]
 [ext_resource type="Texture2D" uid="uid://cpj5vdhgilojf" path="res://Images/Player-Sheet.png" id="5_jyxvo"]
-[ext_resource type="Texture2D" uid="uid://dv8lq5jn1ycy1" path="res://Images/Employement Support & Assistance Center/Exterior/Sign.png" id="6_ypbar"]
+[ext_resource type="Texture2D" uid="uid://cp5xtea6bdeux" path="res://Images/Employement Support & Assistance Center/Exterior/Sign.png" id="6_ypbar"]
 [ext_resource type="Texture2D" uid="uid://be04rdrglmgmh" path="res://Images/Employement Support & Assistance Center/Exterior/City_Background.png" id="7_2rm3j"]
-[ext_resource type="Script" uid="uid://duqtcne0dh48c" path="res://Scripts/Employement S&P center/player.gd" id="8_goryt"]
+[ext_resource type="Script" uid="uid://pno4gqqbkrfl" path="res://Scripts/Employement S&P center/player.gd" id="8_goryt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tvsy3"]
 texture = ExtResource("1_u75jl")
@@ -317,7 +317,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1lupt")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle_L",
 "speed": 8.0
 }, {
@@ -340,7 +340,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u0q5h")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle_R",
 "speed": 7.0
 }]

@@ -4,36 +4,32 @@ signal player_movable
 signal player_immovable
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
-@onready var parallax: Parallax2D = $Parallax2D
 var follow_player:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.first_game_phase = Global.GamePhase.post_prologue
+	
+	match Global.GamePhase:
+		"post_prologue":
+			
+			# Disable Player
+			emit_signal("player_immovable")
+			anim.play("Fade out")
+			
+			#Move Camera to player
+			var tween = create_tween()
+			tween.tween_property($Camera2D, "position", Vector2($Player.position.x, $Player.position.y), 6.0)
+			await tween.finished
+			follow_player = true
+			anim.play("Exterior")
+			
+			#Player Does Dialogue
+			await Dialogue.show_text("Finally.. Today is the day my life will change..", "Uglyduck (YOU)")
+			await Dialogue.show_text("Hopefully everything things goes right and i get hired..", "Uglyduck (YOU)")
+			Dialogue.hide_text()
 
-	
-	
-	# Disable Player
-	emit_signal("player_immovable")
-
-	anim.play("Fade out")
-	
-	#Move Camera to player
-	var tween = create_tween()
-	tween.tween_property($Camera2D, "position", Vector2($Player.position.x, $Player.position.y), 6.0)
-	await tween.finished
-	follow_player = true
-	anim.play("Exterior")
-	
-
-	
-	await Dialogue.show_text("Finally.. Today is the day my life will change..", "Uglyduck (YOU)")
-	await Dialogue.show_text("Hopefully everything things goes right and i get hired..", "Uglyduck (YOU)")
-	Dialogue.hide_text()
-
-	#after animation of camera moving player is able to move againnnn twin
-	emit_signal("player_movable")
-	
+			#after animation of camera moving player is able to move againnnn twin
+			emit_signal("player_movable")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

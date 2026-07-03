@@ -4,13 +4,12 @@ extends Node
 @export var record_mode: bool = false
 
 enum GamePhase {
-	start,
+	introduction,
 	post_prologue,
 	early_game,
 	mid_game,
 	late_game,
 	end,
-	none
 }
 
-var current_game_phase : GamePhase = GamePhase.post_prologue
+var current_game_phase : GamePhase = GamePhase.introduction

@@ -1,275 +1,286 @@
 [gd_scene format=3 uid="uid://cv4c0ciclruv7"]
 
-[ext_resource type="FontFile" uid="uid://nor5b56h36pc" path="res://Fonts/Schoolbell-Regular.ttf" id="1_po227"]
-[ext_resource type="Script" uid="uid://cpjurtgkghysd" path="res://Scripts/title_screen.gd" id="1_qyra1"]
-[ext_resource type="Texture2D" uid="uid://drosswoeps26f" path="res://Images/Logo/New-Game-Logo (straight)1.png" id="3_qyra1"]
-[ext_resource type="FontFile" uid="uid://b7gywp6teg277" path="res://Fonts/Born2bSportyV2.ttf" id="3_x2sej"]
-[ext_resource type="AudioStream" uid="uid://clxonj4gmnjin" path="res://SFX/select1.wav" id="6_x2sej"]
-[ext_resource type="Texture2D" uid="uid://ccyvf2b2qevxy" path="res://Images/Cutscenes/Finzalied Intro/Scene 4 - Uglyduck Being left out.png" id="7_6pqua"]
+[ext_resource type="Script" uid="uid://dlwbhkhkmrxpw" path="res://Scripts/title_screen.gd" id="1_qyra1"]
+[ext_resource type="Texture2D" uid="uid://drosswoeps26f" path="res://Images/Miscellaneous/Logo/New-Game-Logo (straight)1.png" id="3_qyra1"]
+[ext_resource type="Texture2D" uid="uid://dnsfpgr6mwjvf" path="res://Images/Miscellaneous/Title Screen/Title Screen - Background.png" id="3_x2sej"]
+[ext_resource type="Texture2D" uid="uid://djlaayf6dr66k" path="res://Images/Miscellaneous/Title Screen/Title Screen - Spotlight.png" id="4_6pqua"]
+[ext_resource type="Texture2D" uid="uid://cgt8ecxryrr74" path="res://Images/Miscellaneous/Title Screen/Title Screen - BG scartch.png" id="4_hhp2p"]
+[ext_resource type="Texture2D" uid="uid://nd1qyboigxda" path="res://Images/Miscellaneous/Title Screen/Title Screen - Character.png" id="5_hhp2p"]
+[ext_resource type="AudioStream" uid="uid://51sfnqfciikg" path="res://SFX/HUD/select1.wav" id="6_x2sej"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_po227"]
-font = ExtResource("3_x2sej")
-font_size = 20
+[sub_resource type="Animation" id="Animation_gr1ek"]
+resource_name = "Fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
 
-[sub_resource type="LabelSettings" id="LabelSettings_q81kl"]
-font = ExtResource("3_x2sej")
-font_size = 19
-font_color = Color(0.6350498, 0.7293979, 1, 0.39100003)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xdkfq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hhp2p"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcif5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gr1ek"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pqua"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2sej"]
+[sub_resource type="Animation" id="Animation_ggnsx"]
+resource_name = "Fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_6pqua"]
+resource_name = "Loop"
+length = 3.0000000000000004
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.6918009, 0.6965535, 0.74084204, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Elements/Spotlight:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(91.66669, 0), Vector2(126, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Elements/Character:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(63, 38), Vector2(23.000008, 38)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Elements/Scars:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0), Vector2(-17, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hhp2p"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Logo:rotation")
+tracks/0/path = NodePath("CanvasModulate:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Logo:position")
+tracks/1/path = NodePath("Elements/Spotlight:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-8, -19)]
+"values": [Vector2(91.66669, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_x2sej"]
-resource_name = "new_animation"
-length = 1.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Logo:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Elements/Character:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0, 0.017453292519943295]
+"values": [Vector2(63, 38)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Logo:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Elements/Scars:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-8, 6), Vector2(-8, 0)]
+"values": [Vector2(1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6pqua"]
 _data = {
-&"RESET": SubResource("Animation_6pqua"),
-&"new_animation": SubResource("Animation_x2sej")
+&"Fade in": SubResource("Animation_gr1ek"),
+&"Fade out": SubResource("Animation_ggnsx"),
+&"Loop": SubResource("Animation_6pqua"),
+&"RESET": SubResource("Animation_hhp2p")
 }
+
+[sub_resource type="ImageTexture" id="ImageTexture_vglh3"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=116923037]
 follow_viewport_enabled = true
 script = ExtResource("1_qyra1")
 metadata/_edit_horizontal_guides_ = [-113.0]
 
-[node name="Logo" type="TextureRect" parent="." unique_id=104900995]
-z_index = 4
-offset_left = -8.0
-offset_top = -19.0
-offset_right = 120.0
-offset_bottom = 45.0
-scale = Vector2(3, 3)
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1028461899]
+
+[node name="Elements" type="Control" parent="." unique_id=1905172818]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_right = 639.0
+offset_bottom = 408.0
+
+[node name="Logo" type="TextureRect" parent="Elements" unique_id=104900995]
+z_index = 2
+layout_mode = 0
+offset_left = 64.99999
+offset_top = -42.999996
+offset_right = 193.0
+offset_bottom = 21.000004
+scale = Vector2(3.8559504, 3.8559504)
 texture = ExtResource("3_qyra1")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=919762388]
+[node name="Spotlight" type="TextureRect" parent="Elements" unique_id=1424243410]
+modulate = Color(1.6197081, 1.6197081, 1.6197081, 1)
+z_index = 2
+layout_mode = 0
+offset_left = 91.66669
+offset_right = 641.00006
+offset_bottom = 412.0
+texture = ExtResource("4_6pqua")
+expand_mode = 1
+
+[node name="Character" type="TextureRect" parent="Elements" unique_id=151903078]
+z_index = 1
+layout_mode = 0
+offset_left = 63.0
+offset_top = 38.0
+offset_right = 703.0
+offset_bottom = 518.0
+scale = Vector2(0.8173284, 0.8173284)
+texture = ExtResource("5_hhp2p")
+
+[node name="Scars" type="TextureRect" parent="Elements" unique_id=2062987187]
+z_index = 1
+layout_mode = 0
+offset_left = 1.0
+offset_right = 641.0
+offset_bottom = 480.0
+texture = ExtResource("4_hhp2p")
+
+[node name="Background" type="TextureRect" parent="Elements" unique_id=1449912871]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 641.0
+offset_bottom = 480.0
+texture = ExtResource("3_x2sej")
+
+[node name="BG_2" type="ColorRect" parent="Elements" unique_id=919762388]
+layout_mode = 0
+offset_left = 1.0
 offset_top = 408.0
-offset_right = 640.0
+offset_right = 641.0
 offset_bottom = 1043.0
 color = Color(0, 0, 0, 1)
 
-[node name="Fade" type="ColorRect" parent="." unique_id=1386728844]
-visible = false
-z_index = 8
-offset_top = -368.0
-offset_right = 640.0
-offset_bottom = 825.0
+[node name="SFX" type="Node" parent="." unique_id=714947016]
 
-[node name="click" type="AudioStreamPlayer" parent="." unique_id=1407401827]
+[node name="click" type="AudioStreamPlayer" parent="SFX" unique_id=1407401827]
 stream = ExtResource("6_x2sej")
 volume_db = 14.596
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2054794464]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1449912871]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("7_6pqua")
-
-[node name="Credit" type="VBoxContainer" parent="." unique_id=465524607]
-offset_left = 19.0
-offset_top = 350.0
-offset_right = 247.0
-offset_bottom = 394.0
-
-[node name="Credit" type="Label" parent="Credit" unique_id=2066445513]
-z_index = 1
-layout_mode = 2
-text = "2024, 26 - Jean Junior Jams"
-label_settings = SubResource("LabelSettings_po227")
-
-[node name="Beta Stage" type="Label" parent="Credit" unique_id=1793642053]
-z_index = 3
-layout_mode = 2
-text = "This Game Is Still in Beta Stages"
-label_settings = SubResource("LabelSettings_q81kl")
-
-[node name="Socials" type="VBoxContainer" parent="." unique_id=1291370425]
-visible = false
-z_index = 3
-offset_left = 159.0
-offset_top = 215.0
-offset_right = 457.0
-offset_bottom = 307.0
-
-[node name="Return" type="Button" parent="Socials" unique_id=1892696654]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.63529414, 0.7294118, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.70980394, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.9490196, 0.9490196, 0.70980394, 1)
-theme_override_colors/font_disabled_color = Color(0.16470589, 0.16470589, 0.16470589, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("1_po227")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxEmpty_xdkfq")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_xdkfq")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xdkfq")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_xdkfq")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_xdkfq")
-text = "Return to menu"
-flat = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Socials" unique_id=1700552203]
-layout_mode = 2
-
-[node name="Discord" type="LinkButton" parent="Socials/HBoxContainer" unique_id=869222849]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.25882354, 0, 0.8745098, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.70980394, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.9490196, 0.9490196, 0.70980394, 1)
-theme_override_colors/font_disabled_color = Color(0.16470589, 0.16470589, 0.16470589, 1)
-theme_override_constants/outline_size = 12
-theme_override_constants/underline_spacing = 0
-theme_override_fonts/font = ExtResource("1_po227")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hhp2p")
-text = "Discord"
-uri = "https://discord.gg/XqBQqSmV"
-
-[node name="Website" type="LinkButton" parent="Socials/HBoxContainer" unique_id=1957288847]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.25882354, 0, 0.8745098, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.70980394, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.9490196, 0.9490196, 0.70980394, 1)
-theme_override_colors/font_disabled_color = Color(0.16470589, 0.16470589, 0.16470589, 1)
-theme_override_constants/outline_size = 12
-theme_override_constants/underline_spacing = 0
-theme_override_fonts/font = ExtResource("1_po227")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_rcif5")
-text = "Website"
-uri = "https://jaytheoff.github.io/uglyduck.github.io/"
-
-[node name="Github" type="LinkButton" parent="Socials/HBoxContainer" unique_id=1718814149]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.25882354, 0, 0.8745098, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.70980394, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.9490196, 0.9490196, 0.70980394, 1)
-theme_override_colors/font_disabled_color = Color(0.16470589, 0.16470589, 0.16470589, 1)
-theme_override_constants/outline_size = 12
-theme_override_fonts/font = ExtResource("1_po227")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_gr1ek")
-text = "Github"
-uri = "https://github.com/jaytheoff/uglyduck"
-
-[node name="Menu" type="HBoxContainer" parent="." unique_id=1773475893]
-z_index = 4
-offset_left = 436.0
-offset_top = 295.0
-offset_right = 622.0
-offset_bottom = 403.0
-theme_override_constants/separation = 32
-
-[node name="Start" type="Button" parent="Menu" unique_id=1695683362]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.63529414, 0.7294118, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.70980394, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.9490196, 0.9490196, 0.70980394, 1)
-theme_override_colors/font_disabled_color = Color(0.16470589, 0.16470589, 0.16470589, 1)
-theme_override_fonts/font = ExtResource("3_x2sej")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxEmpty_6pqua")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_6pqua")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_6pqua")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_6pqua")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6pqua")
-text = "Start"
-flat = true
-
-[node name="Socials" type="Button" parent="Menu" unique_id=1997647852]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.63529414, 0.7294118, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.70980394, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.9490196, 0.9490196, 0.70980394, 1)
-theme_override_colors/font_disabled_color = Color(0.16470589, 0.16470589, 0.16470589, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("3_x2sej")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxEmpty_x2sej")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_x2sej")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_x2sej")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_x2sej")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_x2sej")
-text = "Socials"
-flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=536090446]
 libraries/ = SubResource("AnimationLibrary_6pqua")
 
-[connection signal="pressed" from="Socials/Return" to="." method="_on_return_pressed"]
-[connection signal="pressed" from="Socials/HBoxContainer/Discord" to="." method="_on_discord_pressed"]
-[connection signal="pressed" from="Socials/HBoxContainer/Website" to="." method="_on_website_pressed"]
-[connection signal="pressed" from="Socials/HBoxContainer/Github" to="." method="_on_github_pressed"]
-[connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Menu/Socials" to="." method="_on_socials_pressed"]
+[node name="Menu" type="Control" parent="." unique_id=1137869288]
+z_index = 3
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -130.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+
+[node name="StartButton" type="Button" parent="Menu" unique_id=939316360]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 114.0
+offset_top = -2.0
+offset_right = 242.0
+offset_bottom = -4.0
+grow_vertical = 2
+focus_neighbor_left = NodePath("../QuitButton")
+focus_neighbor_right = NodePath("../Settings")
+button_mask = 0
+icon = SubResource("ImageTexture_vglh3")
+
+[node name="QuitButton" type="Button" parent="Menu" unique_id=1195041089]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 73.0
+offset_top = -3.0
+offset_right = 201.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../Settings")
+focus_neighbor_right = NodePath(".")
+button_mask = 0
+
+[node name="Settings" type="Button" parent="Menu" unique_id=30306814]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -68.0
+offset_right = 59.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+button_mask = 0

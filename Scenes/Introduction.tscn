@@ -1,0 +1,571 @@
+[gd_scene format=3 uid="uid://dtw3fnffgpqr4"]
+
+[ext_resource type="AudioStream" uid="uid://o0wcqv55yws2" path="res://Voicelines/Prologue.ogg" id="1_nx00x"]
+[ext_resource type="Script" uid="uid://bgwn8ptrmjxa2" path="res://Scripts/Miscellaneous/introduction.gd" id="1_pr2a3"]
+[ext_resource type="Script" path="res://Scripts/Miscellaneous/Button.gd" id="8_ggnsx"]
+[ext_resource type="AudioStream" uid="uid://7j1uml1cl51j" path="res://Music/III - Scherzo, Presto.ogg" id="2_75w15"]
+[ext_resource type="Texture2D" uid="uid://bb78ckvubpknb" path="res://Images/Cutscenes/1/Cutscene 1 - Background .png" id="3_ct43b"]
+[ext_resource type="Texture2D" uid="uid://dbr8x67mhw0wf" path="res://Images/Cutscenes/1/Cutscene 1 - Clouds.png" id="4_ef74u"]
+[ext_resource type="Texture2D" uid="uid://b8uenrsx0cjb2" path="res://Images/Cutscenes/1/Cutscene 1 - Furtherground.png" id="5_o7m1o"]
+[ext_resource type="Texture2D" uid="uid://1extpjfai1pu" path="res://Images/Cutscenes/1/Cutscene 1 - Foreground.png" id="6_ef74u"]
+[ext_resource type="Texture2D" uid="uid://wjwbtkh2g18f" path="res://Images/Miscellaneous/Effects/Fade Gradient (Vertical).png" id="7_o7m1o"]
+[ext_resource type="FontFile" uid="uid://b7gywp6teg277" path="res://Fonts/Born2bSportyV2.ttf" id="8_sr2jf"]
+[ext_resource type="Texture2D" uid="uid://dqkmhf4gdkexa" path="res://Images/Cutscenes/2/Cutscene 2 - Background.png" id="9_ljrjd"]
+[ext_resource type="Texture2D" uid="uid://cd75rj0f16weu" path="res://Images/Cutscenes/2/Cutscene 2 - Clouds1.png" id="9_pm31h"]
+[ext_resource type="Texture2D" uid="uid://c8ef18j5toxfq" path="res://Images/Cutscenes/2/Cutscene 2 - Foreground.png" id="10_1ogbn"]
+[ext_resource type="Texture2D" uid="uid://cgt8ecxryrr74" path="res://Images/Miscellaneous/Title Screen/Title Screen - BG scartch.png" id="10_3asdj"]
+[ext_resource type="Texture2D" uid="uid://ccaoffmxdy8e4" path="res://Images/Cutscenes/2/Cutscene 2 - Furtherground.png" id="11_1ogbn"]
+[ext_resource type="Texture2D" uid="uid://cws8oar6mbdon" path="res://Images/Cutscenes/2/Cutscene 2 - Birth Of Uglyduck Panel.png" id="11_jv5up"]
+[ext_resource type="Texture2D" uid="uid://7p63udhxfqw" path="res://Images/Cutscenes/3/Cutscene 3 - Character.png" id="11_myy6h"]
+[ext_resource type="Texture2D" uid="uid://cxies3dbbe5c7" path="res://Images/Cutscenes/4/ Cutscene 4 - Uglyduck.png" id="12_pi6gt"]
+[ext_resource type="AudioStream" uid="uid://dfvwv8p1efiod" path="res://SFX/Miscellaneous/Spotlight-Switch.mp3" id="13_15c6a"]
+[ext_resource type="Texture2D" uid="uid://djlaayf6dr66k" path="res://Images/Miscellaneous/Title Screen/Title Screen - Spotlight.png" id="13_j6vvs"]
+[ext_resource type="Texture2D" uid="uid://bonbj3l1b34pi" path="res://Images/Cutscenes/3/Cutscene 3 - Background.png" id="13_nnpmm"]
+[ext_resource type="Texture2D" uid="uid://drosswoeps26f" path="res://Images/Miscellaneous/Logo/New-Game-Logo (straight)1.png" id="15_2soqs"]
+[ext_resource type="Texture2D" uid="uid://cmvkwksvl7ft2" path="res://Images/Cutscenes/4/Cutscene 4 - Background.png" id="17_vb50j"]
+[ext_resource type="Texture2D" uid="uid://bc6c1xl3rs80u" path="res://Images/Cutscenes/4/Cutscene 4 - SexyDuck.png" id="18_at6q4"]
+[ext_resource type="Texture2D" uid="uid://dnsfpgr6mwjvf" path="res://Images/Miscellaneous/Title Screen/Title Screen - Background.png" id="19_3asdj"]
+[ext_resource type="Texture2D" uid="uid://nd1qyboigxda" path="res://Images/Miscellaneous/Title Screen/Title Screen - Character.png" id="22_2soqs"]
+
+[sub_resource type="Animation" id="Animation_sr2jf"]
+resource_name = "Prologue"
+length = 37.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Audio/Voice")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_nx00x")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Music")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_75w15")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/Voice:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Layers/Fade:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.14723124, 2.404777, 3.5333333, 4.266667, 5.7333336, 6.5, 10.533334, 11.433333, 13.033334, 13.9, 24.566668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(640, 521), Vector2(640, 1085), Vector2(640, 1085), Vector2(640, 512), Vector2(640, 512), Vector2(640, 1085), Vector2(640, 1085), Vector2(640, 512), Vector2(640, 512), Vector2(640, 1085), Vector2(640, 1085)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Layers/Fade:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.14723124, 2.404777, 3.5, 4.266667, 5.7333336, 6.5, 10.533334, 11.433333, 13.0333, 13.9, 24.466667, 26.8, 28.933332),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -6), Vector2(0, -570), Vector2(0, -570), Vector2(0, 3), Vector2(0, 3), Vector2(0, -570), Vector2(0, -570), Vector2(0, 3), Vector2(0, 3), Vector2(0, -570), Vector2(0, -570), Vector2(0, 0), Vector2(0, -570)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Layers/Foreground:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.2679, 4.9, 10.520407, 17.433332, 24.4, 34.133335, 34.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -36), Vector2(56, -36), Vector2(56, -36), Vector2(19, -36), Vector2(0, -33.285), Vector2(-10, -33.285), Vector2(34.8, -33.285), Vector2(0, 24.26)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Layers/Furthestground:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.266667, 4.866667, 10.520407, 16.966667, 17.4333, 24.4, 34.166668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -36), Vector2(41, -36), Vector2(-14.57, -36), Vector2(-1, -36), Vector2(-1, -36), Vector2(-1, -36), Vector2(19.925, -36), Vector2(-13.415, -36)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Layers/Furtherground:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4.2679, 4.9, 10.520407),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -71), Vector2(-44, -71), Vector2(-44, -71), Vector2(-2, -71)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Layers/Background:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4.2679, 13.0333, 17.433332, 26.866667, 27.033333, 34.133335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_ct43b"), ExtResource("9_ljrjd"), ExtResource("13_nnpmm"), ExtResource("17_vb50j"), null, ExtResource("19_3asdj"), ExtResource("19_3asdj")]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Layers/Furthestground:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 4.2679, 13.0333, 17.433332, 26.866667, 27.033333, 34.133335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_ef74u"), ExtResource("11_1ogbn"), null, ExtResource("18_at6q4"), null, ExtResource("22_2soqs"), null]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Layers/Furtherground:texture")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 4.2679, 13.0333, 27.033333, 34.133335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_o7m1o"), ExtResource("9_pm31h"), null, ExtResource("10_3asdj"), null]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Layers/Foreground:texture")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4.2679, 13.033334, 17, 17.433332, 26.866667, 27.033333, 34.166668, 34.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ef74u"), ExtResource("10_1ogbn"), ExtResource("11_myy6h"), null, ExtResource("12_pi6gt"), null, ExtResource("13_j6vvs"), null, ExtResource("15_2soqs")]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Layers/Panels:texture")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 4.956785, 13.0333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [null, ExtResource("11_jv5up"), null]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Layers/Panels:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 4.8667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -40)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Layers/Panels:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 5.6, 7.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/15/type = "audio"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Audio/AudioStreamPlayer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_15c6a")
+}],
+"times": PackedFloat32Array(17)
+}
+tracks/15/use_blend = true
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("HBoxContainer/Skip:disabled")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.8772866, 27.021973),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_pr2a3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Audio/Voice:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Layers/Fade:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 521)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Layers/Fade:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Layers/Foreground:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -36)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Layers/Furthestground:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -36)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Layers/Furtherground:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -71)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Layers/Background:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_ct43b")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Layers/Furthestground:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_ef74u")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Layers/Furtherground:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_o7m1o")]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Layers/Foreground:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_ef74u")]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Layers/Panels:texture")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Layers/Panels:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Layers/Panels:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("HBoxContainer/Skip:disabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pr2a3"]
+_data = {
+&"Prologue": SubResource("Animation_sr2jf"),
+&"RESET": SubResource("Animation_pr2a3")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o7m1o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sr2jf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pr2a3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ljrjd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gvyo"]
+
+[node name="Introduction" type="CanvasLayer" unique_id=611296882]
+script = ExtResource("1_pr2a3")
+
+[node name="Audio" type="Node" parent="." unique_id=602264477]
+
+[node name="Voice" type="AudioStreamPlayer" parent="Audio" unique_id=1549659171]
+volume_db = 4.0
+
+[node name="Music" type="AudioStreamPlayer" parent="Audio" unique_id=344177411]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1124121283]
+
+[node name="Layers" type="Control" parent="." unique_id=1910716826]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fade" type="Control" parent="Layers" unique_id=410952573]
+z_index = 5
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -6.0
+offset_bottom = 515.0
+grow_horizontal = 2
+size_flags_vertical = 6
+
+[node name="TopFade" type="TextureRect" parent="Layers/Fade" unique_id=1215828584]
+layout_mode = 0
+offset_top = -109.0
+offset_right = 640.0
+texture = ExtResource("7_o7m1o")
+expand_mode = 1
+flip_v = true
+
+[node name="Center" type="ColorRect" parent="Layers/Fade" unique_id=378687296]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 408.0
+color = Color(0, 0, 0, 1)
+
+[node name="BottomFade" type="TextureRect" parent="Layers/Fade" unique_id=1523747805]
+layout_mode = 0
+offset_top = 408.0
+offset_right = 640.0
+offset_bottom = 517.0
+texture = ExtResource("7_o7m1o")
+expand_mode = 1
+
+[node name="Background" type="TextureRect" parent="Layers" unique_id=1545063243]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ct43b")
+
+[node name="Furthestground" type="TextureRect" parent="Layers" unique_id=1058341204]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ef74u")
+
+[node name="Furtherground" type="TextureRect" parent="Layers" unique_id=654008000]
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -71.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_o7m1o")
+
+[node name="Foreground" type="TextureRect" parent="Layers" unique_id=2023712986]
+z_index = 4
+layout_mode = 0
+offset_top = -36.0
+offset_right = 640.0
+offset_bottom = 444.0
+texture = ExtResource("6_ef74u")
+stretch_mode = 4
+
+[node name="Panels" type="TextureRect" parent="Layers" unique_id=813117150]
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2069753523]
+libraries/ = SubResource("AnimationLibrary_pr2a3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=129659359]
+z_index = 15
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+accessibility_region = true
+alignment = 1
+
+[node name="Skip" type="Button" parent="HBoxContainer" unique_id=1563622392]
+layout_mode = 2
+script = ExtResource("8_ggnsx")
+theme_override_colors/font_color = Color(0.8750814, 0.8750814, 0.8750814, 0.64500004)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.94385463, 0.9304411, 0.66668326, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 0.554)
+theme_override_fonts/font = ExtResource("8_sr2jf")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o7m1o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sr2jf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pr2a3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ljrjd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0gvyo")
+disabled = true
+text = "SKIP?"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="HBoxContainer/Skip" to="." method="_on_skip_pressed"]

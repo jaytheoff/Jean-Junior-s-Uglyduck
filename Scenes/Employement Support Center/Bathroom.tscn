@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bogv2o5fi6hsf"]
 
-[ext_resource type="Script" uid="uid://dky08qywfxoql" path="res://Scripts/Employement S&P center/bathroom.gd" id="1_0eqic"]
-[ext_resource type="Texture2D" uid="uid://twivvdbyy06l" path="res://Images/Employement Support & Assistance Center/Interior/Bathroom/Bathroom.png" id="1_8pnob"]
-[ext_resource type="Texture2D" uid="uid://bd8rbc0l14cm2" path="res://Images/Employement Support & Assistance Center/Interior/Bathroom/Toliet_Divider.png" id="1_rly28"]
-[ext_resource type="Script" uid="uid://duqtcne0dh48c" path="res://Scripts/Employement S&P center/player.gd" id="3_snkv0"]
-[ext_resource type="Texture2D" uid="uid://qlgin6rdrvqf" path="res://Images/LightMap.png" id="5_2xxgd"]
+[ext_resource type="Script" uid="uid://cgabqv0o071k4" path="res://Scripts/Employement S&P center/bathroom.gd" id="1_0eqic"]
+[ext_resource type="Texture2D" uid="uid://twivvdbyy06l" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Interior/Bathroom/Bathroom.png" id="1_8pnob"]
+[ext_resource type="Texture2D" uid="uid://bd8rbc0l14cm2" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Interior/Bathroom/Toliet_Divider.png" id="1_rly28"]
+[ext_resource type="Script" uid="uid://pno4gqqbkrfl" path="res://Scripts/Employement S&P center/player.gd" id="3_snkv0"]
+[ext_resource type="Texture2D" uid="uid://k3ps4806drbj" path="res://Images/Miscellaneous/Effects/LightMap.png" id="5_2xxgd"]
+[ext_resource type="Texture2D" uid="uid://bty1i3571g8uh" path="res://Images/Characters/Uglyduck/Uglyduck (Default Outfit).png" id="5_lpcon"]
+[ext_resource type="Texture2D" uid="uid://bkjqqchygiuj" path="res://Images/Miscellaneous/Maps/Toliet.png" id="7_hp1va"]
 
 [sub_resource type="Gradient" id="Gradient_rly28"]
 interpolation_mode = 1
@@ -16,7 +18,213 @@ gradient = SubResource("Gradient_rly28")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rly28"]
 radius = 4.0
-height = 14.0
+height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp1va"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgrb1"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oihlq"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p434k"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia2vi"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moclw"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkxns"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08kni"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn0qo"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u2vf"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_277k5"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdbtr"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpcon"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdgks"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83f8l"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3775"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqb6d"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2kn4"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrnl1"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uq36"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6tlk"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe0td"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcmll"]
+atlas = ExtResource("5_lpcon")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2xxgd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp1va")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgrb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oihlq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p434k")
+}],
+"loop": 1,
+"name": &"Idle_Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia2vi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moclw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkxns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08kni")
+}],
+"loop": 1,
+"name": &"Idle_Front",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn0qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u2vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_277k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdbtr")
+}],
+"loop": 1,
+"name": &"Idle_Side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpcon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdgks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83f8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3775")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83f8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdgks")
+}],
+"loop": 1,
+"name": &"Walk_Back",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqb6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2kn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrnl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uq36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrnl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2kn4")
+}],
+"loop": 1,
+"name": &"Walk_Front",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6tlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe0td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcmll")
+}],
+"loop": 1,
+"name": &"Walk_Side",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_snkv0"]
 
@@ -144,14 +352,13 @@ script = ExtResource("3_snkv0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1097096613]
 z_index = 1
+position = Vector2(-1, 2)
 shape = SubResource("CapsuleShape2D_rly28")
 
-[node name="ColorRect" type="ColorRect" parent="Player" unique_id=790587044]
-offset_left = -5.0
-offset_top = -9.0
-offset_right = 5.0
-offset_bottom = 8.0
-color = Color(1, 0, 0, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=151965385]
+sprite_frames = SubResource("SpriteFrames_2xxgd")
+animation = &"Walk_Front"
+frame_progress = 0.26704827
 
 [node name="Exit" type="Area2D" parent="." unique_id=1722489482]
 position = Vector2(-4, -56)
@@ -231,14 +438,11 @@ debug_color = Color(0, 0.63184625, 0.46122873, 0.41960785)
 
 [node name="Toliet" type="Area2D" parent="Objects" unique_id=332931462]
 position = Vector2(-65, -14)
+scale = Vector2(1.5, 1.5)
 
-[node name="ColorRect" type="ColorRect" parent="Objects/Toliet" unique_id=1175916260]
-z_index = 3
-offset_left = -6.0
-offset_top = -5.0
-offset_right = 7.0
-offset_bottom = 6.0
-color = Color(0, 1, 0.07450981, 1)
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Toliet" unique_id=1555044124]
+position = Vector2(1, 0)
+texture = ExtResource("7_hp1va")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Toliet" unique_id=681213535]
 z_index = 3
@@ -247,19 +451,16 @@ debug_color = Color(0.63793474, 0.52519023, 0, 0.41960785)
 
 [node name="Toliet2" type="Area2D" parent="Objects" unique_id=480580185]
 position = Vector2(-65, 16)
-
-[node name="ColorRect" type="ColorRect" parent="Objects/Toliet2" unique_id=477241247]
-z_index = 3
-offset_left = -6.0
-offset_top = -5.0
-offset_right = 7.0
-offset_bottom = 6.0
-color = Color(0, 1, 0.07450981, 1)
+scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Toliet2" unique_id=89804576]
 z_index = 3
 shape = SubResource("CircleShape2D_2xxgd")
 debug_color = Color(0.63793474, 0.52519023, 0, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Toliet2" unique_id=82805822]
+position = Vector2(3, 1)
+texture = ExtResource("7_hp1va")
 
 [node name="Borders" type="Node2D" parent="." unique_id=869470367]
 

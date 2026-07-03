@@ -1,203 +1,47 @@
 [gd_scene format=3 uid="uid://bkkwo62pm4ejp"]
 
-[ext_resource type="Script" uid="uid://bk4uu0tw3d0u6" path="res://Scripts/Employement S&P center/interior.gd" id="1_7usxb"]
-[ext_resource type="FontFile" uid="uid://b7gywp6teg277" path="res://Fonts/Born2bSportyV2.ttf" id="2_132yf"]
-[ext_resource type="Script" uid="uid://duqtcne0dh48c" path="res://Scripts/Employement S&P center/player.gd" id="2_ls5fk"]
-[ext_resource type="Texture2D" uid="uid://qlgin6rdrvqf" path="res://Images/LightMap.png" id="3_anw7d"]
-[ext_resource type="Texture2D" uid="uid://dpx2vt7ouyat2" path="res://Images/Employement Support & Assistance Center/Interior/Classroom.png" id="3_pudod"]
-[ext_resource type="Texture2D" uid="uid://cpj5vdhgilojf" path="res://Images/Player-Sheet.png" id="3_vajp6"]
-[ext_resource type="Texture2D" uid="uid://0yvs7jyx3cqh" path="res://Images/Employement Support & Assistance Center/Interior/Lobby.png" id="3_vchhe"]
-[ext_resource type="Texture2D" uid="uid://cu0hhbwmcbml3" path="res://Images/Employement Support & Assistance Center/Interior/Flower-pot.png" id="4_s2kih"]
-[ext_resource type="Texture2D" uid="uid://cdey20yuxdmgw" path="res://Images/Employement Support & Assistance Center/Interior/Mini-Table.png" id="5_pudod"]
-[ext_resource type="Texture2D" uid="uid://xevwd3dp448f" path="res://Images/Employement Support & Assistance Center/Interior/Computer Register Desk.png" id="6_ds418"]
-[ext_resource type="Texture2D" uid="uid://b0jeq3elx5q1v" path="res://Images/Employement Support & Assistance Center/Interior/Desks.png" id="7_d6iey"]
-[ext_resource type="Texture2D" uid="uid://bckd5qqf7xvyy" path="res://Images/Employement Support & Assistance Center/Interior/Hallway.png" id="8_ds418"]
-[ext_resource type="Texture2D" uid="uid://h36xeqcxrwre" path="res://Images/Employement Support & Assistance Center/Interior/Vertical-Cabinet.png" id="9_pi0rf"]
-[ext_resource type="Texture2D" uid="uid://cx1wuth5c0ovb" path="res://Images/Employement Support & Assistance Center/Interior/OfficeHallway.png" id="11_u1wv5"]
-[ext_resource type="Texture2D" uid="uid://bjgqyub1tslcp" path="res://Images/Employement Support & Assistance Center/Interior/Job-Listings.png" id="12_retxh"]
-[ext_resource type="Texture2D" uid="uid://ds0po1h0os8bx" path="res://Images/Employement Support & Assistance Center/Interior/Office.png" id="14_7icrr"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_02ev5"]
-font = ExtResource("2_132yf")
-font_size = 32
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vajp6"]
-atlas = ExtResource("3_vajp6")
-region = Rect2(0, 32, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vo17a"]
-atlas = ExtResource("3_vajp6")
-region = Rect2(48, 32, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7csnp"]
-atlas = ExtResource("3_vajp6")
-region = Rect2(96, 32, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_132yf"]
-atlas = ExtResource("3_vajp6")
-region = Rect2(0, 0, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_02ev5"]
-atlas = ExtResource("3_vajp6")
-region = Rect2(48, 0, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p6dsl"]
-atlas = ExtResource("3_vajp6")
-region = Rect2(96, 0, 48, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vo17a"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vajp6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vajp6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vajp6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vo17a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vo17a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7csnp")
-}],
-"loop": true,
-"name": &"Idle_L",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_132yf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_132yf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_132yf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_02ev5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_02ev5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p6dsl")
-}],
-"loop": true,
-"name": &"Idle_R",
-"speed": 6.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_phjn4"]
-radius = 8.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_wfvpx"]
-radius = 11.401754
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_phjn4"]
-radius = 9.219544
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ls5fk"]
-size = Vector2(160, 13)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7icrr"]
-size = Vector2(20, 129)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_giy78"]
-size = Vector2(51, 28)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5iqox"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofbrf"]
-size = Vector2(20, 24)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d6iey"]
-height = 20.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1wv5"]
-size = Vector2(185, 28)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6iey"]
-size = Vector2(25, 153)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vchhe"]
-radius = 12.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_retxh"]
-size = Vector2(14, 29)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ls5fk"]
-radius = 9.055386
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7icrr"]
-radius = 12.0415945
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vajp6"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_132yf"]
-radius = 11.045361
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vajp6"]
-size = Vector2(480, 24.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_132yf"]
-size = Vector2(20, 138)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_02ev5"]
-size = Vector2(23, 479)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6dsl"]
-size = Vector2(130, 11)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_retxh"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_u1wv5"]
-radius = 12.165525
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_retxh"]
-radius = 13.0
-height = 52.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vo17a"]
-size = Vector2(23, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7csnp"]
-size = Vector2(20, 136)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tytls"]
-size = Vector2(151, 8.5)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_p6dsl"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s8sv"]
-size = Vector2(36, 42)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8fhv"]
-size = Vector2(12, 85.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c78m7"]
-size = Vector2(161, 18)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_herh2"]
-size = Vector2(12, 45)
+[ext_resource type="Script" uid="uid://bjhnknexmuieg" path="res://Scripts/Employement S&P center/interior.gd" id="1_7usxb"]
+[ext_resource type="PackedScene" uid="uid://dn1t6t08jr01p" path="res://Scenes/Employement Support Center/Default Player.tscn" id="2_vajp6"]
+[ext_resource type="Texture2D" uid="uid://k3ps4806drbj" path="res://Images/Miscellaneous/Effects/LightMap.png" id="3_anw7d"]
+[ext_resource type="Texture2D" uid="uid://dpx2vt7ouyat2" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Interior/Classroom.png" id="3_pudod"]
+[ext_resource type="Texture2D" uid="uid://41jjc3y2wtpv" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Interior/Lobby.png" id="3_vchhe"]
+[ext_resource type="Texture2D" uid="uid://cu0hhbwmcbml3" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Interior/Flower-pot.png" id="4_s2kih"]
+[ext_resource type="Texture2D" uid="uid://xevwd3dp448f" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Interior/Computer Register Desk.png" id="6_ds418"]
+[ext_resource type="Texture2D" uid="uid://b0jeq3elx5q1v" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Interior/Desks.png" id="7_d6iey"]
+[ext_resource type="Texture2D" uid="uid://bckd5qqf7xvyy" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Interior/Hallway.png" id="8_ds418"]
+[ext_resource type="Script" uid="uid://1iqu02mm8chd" path="res://Scripts/Employement S&P center/NPC/receptionist.gd" id="9_7icrr"]
+[ext_resource type="Texture2D" uid="uid://cx1wuth5c0ovb" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Interior/OfficeHallway.png" id="11_u1wv5"]
+[ext_resource type="Texture2D" uid="uid://bjgqyub1tslcp" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Interior/Job-Listings.png" id="12_retxh"]
+[ext_resource type="Texture2D" uid="uid://cdey20yuxdmgw" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Interior/Mini-Table.png" id="13_ls5fk"]
+[ext_resource type="Texture2D" uid="uid://dc1x23y5vcyr3" path="res://Images/Characters/NPCs/Receptionist.png" id="17_02ev5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_02ev5"]
-radius = 21.377558
+radius = 29.832869
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ls5fk"]
-radius = 12.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtkce"]
+radius = 16.0
+height = 66.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7icrr"]
-radius = 12.003052
-height = 32.000244
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4rsib"]
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6khpy"]
+radius = 13.0
+height = 78.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vglh3"]
+height = 22.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymyg1"]
+height = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vglh3"]
+size = Vector2(12, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtkce"]
+size = Vector2(22, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vglh3"]
 
 [sub_resource type="Animation" id="Animation_ls5fk"]
 resource_name = "Fade in"
@@ -255,6 +99,14 @@ _data = {
 process_mode = 3
 script = ExtResource("1_7usxb")
 
+[node name="Backdrop" type="ColorRect" parent="." unique_id=515812511]
+offset_left = -2178.0
+offset_top = -1230.0
+offset_right = -836.0
+offset_bottom = -306.0
+pivot_offset = Vector2(196, 129)
+color = Color(0, 0, 0, 1)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=709597559]
 process_mode = 3
 
@@ -264,706 +116,513 @@ offset_right = 640.0
 offset_bottom = 1222.0
 color = Color(0, 0, 0, 0)
 
-[node name="Location" type="Label" parent="CanvasLayer" unique_id=1085157240]
-offset_right = 640.0
-offset_bottom = 23.0
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "Entrance"
-label_settings = SubResource("LabelSettings_02ev5")
-horizontal_alignment = 1
-
-[node name="Backdrop" type="ColorRect" parent="." unique_id=515812511]
-offset_left = -2178.0
-offset_top = -1230.0
-offset_right = -836.0
-offset_bottom = -78.0
-pivot_offset = Vector2(196, 129)
-color = Color(0.18267405, 0.093141906, 0.13794747, 1)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=487009473]
 process_mode = 3
 z_index = 8
-position = Vector2(-1999, -1089)
+position = Vector2(-1887, -1091)
 zoom = Vector2(3, 3)
 limit_left = -2177
 limit_top = -1230
-limit_right = -844
-limit_bottom = -84
+limit_right = -836
+limit_bottom = -306
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 4.0
-drag_horizontal_offset = 0.04
+editor_draw_limits = true
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1096949037 groups=["Player"]]
-z_index = 4
-position = Vector2(-1053, -550)
-scale = Vector2(0.5, 0.5)
-script = ExtResource("2_ls5fk")
+[node name="Player" parent="." unique_id=1309871423 instance=ExtResource("2_vajp6")]
+z_index = 5
+position = Vector2(-1700, -1095)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=894606312]
-position = Vector2(-4.000059, -2.0000567)
-scale = Vector2(1.4883703, 1.4999998)
-sprite_frames = SubResource("SpriteFrames_vo17a")
-animation = &"Idle_R"
-frame_progress = 0.44077384
+[node name="Map" type="Node2D" parent="." unique_id=215161263]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=492592828]
-position = Vector2(-2, 2)
-shape = SubResource("CapsuleShape2D_phjn4")
-debug_color = Color(0.94432527, 6.7383053e-06, 0.5998465, 0.41960785)
-
-[node name="Lobby" type="Node2D" parent="." unique_id=1239529951]
-position = Vector2(-1641, -1096)
-
-[node name="Room" type="Sprite2D" parent="Lobby" unique_id=1006310790]
-position = Vector2(-5, 4)
-texture = ExtResource("3_vchhe")
-
-[node name="Hallway" type="Area2D" parent="Lobby" unique_id=1942966034]
-z_index = 2
-position = Vector2(71, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lobby/Hallway" unique_id=541777532]
-position = Vector2(-5, 4)
-shape = SubResource("CircleShape2D_wfvpx")
-debug_color = Color(0.3467689, 0.48473573, 1, 0.41960785)
-
-[node name="Classroom" type="Area2D" parent="Lobby" unique_id=2032402866]
-z_index = 2
-position = Vector2(-5, 53)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lobby/Classroom" unique_id=1778922355]
-shape = SubResource("CircleShape2D_phjn4")
-debug_color = Color(0.36078432, 0.61960787, 0, 0.5176471)
-
-[node name="Teleport" type="Node2D" parent="Lobby" unique_id=1185881296]
-z_index = 4
-
-[node name="Destination" type="Marker2D" parent="Lobby/Teleport" unique_id=710452405]
-position = Vector2(-59, 1)
-
-[node name="Destination2" type="Marker2D" parent="Lobby/Teleport" unique_id=1027230540]
-position = Vector2(-4, 30)
-
-[node name="Destination3" type="Marker2D" parent="Lobby/Teleport" unique_id=1512921874]
-position = Vector2(48, 4)
-
-[node name="Objects" type="Node2D" parent="Lobby" unique_id=2009429121]
-z_index = 3
-
-[node name="FlowerPot" type="Sprite2D" parent="Lobby/Objects" unique_id=1833872012]
-position = Vector2(32, -33)
-texture = ExtResource("4_s2kih")
-
-[node name="MiniTable" type="Sprite2D" parent="Lobby/Objects" unique_id=1605027220]
-position = Vector2(-8, -37)
-texture = ExtResource("5_pudod")
-
-[node name="ComputerRegisterDesk" type="Sprite2D" parent="Lobby/Objects" unique_id=1402241035]
-position = Vector2(-55, -16)
-texture = ExtResource("6_ds418")
-
-[node name="Lights" type="Node2D" parent="Lobby" unique_id=817508469]
-
-[node name="PointLight2D" type="PointLight2D" parent="Lobby/Lights" unique_id=2029741009]
-position = Vector2(-8, -51)
-energy = 0.68
-texture = ExtResource("3_anw7d")
-texture_scale = 0.8
-
-[node name="PointLight2D2" type="PointLight2D" parent="Lobby/Lights" unique_id=1278616227]
-position = Vector2(-65, -49)
-energy = 0.68
-texture = ExtResource("3_anw7d")
-texture_scale = 0.8
-
-[node name="PointLight2D3" type="PointLight2D" parent="Lobby/Lights" unique_id=996289388]
-position = Vector2(57, -49)
-energy = 0.68
-texture = ExtResource("3_anw7d")
-texture_scale = 0.8
-
-[node name="Collisons" type="StaticBody2D" parent="Lobby" unique_id=1880619132]
-position = Vector2(-5, 2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lobby/Collisons" unique_id=345250092]
-position = Vector2(0, 61.5)
-shape = SubResource("RectangleShape2D_ls5fk")
-debug_color = Color(0.90694875, 0.00012648762, 0.743377, 0.41960785)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Lobby/Collisons" unique_id=548825705]
-position = Vector2(0, -53)
-shape = SubResource("RectangleShape2D_ls5fk")
-debug_color = Color(0.90694875, 0.00012648762, 0.743377, 0.41960785)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Lobby/Collisons" unique_id=733681593]
-position = Vector2(-80, 4.5)
-shape = SubResource("RectangleShape2D_7icrr")
-debug_color = Color(0.5487559, 0.40302747, 1, 0.41960785)
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Lobby/Collisons" unique_id=751464181]
-position = Vector2(80, 4.5)
-shape = SubResource("RectangleShape2D_7icrr")
-debug_color = Color(0.5487559, 0.40302747, 1, 0.41960785)
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Lobby/Collisons" unique_id=1683133222]
-z_index = 3
-position = Vector2(-44.5, -29)
-shape = SubResource("RectangleShape2D_giy78")
-debug_color = Color(0.81905186, 0.4044262, 5.7756904e-07, 0.41960785)
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Lobby/Collisons" unique_id=831455146]
-z_index = 3
-position = Vector2(-3, -38)
-shape = SubResource("RectangleShape2D_5iqox")
-debug_color = Color(0.9264111, 0.27181706, 0, 0.41960785)
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Lobby/Collisons" unique_id=1248738104]
-z_index = 3
-position = Vector2(37, -40)
-shape = SubResource("RectangleShape2D_ofbrf")
-debug_color = Color(0.9499721, 0.09416094, 0.51249063, 0.41960785)
-
-[node name="Classroom" type="Node2D" parent="." unique_id=2097056508]
-position = Vector2(-1642, -829)
-
-[node name="Room" type="Sprite2D" parent="Classroom" unique_id=961372388]
-position = Vector2(0, -15)
+[node name="Classroom" type="Sprite2D" parent="Map" unique_id=961372388]
+z_index = 1
+position = Vector2(-1646, -851)
 texture = ExtResource("3_pudod")
 
-[node name="Objects" type="Node2D" parent="Classroom" unique_id=1114076593]
-
-[node name="Desk1" type="StaticBody2D" parent="Classroom/Objects" unique_id=38278835]
-position = Vector2(-29, -16)
-
-[node name="Sprite" type="Sprite2D" parent="Classroom/Objects/Desk1" unique_id=109710638]
-z_index = 3
-texture = ExtResource("7_d6iey")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Objects/Desk1" unique_id=382530608]
-z_index = 4
-shape = SubResource("CapsuleShape2D_d6iey")
-debug_color = Color(0.977182, 0, 0.40977353, 0.41960785)
-
-[node name="Desk2" type="StaticBody2D" parent="Classroom/Objects" unique_id=1715095532]
-position = Vector2(18, 11)
-
-[node name="Sprite" type="Sprite2D" parent="Classroom/Objects/Desk2" unique_id=1634614419]
-z_index = 3
-texture = ExtResource("7_d6iey")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Objects/Desk2" unique_id=160905415]
-z_index = 4
-shape = SubResource("CapsuleShape2D_d6iey")
-debug_color = Color(0.977182, 0, 0.40977353, 0.41960785)
-
-[node name="Desk3" type="StaticBody2D" parent="Classroom/Objects" unique_id=1374788199]
-position = Vector2(18, -33)
-
-[node name="Sprite" type="Sprite2D" parent="Classroom/Objects/Desk3" unique_id=2086835091]
-z_index = 3
-texture = ExtResource("7_d6iey")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Objects/Desk3" unique_id=2019282360]
-z_index = 4
-shape = SubResource("CapsuleShape2D_d6iey")
-debug_color = Color(0.977182, 0, 0.40977353, 0.41960785)
-
-[node name="Cabinet" type="Sprite2D" parent="Classroom/Objects" unique_id=581423285]
-position = Vector2(-3, 42)
-texture = ExtResource("9_pi0rf")
-
-[node name="FlowerPot2" type="Sprite2D" parent="Classroom/Objects" unique_id=905428755]
-position = Vector2(-47, -52)
-texture = ExtResource("4_s2kih")
-flip_h = true
-
-[node name="FlowerPot" type="Sprite2D" parent="Classroom/Objects" unique_id=385863693]
-position = Vector2(49, -53)
-texture = ExtResource("4_s2kih")
-
-[node name="Lights" type="Node2D" parent="Classroom" unique_id=1859990614]
-
-[node name="PointLight2D" type="PointLight2D" parent="Classroom/Lights" unique_id=1235044902]
-position = Vector2(-60, 48)
-texture = ExtResource("3_anw7d")
-
-[node name="PointLight2D2" type="PointLight2D" parent="Classroom/Lights" unique_id=945782429]
-position = Vector2(55, 48)
-texture = ExtResource("3_anw7d")
-
-[node name="Borders" type="Node2D" parent="Classroom" unique_id=574995928]
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Classroom/Borders" unique_id=1731745364]
-position = Vector2(-3, 58)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Borders/StaticBody2D3" unique_id=1511074531]
-position = Vector2(0, -8)
-shape = SubResource("RectangleShape2D_u1wv5")
-debug_color = Color(0, 0.64887065, 0.17660797, 0.41960785)
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Classroom/Borders" unique_id=1391809464]
-position = Vector2(-3, -83)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Classroom/Borders/StaticBody2D4" unique_id=449212864]
-polygon = PackedVector2Array(-70, -6, -70, 22, -62, 30, -51, 30, -50, 36, -37, 36, -35, 29, -17, 29, -14, 25, -14, 6, 13, 6, 13, 26, 16, 29, 43, 29, 46, 35, 57, 35, 59, 29, 67, 29, 75, 21, 75, -6)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Classroom/Borders" unique_id=1351202075]
-position = Vector2(-83, -10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Borders/StaticBody2D" unique_id=1273772481]
-position = Vector2(2.5, -2.5)
-shape = SubResource("RectangleShape2D_d6iey")
-debug_color = Color(0.89620066, 0.00020484447, 0.77744585, 0.41960785)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Classroom/Borders" unique_id=1332101321]
-position = Vector2(82, -10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Borders/StaticBody2D2" unique_id=769397080]
-position = Vector2(0, -2.5)
-shape = SubResource("RectangleShape2D_d6iey")
-debug_color = Color(0.89620066, 0.00020484447, 0.77744585, 0.41960785)
-
-[node name="Lobby" type="Area2D" parent="Classroom" unique_id=1356254479]
-z_index = 3
-position = Vector2(-4, -67)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Lobby" unique_id=278288890]
-shape = SubResource("CircleShape2D_vchhe")
-debug_color = Color(0.27417794, 0.6325208, 1.92523e-07, 0.41960785)
-
-[node name="Chalkboard" type="Area2D" parent="Classroom" unique_id=1218887897]
-position = Vector2(-65, -17)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Classroom/Chalkboard" unique_id=1895822088]
-shape = SubResource("RectangleShape2D_retxh")
-debug_color = Color(0.73521745, 0.4703313, 0, 0.41960785)
-
-[node name="Hallway" type="Node2D" parent="." unique_id=2100647859]
-position = Vector2(-1203, -1093)
-
-[node name="Room" type="Sprite2D" parent="Hallway" unique_id=1087626968]
-position = Vector2(10, 1)
-texture = ExtResource("8_ds418")
-
-[node name="Lobby2" type="Area2D" parent="Hallway" unique_id=1135176798]
-position = Vector2(-217, -2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/Lobby2" unique_id=1954357038]
-shape = SubResource("CircleShape2D_ls5fk")
-debug_color = Color(0.66157687, 0.5142507, 9.62615e-07, 0.41960785)
-
-[node name="Listings" type="Area2D" parent="Hallway" unique_id=180591665]
-position = Vector2(-152, 52)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/Listings" unique_id=514550251]
-shape = SubResource("CircleShape2D_7icrr")
-debug_color = Color(0.32666537, 0.62382233, 0, 0.41960785)
-
-[node name="Bathroom" type="Area2D" parent="Hallway" unique_id=441466906]
-position = Vector2(-13, 52)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/Bathroom" unique_id=1012149749]
-shape = SubResource("CircleShape2D_vajp6")
-debug_color = Color(0.44095892, 0.5989918, 1.92523e-07, 0.41960785)
-
-[node name="Offices" type="Area2D" parent="Hallway" unique_id=1498216725]
-position = Vector2(122, 52)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/Offices" unique_id=2040136104]
-shape = SubResource("CircleShape2D_132yf")
-debug_color = Color(0.31226692, 0.62664026, 0, 0.41960785)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Hallway" unique_id=2137010198]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/StaticBody2D" unique_id=1077642891]
-position = Vector2(10, 61.5)
-shape = SubResource("RectangleShape2D_vajp6")
-debug_color = Color(0.9026459, 0.00016133428, 0.760461, 0.41960785)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hallway/StaticBody2D" unique_id=668936494]
-position = Vector2(10, -49.25)
-shape = SubResource("RectangleShape2D_vajp6")
-debug_color = Color(0.8537977, 0.00083285454, 0.89482015, 0.41960785)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Hallway/StaticBody2D" unique_id=1464972574]
-position = Vector2(-230, 6)
-shape = SubResource("RectangleShape2D_132yf")
-debug_color = Color(0.5507357, 0.4018728, 1, 0.41960785)
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Hallway/StaticBody2D" unique_id=1528769322]
-position = Vector2(250, 6)
-shape = SubResource("RectangleShape2D_132yf")
-debug_color = Color(0.5507357, 0.4018728, 1, 0.41960785)
-
-[node name="Objects" type="Node2D" parent="Hallway" unique_id=640306874]
-
-[node name="FlowerPot" type="Sprite2D" parent="Hallway/Objects" unique_id=839138881]
-position = Vector2(5, -39)
-texture = ExtResource("4_s2kih")
-
-[node name="FlowerPot4" type="Sprite2D" parent="Hallway/Objects" unique_id=490725332]
-position = Vector2(212, -39)
-texture = ExtResource("4_s2kih")
-
-[node name="FlowerPot2" type="Sprite2D" parent="Hallway/Objects" unique_id=892234919]
-position = Vector2(-33, -39)
-texture = ExtResource("4_s2kih")
-flip_h = true
-
-[node name="FlowerPot3" type="Sprite2D" parent="Hallway/Objects" unique_id=1983349177]
-position = Vector2(-192, -39)
-texture = ExtResource("4_s2kih")
-flip_h = true
-
-[node name="MiniTable" type="Sprite2D" parent="Hallway/Objects" unique_id=1060722280]
-position = Vector2(-14, -41)
-texture = ExtResource("5_pudod")
-
-[node name="MiniTable2" type="Sprite2D" parent="Hallway/Objects" unique_id=783507924]
-position = Vector2(190, -41)
-texture = ExtResource("5_pudod")
-
-[node name="MiniTable3" type="Sprite2D" parent="Hallway/Objects" unique_id=123388107]
-position = Vector2(-173, -41)
-texture = ExtResource("5_pudod")
-
-[node name="VerticalCabinet" type="Sprite2D" parent="Hallway/Objects" unique_id=1903822991]
-position = Vector2(-90, 53)
-texture = ExtResource("9_pi0rf")
-
-[node name="VerticalCabinet2" type="Sprite2D" parent="Hallway/Objects" unique_id=1988146502]
-position = Vector2(62, 51)
-texture = ExtResource("9_pi0rf")
-
-[node name="Light" type="Node2D" parent="Hallway" unique_id=1361008072]
-
-[node name="PointLight2D" type="PointLight2D" parent="Hallway/Light" unique_id=2069054626]
-position = Vector2(-211, -55)
-texture = ExtResource("3_anw7d")
-
-[node name="PointLight2D2" type="PointLight2D" parent="Hallway/Light" unique_id=812379784]
-position = Vector2(-11, -61)
-texture = ExtResource("3_anw7d")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Hallway/Light" unique_id=1212404520]
-position = Vector2(232, -61)
-texture = ExtResource("3_anw7d")
-
-[node name="Teleport" type="Node2D" parent="Hallway" unique_id=1804181132]
-
-[node name="Destination" type="Marker2D" parent="Hallway/Teleport" unique_id=1756204848]
-position = Vector2(-189, -1)
-
-[node name="Destination2" type="Marker2D" parent="Hallway/Teleport" unique_id=86352263]
-position = Vector2(-152, 31)
-
-[node name="Destination3" type="Marker2D" parent="Hallway/Teleport" unique_id=1968773568]
-position = Vector2(-13, 31)
-
-[node name="Destination4" type="Marker2D" parent="Hallway/Teleport" unique_id=1716076494]
-position = Vector2(125, 31)
-
-[node name="Offices" type="Node2D" parent="." unique_id=373869711]
-position = Vector2(-1024, -679)
-
-[node name="Room" type="Sprite2D" parent="Offices" unique_id=1095355414]
-position = Vector2(-2, 19)
+[node name="Lobby" type="Sprite2D" parent="Map" unique_id=1006310790]
+z_index = 1
+position = Vector2(-1646, -1092)
+texture = ExtResource("3_vchhe")
+
+[node name="Offices" type="Sprite2D" parent="Map" unique_id=1095355414]
+z_index = 1
+position = Vector2(-1019, -679)
 texture = ExtResource("11_u1wv5")
 
-[node name="Borders" type="StaticBody2D" parent="Offices" unique_id=1208252512]
+[node name="Hallway" type="Sprite2D" parent="Map" unique_id=1087626968]
+z_index = 1
+position = Vector2(-1193, -1092)
+texture = ExtResource("8_ds418")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Offices/Borders" unique_id=453561912]
-position = Vector2(-64.5, 18.5)
-shape = SubResource("RectangleShape2D_02ev5")
-debug_color = Color(0.9325021, 2.5509298e-05, 0.6505147, 0.41960785)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Offices/Borders" unique_id=902369412]
-position = Vector2(56, 17)
-shape = SubResource("RectangleShape2D_02ev5")
-debug_color = Color(0.9325021, 2.5509298e-05, 0.6505147, 0.41960785)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Offices/Borders" unique_id=616476026]
-position = Vector2(-2, 251)
-shape = SubResource("RectangleShape2D_p6dsl")
-debug_color = Color(0.4552287, 0.5950943, 0, 0.41960785)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Offices/Borders" unique_id=1465682665]
-polygon = PackedVector2Array(-56, -221, -56, -211, -50, -203, -16, -203, -11, -213, 13, -213, 24, -201, 39, -201, 48, -212, 48, -221)
-
-[node name="Hallway3" type="Area2D" parent="Offices" unique_id=1910983366]
-position = Vector2(1, -210)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Offices/Hallway3" unique_id=450371610]
-shape = SubResource("CircleShape2D_retxh")
-debug_color = Color(1.0588765e-06, 0.63251066, 0.4541421, 0.41960785)
-
-[node name="OpenOffice" type="Area2D" parent="Offices" unique_id=1595252553]
-position = Vector2(-50, 131)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Offices/OpenOffice" unique_id=254284948]
-position = Vector2(-3, 0)
-shape = SubResource("CircleShape2D_u1wv5")
-debug_color = Color(0.3423144, 0.6213053, 7.70092e-07, 0.41960785)
-
-[node name="Objects" type="Node2D" parent="Offices" unique_id=1023873705]
-
-[node name="Flowerpot" type="Sprite2D" parent="Offices/Objects" unique_id=396700244]
-position = Vector2(31, -207)
-texture = ExtResource("4_s2kih")
-
-[node name="Flowerpot2" type="Sprite2D" parent="Offices/Objects" unique_id=918711037]
-position = Vector2(42, -63)
-texture = ExtResource("4_s2kih")
-
-[node name="Flowerpot3" type="Sprite2D" parent="Offices/Objects" unique_id=1279175403]
-position = Vector2(-48, 103)
-texture = ExtResource("4_s2kih")
-
-[node name="Table" type="Sprite2D" parent="Offices/Objects" unique_id=568095031]
-position = Vector2(-34, -207)
-texture = ExtResource("5_pudod")
-
-[node name="Light" type="Node2D" parent="Offices" unique_id=1024987276]
-
-[node name="PointLight2D" type="PointLight2D" parent="Offices/Light" unique_id=1816017796]
-position = Vector2(50, -201)
-texture = ExtResource("3_anw7d")
-
-[node name="PointLight2D2" type="PointLight2D" parent="Offices/Light" unique_id=1262267084]
-position = Vector2(50, 242)
-texture = ExtResource("3_anw7d")
-
-[node name="Job Listings" type="Node2D" parent="." unique_id=1495967571]
-position = Vector2(-1351, -843)
-
-[node name="Destination" type="Marker2D" parent="Job Listings" unique_id=160081737]
-position = Vector2(0, -33)
-
-[node name="Light" type="Node2D" parent="Job Listings" unique_id=778622628]
-
-[node name="PointLight2D" type="PointLight2D" parent="Job Listings/Light" unique_id=459509026]
-position = Vector2(-66, 54)
-energy = 0.7
-texture = ExtResource("3_anw7d")
-texture_scale = 2.24
-
-[node name="PointLight2D2" type="PointLight2D" parent="Job Listings/Light" unique_id=1944515851]
-position = Vector2(54, 54)
-energy = 0.7
-texture = ExtResource("3_anw7d")
-texture_scale = 2.24
-
-[node name="Objects" type="Node2D" parent="Job Listings" unique_id=1470236954]
-
-[node name="Room" type="Sprite2D" parent="Job Listings/Objects" unique_id=1301566848]
-position = Vector2(-4, -8)
+[node name="Job Listings" type="Sprite2D" parent="Map" unique_id=1301566848]
+position = Vector2(-1354, -851)
 texture = ExtResource("12_retxh")
 
-[node name="Cabinet" type="Sprite2D" parent="Job Listings/Objects" unique_id=865614504]
-position = Vector2(31, -53)
-texture = ExtResource("9_pi0rf")
-flip_h = true
-flip_v = true
+[node name="Lights" type="Node" parent="Map" unique_id=1140844727]
 
-[node name="Flowerpot" type="Sprite2D" parent="Job Listings/Objects" unique_id=1666920868]
-position = Vector2(52, -47)
-texture = ExtResource("4_s2kih")
-
-[node name="Flowerpot2" type="Sprite2D" parent="Job Listings/Objects" unique_id=376118279]
-position = Vector2(-45, -44)
-texture = ExtResource("4_s2kih")
-flip_h = true
-
-[node name="Job Pinboard" type="Area2D" parent="Job Listings" unique_id=1841905258]
-position = Vector2(54, -2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Job Listings/Job Pinboard" unique_id=1337890943]
-position = Vector2(2, -2)
-shape = SubResource("CapsuleShape2D_retxh")
-debug_color = Color(0.88394034, 0.3343746, 5.7756904e-07, 0.41960785)
-
-[node name="Hallway2" type="Area2D" parent="Job Listings" unique_id=1840380451]
-position = Vector2(0, -56)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Job Listings/Hallway2" unique_id=463122334]
-position = Vector2(-0.5, -2)
-shape = SubResource("RectangleShape2D_vo17a")
-debug_color = Color(0.99902374, 0, 0.13868842, 0.41960785)
-
-[node name="Borders" type="StaticBody2D" parent="Job Listings" unique_id=1230851370]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Job Listings/Borders" unique_id=221232762]
-position = Vector2(-83, -8)
-shape = SubResource("RectangleShape2D_7csnp")
-debug_color = Color(0.81336784, 0.0020576857, 0.9811905, 0.41960785)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Job Listings/Borders" unique_id=1019056194]
-position = Vector2(66, -8)
-shape = SubResource("RectangleShape2D_7csnp")
-debug_color = Color(0.81336784, 0.0020576857, 0.9811905, 0.41960785)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Job Listings/Borders" unique_id=802232219]
-position = Vector2(-5.5, 56.5)
-shape = SubResource("RectangleShape2D_tytls")
-debug_color = Color(0.99320966, 0, 0.2722371, 0.41960785)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Job Listings/Borders" unique_id=199630147]
-polygon = PackedVector2Array(-73, -76, -73, -49, -69, -46, -52, -46, -52, -39, -38, -39, -38, -47, -19, -47, -13, -52, -13, -70, 12, -70, 12, -52, 16, -47, 18, -47, 18, -44, 51, -41, 62, -41, 76, -61, 76, -76)
-
-[node name="Office_Room" type="Node2D" parent="." unique_id=196028585]
-position = Vector2(-1468, -537)
-
-[node name="Backdrop" type="ColorRect" parent="Office_Room" unique_id=1028555772]
-offset_left = -161.0
-offset_top = -111.0
-offset_right = 166.0
-offset_bottom = 109.0
-color = Color(0.72294766, 0.76585144, 0.8374269, 1)
-
-[node name="Room" type="Sprite2D" parent="Office_Room" unique_id=512758561]
-texture = ExtResource("14_7icrr")
-
-[node name="Offices2" type="Area2D" parent="Office_Room" unique_id=1842666088]
-position = Vector2(65, 2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Room/Offices2" unique_id=20839170]
-shape = SubResource("CircleShape2D_p6dsl")
-debug_color = Color(0.8541347, 0.36936638, 0, 0.41960785)
-
-[node name="Objects" type="Node2D" parent="Office_Room" unique_id=1714258160]
-
-[node name="Light" type="Node2D" parent="Office_Room" unique_id=1127781035]
-
-[node name="PointLight2D" type="PointLight2D" parent="Office_Room/Light" unique_id=487307298]
-position = Vector2(-58, -57)
-color = Color(1, 0.5254902, 0, 1)
-energy = 0.3
+[node name="PointLight2D" type="PointLight2D" parent="Map/Lights" unique_id=118966076]
+position = Vector2(-1706, -1146)
 texture = ExtResource("3_anw7d")
 
-[node name="PointLight2D2" type="PointLight2D" parent="Office_Room/Light" unique_id=24607525]
-position = Vector2(62, -57)
-color = Color(1, 0.5254902, 0, 1)
-energy = 0.3
+[node name="PointLight2D2" type="PointLight2D" parent="Map/Lights" unique_id=504068818]
+position = Vector2(-1592, -1146)
 texture = ExtResource("3_anw7d")
 
-[node name="Borders" type="Node2D" parent="Office_Room" unique_id=246675589]
+[node name="PointLight2D3" type="PointLight2D" parent="Map/Lights" unique_id=1579944210]
+position = Vector2(-1650, -1146)
+texture = ExtResource("3_anw7d")
 
-[node name="table" type="StaticBody2D" parent="Office_Room/Borders" unique_id=770494428]
-position = Vector2(-43, 0)
+[node name="PointLight2D4" type="PointLight2D" parent="Map/Lights" unique_id=922496131]
+position = Vector2(-1710, -786)
+texture = ExtResource("3_anw7d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Room/Borders/table" unique_id=1264028895]
-position = Vector2(-8, 7)
-shape = SubResource("RectangleShape2D_0s8sv")
-debug_color = Color(0.9463145, 5.198121e-06, 0.59068346, 0.41960785)
+[node name="PointLight2D5" type="PointLight2D" parent="Map/Lights" unique_id=240756243]
+position = Vector2(-1581, -786)
+texture = ExtResource("3_anw7d")
 
-[node name="Top" type="StaticBody2D" parent="Office_Room/Borders" unique_id=1691655388]
-position = Vector2(2, -41)
+[node name="PointLight2D6" type="PointLight2D" parent="Map/Lights" unique_id=662924987]
+position = Vector2(-1414, -786)
+texture = ExtResource("3_anw7d")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Office_Room/Borders/Top" unique_id=1258672323]
-polygon = PackedVector2Array(39, 1, 39, 9, 61, 9, 78, 9, 78, -27, -82, -27, -82, 8, -68, 8, -63, 8, -63, 2, -42, 2, -41, 1)
+[node name="PointLight2D7" type="PointLight2D" parent="Map/Lights" unique_id=1155592344]
+position = Vector2(-1293, -786)
+texture = ExtResource("3_anw7d")
 
-[node name="Left" type="StaticBody2D" parent="Office_Room/Borders" unique_id=1251363037]
-position = Vector2(-72, 0)
+[node name="PointLight2D8" type="PointLight2D" parent="Map/Lights" unique_id=1051538839]
+position = Vector2(-1414, -1146)
+texture = ExtResource("3_anw7d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Room/Borders/Left" unique_id=904195032]
-position = Vector2(-2, 8.5)
-shape = SubResource("RectangleShape2D_s8fhv")
-debug_color = Color(0.90666765, 0.30324465, 0, 0.41960785)
+[node name="PointLight2D9" type="PointLight2D" parent="Map/Lights" unique_id=491670190]
+position = Vector2(-1215, -1146)
+texture = ExtResource("3_anw7d")
 
-[node name="Right" type="StaticBody2D" parent="Office_Room/Borders" unique_id=610150273]
-position = Vector2(76, 1)
+[node name="PointLight2D10" type="PointLight2D" parent="Map/Lights" unique_id=478353561]
+position = Vector2(-971, -1146)
+texture = ExtResource("3_anw7d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Room/Borders/Right" unique_id=1773618129]
-position = Vector2(-2, 6.25)
-shape = SubResource("RectangleShape2D_s8fhv")
-debug_color = Color(0.90666765, 0.30324465, 0, 0.41960785)
+[node name="NPCs" type="Node" parent="Map" unique_id=720191693]
 
-[node name="Bottom" type="StaticBody2D" parent="Office_Room/Borders" unique_id=1287503208]
-position = Vector2(10, 58)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Room/Borders/Bottom" unique_id=181150577]
-position = Vector2(-9.5, 1)
-shape = SubResource("RectangleShape2D_c78m7")
-debug_color = Color(0.8635412, 0.00062030915, 0.8681795, 0.41960785)
-
-[node name="Trigger" type="Area2D" parent="Office_Room" unique_id=822967259]
-position = Vector2(-17, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Room/Trigger" unique_id=996707152]
-position = Vector2(-5, 3.5)
-shape = SubResource("RectangleShape2D_herh2")
-debug_color = Color(0.9653712, 0, 0.490027, 0.41960785)
-
-[node name="NPCs" type="Node" parent="." unique_id=720191693]
-
-[node name="Receptionist" type="Area2D" parent="NPCs" unique_id=1809926073]
-position = Vector2(-1685, -1118)
-
-[node name="ColorRect" type="ColorRect" parent="NPCs/Receptionist" unique_id=606537858]
-offset_left = -15.0
-offset_top = -9.0
-offset_right = -2.0
-offset_bottom = 12.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Receptionist" unique_id=1962433379]
-z_index = 3
-position = Vector2(-8, -1)
-shape = SubResource("CircleShape2D_02ev5")
-debug_color = Color(0, 0.63295674, 0.45204508, 0.41960785)
-
-[node name="Professor_Pop" type="Area2D" parent="NPCs" unique_id=805551378]
-position = Vector2(-1406, -822)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Professor_Pop" unique_id=1293129982]
+[node name="Receptionist" type="Area2D" parent="Map/NPCs" unique_id=1809926073]
 z_index = 2
-shape = SubResource("CapsuleShape2D_ls5fk")
-debug_color = Color(0.29959235, 0.62877774, 1.92523e-07, 0.41960785)
+position = Vector2(-1648, -1125)
+script = ExtResource("9_7icrr")
 
-[node name="ColorRect" type="ColorRect" parent="NPCs/Professor_Pop" unique_id=397797531]
-offset_left = -5.0
-offset_top = -12.0
-offset_right = 7.0
-offset_bottom = 12.0
+[node name="Character" type="Sprite2D" parent="Map/NPCs/Receptionist" unique_id=1829274072]
+position = Vector2(-3, -4)
+texture = ExtResource("17_02ev5")
 
-[node name="Professor_Move_Marker" type="Marker2D" parent="NPCs" unique_id=999999999]
-position = Vector2(-1524, -536)
+[node name="Desk" type="Sprite2D" parent="Map/NPCs/Receptionist" unique_id=1402241035]
+z_index = 2
+position = Vector2(-4, 6)
+texture = ExtResource("6_ds418")
 
-[node name="Unemployed_Chud" type="Area2D" parent="NPCs" unique_id=1570995191]
-position = Vector2(-1341.0001, -1126.0001)
-rotation = 0.0029960729
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/NPCs/Receptionist" unique_id=1962433379]
+z_index = 3
+position = Vector2(-2, -1)
+shape = SubResource("CircleShape2D_02ev5")
+debug_color = Color(0.86410946, 0.35748443, 0, 0.43529412)
 
-[node name="ColorRect" type="ColorRect" parent="NPCs/Unemployed_Chud" unique_id=826817396]
-offset_left = -11.023905
-offset_top = -7.9670587
-offset_right = -0.126688
-offset_bottom = 12.455305
+[node name="Objects" type="Node" parent="Map" unique_id=1005928945]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Unemployed_Chud" unique_id=2051182785]
-position = Vector2(-5.9939814, 2.0179675)
-shape = SubResource("CapsuleShape2D_7icrr")
-debug_color = Color(3.1766297e-06, 0.6429913, 0.31355733, 0.41960785)
+[node name="Interactable" type="Node" parent="Map/Objects" unique_id=414011571]
+
+[node name="ChalkBoard" type="Area2D" parent="Map/Objects/Interactable" unique_id=1519209724]
+position = Vector2(-1719, -854)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Interactable/ChalkBoard" unique_id=1725112675]
+z_index = 2
+shape = SubResource("CapsuleShape2D_wtkce")
+debug_color = Color(0.81492627, 0.40820006, 0, 0.41960785)
+
+[node name="Paper" type="Area2D" parent="Map/Objects/Interactable" unique_id=1299166750]
+z_index = 1
+position = Vector2(-1619, -899)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Interactable/Paper" unique_id=381872434]
+shape = SubResource("CapsuleShape2D_4rsib")
+debug_color = Color(0.7924188, 0.4289908, 1.1551381e-06, 0.41960785)
+
+[node name="Pinboard" type="Area2D" parent="Map/Objects/Interactable" unique_id=2116512023]
+position = Vector2(-1281, -850)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Interactable/Pinboard" unique_id=703772525]
+shape = SubResource("CapsuleShape2D_6khpy")
+debug_color = Color(0.81747717, 0.40587446, 0, 0.41960785)
+
+[node name="Flowerpot" type="StaticBody2D" parent="Map/Objects" unique_id=1987751836]
+z_index = 2
+position = Vector2(-1600, -1129)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Objects/Flowerpot" unique_id=226746265]
+texture = ExtResource("4_s2kih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Flowerpot" unique_id=1729081897]
+shape = SubResource("CapsuleShape2D_vglh3")
+debug_color = Color(0.9089352, 0.29987067, 0, 0.41960785)
+
+[node name="Flowerpot3" type="StaticBody2D" parent="Map/Objects" unique_id=97472524]
+z_index = 2
+position = Vector2(-1697, -886)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Objects/Flowerpot3" unique_id=1166296511]
+texture = ExtResource("4_s2kih")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Flowerpot3" unique_id=163003334]
+shape = SubResource("CapsuleShape2D_vglh3")
+debug_color = Color(0.9089352, 0.29987067, 0, 0.41960785)
+
+[node name="Flowerpot4" type="StaticBody2D" parent="Map/Objects" unique_id=1725418199]
+z_index = 2
+position = Vector2(-1600, -886)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Objects/Flowerpot4" unique_id=365634229]
+texture = ExtResource("4_s2kih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Flowerpot4" unique_id=2110390850]
+shape = SubResource("CapsuleShape2D_vglh3")
+debug_color = Color(0.9089352, 0.29987067, 0, 0.41960785)
+
+[node name="Flowerpot2" type="StaticBody2D" parent="Map/Objects" unique_id=659805295]
+z_index = 2
+position = Vector2(-1690, -1129)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Objects/Flowerpot2" unique_id=1239171644]
+texture = ExtResource("4_s2kih")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Flowerpot2" unique_id=1022601891]
+shape = SubResource("CapsuleShape2D_vglh3")
+debug_color = Color(0.9089352, 0.29987067, 0, 0.41960785)
+
+[node name="Desk" type="StaticBody2D" parent="Map/Objects" unique_id=1458115917]
+position = Vector2(-1622, -868)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Objects/Desk" unique_id=1310944421]
+z_index = 1
+texture = ExtResource("7_d6iey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Desk" unique_id=1687287229]
+z_index = 1
+shape = SubResource("CapsuleShape2D_ymyg1")
+debug_color = Color(0.7323313, 0.47226107, 5.7756904e-07, 0.41960785)
+
+[node name="Desk2" type="StaticBody2D" parent="Map/Objects" unique_id=407589017]
+position = Vector2(-1622, -826)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Objects/Desk2" unique_id=1716750291]
+z_index = 1
+texture = ExtResource("7_d6iey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Desk2" unique_id=1033632374]
+z_index = 1
+shape = SubResource("CapsuleShape2D_ymyg1")
+debug_color = Color(0.7323313, 0.47226107, 5.7756904e-07, 0.41960785)
+
+[node name="Desk3" type="StaticBody2D" parent="Map/Objects" unique_id=1365930882]
+position = Vector2(-1667, -826)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Objects/Desk3" unique_id=1760888130]
+z_index = 1
+texture = ExtResource("7_d6iey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Desk3" unique_id=1514704568]
+z_index = 1
+shape = SubResource("CapsuleShape2D_ymyg1")
+debug_color = Color(0.7323313, 0.47226107, 5.7756904e-07, 0.41960785)
+
+[node name="Desk4" type="StaticBody2D" parent="Map/Objects" unique_id=628298203]
+position = Vector2(-1667, -868)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Objects/Desk4" unique_id=1033122299]
+z_index = 1
+texture = ExtResource("7_d6iey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Desk4" unique_id=1807260126]
+z_index = 1
+shape = SubResource("CapsuleShape2D_ymyg1")
+debug_color = Color(0.7323313, 0.47226107, 5.7756904e-07, 0.41960785)
+
+[node name="Flowerpot5" type="StaticBody2D" parent="Map/Objects" unique_id=1665222099]
+z_index = 1
+position = Vector2(-1393, -1132)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Objects/Flowerpot5" unique_id=1785136841]
+texture = ExtResource("4_s2kih")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Flowerpot5" unique_id=1256441608]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_vglh3")
+debug_color = Color(0.67119116, 0.5090896, 0, 0.41960785)
+
+[node name="Flowerpot6" type="StaticBody2D" parent="Map/Objects" unique_id=1275876967]
+z_index = 1
+position = Vector2(-991, -1132)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Objects/Flowerpot6" unique_id=1762759337]
+texture = ExtResource("4_s2kih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/Flowerpot6" unique_id=268802762]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_vglh3")
+debug_color = Color(0.67119116, 0.5090896, 0, 0.41960785)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/Objects" unique_id=751510379]
+z_index = 1
+position = Vector2(-1216, -1137)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Objects/StaticBody2D" unique_id=1270635605]
+texture = ExtResource("13_ls5fk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Objects/StaticBody2D" unique_id=1004488851]
+shape = SubResource("RectangleShape2D_wtkce")
+
+[node name="Collisons" type="Node" parent="Map" unique_id=1397895766]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/Collisons" unique_id=1540728286]
+z_index = 1
+position = Vector2(-1716, -1095)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D" unique_id=1858589816]
+polygon = PackedVector2Array(-10, 65, -10, -59, 5, -41, 5, 51)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Map/Collisons" unique_id=1810552337]
+z_index = 2
+position = Vector2(-1574, -1095)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D2" unique_id=2143290353]
+polygon = PackedVector2Array(-6, 51, 8, 65, 8, -59, -6, -41)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Map/Collisons" unique_id=705314268]
+z_index = 1
+position = Vector2(-1650, -1129)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D3" unique_id=703556691]
+polygon = PackedVector2Array(-61, -7, -26, -7, -26, 13, -19, 19, 21, 19, 28, 14, 27, -7, 70, -7, 84, -25, -76, -25)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Map/Collisons" unique_id=296392682]
+z_index = 1
+position = Vector2(-1648, -1039)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D4" unique_id=1178635059]
+polygon = PackedVector2Array(-63, -5, 68, -5, 82, 9, -78, 9)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Map/Collisons" unique_id=2030379657]
+z_index = 1
+position = Vector2(-1719, -854)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D5" unique_id=1392111147]
+polygon = PackedVector2Array(-6, 71, 8, 57, 7, 20, -4, 32, -4, -34, 7, -22, 7, -37, -7, -53)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Map/Collisons" unique_id=1335681490]
+z_index = 1
+position = Vector2(-1574, -850)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D6" unique_id=1986838498]
+polygon = PackedVector2Array(-7, 54, 8, 67, 8, -55, -7, -40)
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Map/Collisons" unique_id=1995651713]
+z_index = 1
+position = Vector2(-1643, -789)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D7" unique_id=787478306]
+polygon = PackedVector2Array(-82, 6, -68, -8, -66, -7, 60, -7, 62, -8, 62, -7, 77, 6)
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Map/Collisons" unique_id=1294751317]
+z_index = 1
+position = Vector2(-1689, -896)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D8" unique_id=1570126611]
+polygon = PackedVector2Array(-37, -11, -23, 5, 23, 5, 27, 1, 27, -14, 23, -11)
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Map/Collisons" unique_id=982922589]
+z_index = 1
+position = Vector2(-1603, -899)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D9" unique_id=1972467121]
+polygon = PackedVector2Array(-34, -11, -30, -8, 37, -8, 37, -6, 22, 9, 22, 10, 20, 9, -30, 9, -34, 5)
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Map/Collisons" unique_id=1400491002]
+z_index = 1
+position = Vector2(-1424, -1095)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D10" unique_id=818760540]
+polygon = PackedVector2Array(-10, 65, -10, -59, 5, -41, 5, 51)
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Map/Collisons" unique_id=47832722]
+z_index = 2
+position = Vector2(-961, -1095)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D11" unique_id=563254667]
+polygon = PackedVector2Array(-6, 51, 8, 65, 8, -59, -6, -41)
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Map/Collisons" unique_id=1910407174]
+z_index = 1
+position = Vector2(-1354, -1039)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D12" unique_id=1560019905]
+polygon = PackedVector2Array(-63, -5, 386, -4, 401, 9, -78, 9)
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="Map/Collisons" unique_id=2145787832]
+z_index = 1
+position = Vector2(-1205, -1145)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D13" unique_id=880142048]
+polygon = PackedVector2Array(-228, -9, -213, 9, -211, 7, 238, 7, 251, -9)
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="Map/Collisons" unique_id=861889587]
+z_index = 1
+position = Vector2(-1282, -850)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D14" unique_id=420545636]
+polygon = PackedVector2Array(-7, 54, 8, 67, 8, -55, -7, -40)
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="Map/Collisons" unique_id=1885438609]
+z_index = 1
+position = Vector2(-1424, -848)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D15" unique_id=841857445]
+polygon = PackedVector2Array(-10, 65, -10, -59, 5, -41, 5, 51)
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="Map/Collisons" unique_id=329874895]
+z_index = 1
+position = Vector2(-1311, -899)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D16" unique_id=135502650]
+polygon = PackedVector2Array(-27, -11, -23, -8, 37, -8, 37, -6, 22, 9, 22, 10, 20, 9, -23, 9, -27, 5)
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="Map/Collisons" unique_id=309712496]
+z_index = 1
+position = Vector2(-1397, -896)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D17" unique_id=393530277]
+polygon = PackedVector2Array(-37, -11, -23, 5, 30, 5, 34, 2, 34, -14, 30, -11)
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="Map/Collisons" unique_id=1960857582]
+z_index = 1
+position = Vector2(-1351, -789)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collisons/StaticBody2D18" unique_id=425199175]
+polygon = PackedVector2Array(-82, 6, -68, -8, -66, -7, 60, -7, 62, -8, 62, -7, 77, 6)
+
+[node name="Node" type="Node" parent="Map" unique_id=1133916946]
+
+[node name="Exit" type="Area2D" parent="Map/Node" unique_id=1422554435]
+z_index = 1
+position = Vector2(-1714, -1095)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/Exit" unique_id=673277075]
+shape = SubResource("CircleShape2D_vglh3")
+disabled = true
+debug_color = Color(0, 0.62377065, 0.5516501, 0.74100006)
+
+[node name="Classroom" type="Area2D" parent="Map/Node" unique_id=1390553545]
+z_index = 1
+position = Vector2(-1647, -1042)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/Classroom" unique_id=385935521]
+shape = SubResource("CircleShape2D_vglh3")
+debug_color = Color(0, 0.624095, 0.5445984, 0.693)
+
+[node name="Hallway" type="Area2D" parent="Map/Node" unique_id=2134141129]
+z_index = 1
+position = Vector2(-1578, -1091)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/Hallway" unique_id=994595973]
+shape = SubResource("CircleShape2D_vglh3")
+debug_color = Color(0, 0.6262097, 0.53313285, 0.717)
+
+[node name="Class_to_Lob" type="Area2D" parent="Map/Node" unique_id=1992028678]
+z_index = 1
+position = Vector2(-1650, -906)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/Class_to_Lob" unique_id=1823874102]
+shape = SubResource("CircleShape2D_vglh3")
+debug_color = Color(0, 0.5766774, 0.8215499, 0.82500005)
+
+[node name="Hall_to_Lob" type="Area2D" parent="Map/Node" unique_id=2005528971]
+z_index = 1
+position = Vector2(-1422, -1095)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/Hall_to_Lob" unique_id=592747735]
+shape = SubResource("CircleShape2D_vglh3")
+debug_color = Color(0, 0.624095, 0.5445984, 0.693)
+
+[node name="Listings" type="Area2D" parent="Map/Node" unique_id=1780596906]
+z_index = 1
+position = Vector2(-1354, -1040)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/Listings" unique_id=1468246509]
+shape = SubResource("CircleShape2D_vglh3")
+debug_color = Color(0, 0.624095, 0.5445984, 0.693)
+
+[node name="List_to_hall" type="Area2D" parent="Map/Node" unique_id=160863279]
+z_index = 1
+position = Vector2(-1350, -906)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/List_to_hall" unique_id=1268071299]
+shape = SubResource("CircleShape2D_vglh3")
+debug_color = Color(0, 0.49010885, 0.76737565, 0.81900007)
+
+[node name="Bathroom" type="Area2D" parent="Map/Node" unique_id=1007433455]
+z_index = 1
+position = Vector2(-1215, -1040)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/Bathroom" unique_id=299223324]
+shape = SubResource("CircleShape2D_vglh3")
+debug_color = Color(0, 0.624095, 0.5445984, 0.693)
+
+[node name="Offices_Hall" type="Area2D" parent="Map/Node" unique_id=640944293]
+z_index = 1
+position = Vector2(-1081, -1040)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/Offices_Hall" unique_id=1358465758]
+shape = SubResource("CircleShape2D_vglh3")
+debug_color = Color(0, 0.624095, 0.5445984, 0.693)
+
+[node name="Office_To_Hall" type="Area2D" parent="Map/Node" unique_id=1315851814]
+z_index = 1
+position = Vector2(-1016, -906)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/Office_To_Hall" unique_id=1965483720]
+shape = SubResource("CircleShape2D_vglh3")
+debug_color = Color(0, 0.49010885, 0.76737565, 0.81900007)
+
+[node name="Area2D11" type="Area2D" parent="Map/Node" unique_id=942554610]
+z_index = 1
+position = Vector2(-1072, -839)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/Area2D11" unique_id=529410490]
+shape = SubResource("CircleShape2D_vglh3")
+debug_color = Color(0, 0.624095, 0.5445984, 0.693)
+
+[node name="Area2D12" type="Area2D" parent="Map/Node" unique_id=527847788]
+z_index = 1
+position = Vector2(-969, -700)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/Area2D12" unique_id=1882330809]
+shape = SubResource("CircleShape2D_vglh3")
+debug_color = Color(0, 0.624095, 0.5445984, 0.693)
+
+[node name="Area2D13" type="Area2D" parent="Map/Node" unique_id=1469382804]
+z_index = 1
+position = Vector2(-1072, -567)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Node/Area2D13" unique_id=324390926]
+shape = SubResource("CircleShape2D_vglh3")
+debug_color = Color(0, 0.624095, 0.5445984, 0.693)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1414914917]
 libraries/ = SubResource("AnimationLibrary_132yf")
 
-[connection signal="player_immovable" from="." to="Player" method="_on_interior_player_immovable"]
-[connection signal="player_movable" from="." to="Player" method="_on_interior_player_movable"]
-[connection signal="body_entered" from="Lobby/Hallway" to="." method="_on_hallway_body_entered"]
-[connection signal="body_entered" from="Lobby/Classroom" to="." method="_on_classroom_body_entered"]
-[connection signal="body_entered" from="Classroom/Lobby" to="." method="_on_lobby_body_entered"]
-[connection signal="body_entered" from="Classroom/Chalkboard" to="." method="_on_board_body_entered"]
-[connection signal="body_entered" from="Hallway/Lobby2" to="." method="_on_lobby_2_body_entered"]
-[connection signal="body_entered" from="Hallway/Listings" to="." method="_on_listings_body_entered"]
-[connection signal="body_entered" from="Hallway/Bathroom" to="." method="_on_bathroom_body_entered"]
-[connection signal="body_entered" from="Hallway/Offices" to="." method="_on_offices_body_entered"]
-[connection signal="body_entered" from="Offices/Hallway3" to="." method="_on_hallway_3_body_entered"]
-[connection signal="body_entered" from="Offices/OpenOffice" to="." method="_on_open_office_body_entered"]
-[connection signal="body_entered" from="Job Listings/Job Pinboard" to="." method="_on_job_pinboard_body_entered"]
-[connection signal="body_entered" from="Job Listings/Hallway2" to="." method="_on_hallway_2_body_entered"]
-[connection signal="body_entered" from="Office_Room/Offices2" to="." method="_on_offices_2_body_entered"]
-[connection signal="body_entered" from="Office_Room/Trigger" to="." method="_on_trigger_body_entered"]
-[connection signal="body_entered" from="NPCs/Receptionist" to="." method="_on_receptionist_body_entered"]
-[connection signal="body_entered" from="NPCs/Professor_Pop" to="." method="_on_professor_pop_body_entered"]
-[connection signal="body_entered" from="NPCs/Unemployed_Chud" to="." method="_on_unemployed_chud_body_entered"]
+[connection signal="body_entered" from="Map/NPCs/Receptionist" to="Map/NPCs/Receptionist" method="_on_body_entered"]
+[connection signal="body_entered" from="Map/Node/Classroom" to="." method="_on_classroom_body_entered"]
+[connection signal="body_entered" from="Map/Node/Hallway" to="." method="_on_hallway_body_entered"]
+[connection signal="body_entered" from="Map/Node/Class_to_Lob" to="." method="_on_class_to_lob_body_entered"]
+[connection signal="body_entered" from="Map/Node/Hall_to_Lob" to="." method="_on_hall_to_lob_body_entered"]
+[connection signal="body_entered" from="Map/Node/Listings" to="." method="_on_listings_body_entered"]
+[connection signal="body_entered" from="Map/Node/List_to_hall" to="." method="_on_list_to_hall_body_entered"]
+[connection signal="body_entered" from="Map/Node/Offices_Hall" to="." method="_on_offices_hall_body_entered"]
+[connection signal="body_entered" from="Map/Node/Office_To_Hall" to="." method="_on_office_to_hall_body_entered"]

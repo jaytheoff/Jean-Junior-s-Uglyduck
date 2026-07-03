@@ -24,9 +24,9 @@ config/icon="uid://ciufv6q2nujre"
 
 [autoload]
 
-Dialogue="*uid://ktqyr6xispjp"
 Global_Player_Variables="*res://Scripts/Global/Global_Player_Variables.gd"
-Global="*uid://c0g4lq10envyx"
+Global="*uid://cmbyn2bqq033h"
+Dialogue="*uid://ddh3c1gnbgj5o"
 
 [dialogue_manager]
 
@@ -52,7 +52,16 @@ enabled=PackedStringArray()
 [file_customization]
 
 folder_colors={
-"res://Scenes/Employement Support Center/": "red"
+"res://Fonts/": "gray",
+"res://Images/": "red",
+"res://Music/": "orange",
+"res://Resources/": "yellow",
+"res://SFX/": "blue",
+"res://Scenes/": "green",
+"res://Scenes/Employement Support Center/": "green",
+"res://Scripts/": "teal",
+"res://Shaders/": "purple",
+"res://Voicelines/": "pink"
 }
 
 [input]

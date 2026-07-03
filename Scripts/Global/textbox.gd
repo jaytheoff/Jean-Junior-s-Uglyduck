@@ -1,13 +1,33 @@
 extends CanvasLayer
 
-@onready var _dialogue = $OuterContainer/InnerContainer/Panel/HBoxContainer/Dialogue
-@onready var _name = $OuterContainer/Name
-@onready var _start_symbol = $OuterContainer/InnerContainer/Panel/HBoxContainer/Start
+signal SELECTED(index)
 
-# Called when the node enters the scene tree for the first time.
+@onready var choice_list = $"OuterContainer/InnerContainer/Panel/Choice List"
+@onready var choice_prefab = $"OuterContainer/InnerContainer/Panel/Choice List/Choice Button"
+
+var _start_symbol: Label
+var _dialogue: RichTextLabel
+var _name: Label
+
+var choices:Array = []:
+	set(value):
+		choices = value
+		if is_inside_tree():
+			_init_buttons()
+
 func _ready() -> void:
-	pass
+	_start_symbol = get_node_or_null("OuterContainer/InnerContainer/Panel/HBoxContainer/Start")		# Label
+	_dialogue = get_node_or_null("OuterContainer/InnerContainer/Panel/HBoxContainer/Dialogue")	# RichTextLabel
+	_name = get_node_or_null("OuterContainer/Name")
 
+	if not _start_symbol or not _dialogue or not _name:
+		push_error("Textbox scene is missing one or more expected nodes: Start, Dialogue, or Name")
+		return
+	
+	_init_buttons()
+
+
+#Dialogue Functions
 func _show_textbox():
 	_start_symbol.text = "*"
 	_dialogue.text = ""
@@ -27,7 +47,6 @@ func _add_text(text: String, speaker: String) -> void:
 	_dialogue.visible_characters = 0
 	_name.text = speaker
 	
-	
 	tween.tween_property(_dialogue, "visible_characters", text.length(), Global.text_scroll_speed)
 	await tween.finished
 	_start_symbol.text = ">"
@@ -42,3 +61,36 @@ func show_text(text: String, speaker: String) -> void:
 
 func hide_text() -> void:
 	_hide_textbox()
+
+func ask_choices(options: Array) -> int:
+	choices = options
+	_show_textbox()
+	_init_buttons()
+
+	var selected_index = await self.SELECTED
+	if selected_index is Array:
+		selected_index = selected_index[0]
+
+	_hide_textbox()
+	return int(selected_index)
+
+#Choice Functions
+func onChoice(choice_index):
+	emit_signal("SELECTED", choice_index)
+	print("Choice selected: " + str(choice_index))
+	_hide_textbox()
+
+func _init_buttons():
+	if not choice_list:
+		return
+
+	while choice_list.get_child_count() > 0:
+		var button = choice_list.get_child(0)
+		choice_list.remove_child(button)
+		button.queue_free()
+	
+	for choice_index in range(choices.size()):
+		var button = choice_prefab.duplicate()
+		choice_list.add_child(button)
+		button.text = choices[choice_index]
+		button.pressed.connect(onChoice.bind(choice_index))

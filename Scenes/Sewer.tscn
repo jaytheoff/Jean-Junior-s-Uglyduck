@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dcgbiewu8yfuh"]
 
-[ext_resource type="Texture2D" uid="uid://61cppttou53v" path="res://Images/Employement Support & Assistance Center/Water_Flowing_0001.png" id="1_s7jc5"]
-[ext_resource type="Texture2D" uid="uid://b47e1skvpxqlg" path="res://Images/Employement Support & Assistance Center/Water_Flowing_0002.png" id="2_aue1x"]
-[ext_resource type="Texture2D" uid="uid://co14c8dxq7he1" path="res://Images/Employement Support & Assistance Center/Water_Flowing_0003.png" id="3_j43av"]
-[ext_resource type="Texture2D" uid="uid://bmi8xysyqwqfs" path="res://Images/Employement Support & Assistance Center/Water_Flowing_0004.png" id="4_udu0j"]
-[ext_resource type="Texture2D" uid="uid://dse7qntvhso0k" path="res://Images/Employement Support & Assistance Center/Water_Flowing_0005.png" id="5_llcqj"]
+[ext_resource type="Texture2D" uid="uid://61cppttou53v" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Sewers/Water_Flowing_0001.png" id="1_s7jc5"]
+[ext_resource type="Texture2D" uid="uid://b47e1skvpxqlg" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Sewers/Water_Flowing_0002.png" id="2_aue1x"]
+[ext_resource type="Texture2D" uid="uid://co14c8dxq7he1" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Sewers/Water_Flowing_0003.png" id="3_j43av"]
+[ext_resource type="Texture2D" uid="uid://bmi8xysyqwqfs" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Sewers/Water_Flowing_0004.png" id="4_udu0j"]
+[ext_resource type="Texture2D" uid="uid://dse7qntvhso0k" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Sewers/Water_Flowing_0005.png" id="5_llcqj"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_6w6d4"]
 frames = 5

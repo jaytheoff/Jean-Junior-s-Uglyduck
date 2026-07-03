@@ -1,13 +1,12 @@
 [gd_scene format=4 uid="uid://bi0y6x0co7k2t"]
 
 [ext_resource type="Script" uid="uid://djt84n6l0fr74" path="res://Scripts/Employement S&P center/exterior.gd" id="1_2rm3j"]
-[ext_resource type="Texture2D" uid="uid://jx0u76int713" path="res://Images/Employement Support & Assistance Center/Exterior/Exterior_Tileset.png" id="1_u75jl"]
-[ext_resource type="Texture2D" uid="uid://cq4mrdm3x4nt" path="res://Images/Employement Support & Assistance Center/Exterior/Front_Layer_Tree.png" id="3_2rm3j"]
-[ext_resource type="Texture2D" uid="uid://becb0rb6ulfbi" path="res://Images/Employement Support & Assistance Center/Exterior/Leafs.png" id="5_anhu8"]
-[ext_resource type="Texture2D" uid="uid://cpj5vdhgilojf" path="res://Images/Player-Sheet.png" id="5_jyxvo"]
-[ext_resource type="Texture2D" uid="uid://cp5xtea6bdeux" path="res://Images/Employement Support & Assistance Center/Exterior/Sign.png" id="6_ypbar"]
-[ext_resource type="Texture2D" uid="uid://be04rdrglmgmh" path="res://Images/Employement Support & Assistance Center/Exterior/City_Background.png" id="7_2rm3j"]
-[ext_resource type="Script" uid="uid://pno4gqqbkrfl" path="res://Scripts/Employement S&P center/player.gd" id="8_goryt"]
+[ext_resource type="Texture2D" uid="uid://jx0u76int713" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Exterior/Exterior_Tileset.png" id="1_u75jl"]
+[ext_resource type="Texture2D" uid="uid://cq4mrdm3x4nt" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Exterior/Front_Layer_Tree.png" id="3_2rm3j"]
+[ext_resource type="Texture2D" uid="uid://becb0rb6ulfbi" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Exterior/Leafs.png" id="5_anhu8"]
+[ext_resource type="Texture2D" uid="uid://cp5xtea6bdeux" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Exterior/Sign.png" id="6_ypbar"]
+[ext_resource type="Texture2D" uid="uid://be04rdrglmgmh" path="res://Images/Miscellaneous/Maps/Employement Support & Assistance Center/Exterior/City_Background.png" id="7_2rm3j"]
+[ext_resource type="PackedScene" uid="uid://dn1t6t08jr01p" path="res://Scenes/Employement Support Center/Default Player.tscn" id="7_jyxvo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tvsy3"]
 texture = ExtResource("1_u75jl")
@@ -272,83 +271,6 @@ initial_velocity_min = 20.0
 initial_velocity_max = 80.0
 gravity = Vector3(0, 90, 0)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jyxvo"]
-atlas = ExtResource("5_jyxvo")
-region = Rect2(0, 32, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kkolb"]
-atlas = ExtResource("5_jyxvo")
-region = Rect2(48, 32, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1lupt"]
-atlas = ExtResource("5_jyxvo")
-region = Rect2(96, 32, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_goryt"]
-atlas = ExtResource("5_jyxvo")
-region = Rect2(0, 0, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pqlfo"]
-atlas = ExtResource("5_jyxvo")
-region = Rect2(48, 0, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u0q5h"]
-atlas = ExtResource("5_jyxvo")
-region = Rect2(96, 0, 48, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kkolb"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jyxvo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jyxvo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jyxvo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kkolb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kkolb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1lupt")
-}],
-"loop": 1,
-"name": &"Idle_L",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_goryt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_goryt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_goryt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pqlfo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pqlfo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u0q5h")
-}],
-"loop": 1,
-"name": &"Idle_R",
-"speed": 7.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_anhu8"]
-radius = 5.0
-height = 24.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyxvo"]
 size = Vector2(16, 80)
 
@@ -606,22 +528,6 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_horizontal_offset = 0.04
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=2096901729 groups=["Player"]]
-z_index = 3
-position = Vector2(-183, 58)
-script = ExtResource("8_goryt")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=374329723]
-position = Vector2(-1, 0)
-sprite_frames = SubResource("SpriteFrames_kkolb")
-animation = &"Idle_R"
-frame_progress = 0.13536444
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1941506633]
-position = Vector2(0, 3)
-shape = SubResource("CapsuleShape2D_anhu8")
-debug_color = Color(0.94432527, 6.7383053e-06, 0.5998465, 0.41960785)
-
 [node name="Entrance" type="Node2D" parent="." unique_id=1262312580]
 z_index = 4
 position = Vector2(200, 34)
@@ -712,6 +618,8 @@ texture = ExtResource("7_2rm3j")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1009013736]
 libraries/ = SubResource("AnimationLibrary_jyxvo")
 
-[connection signal="player_immovable" from="." to="Player" method="_on_exterior_player_immovable"]
-[connection signal="player_movable" from="." to="Player" method="_on_exterior_player_movable"]
+[node name="Player" parent="." unique_id=1309871423 instance=ExtResource("7_jyxvo")]
+z_index = 3
+position = Vector2(-189, 63)
+
 [connection signal="body_entered" from="Entrance/Entrance" to="." method="_on_entrance_body_entered"]

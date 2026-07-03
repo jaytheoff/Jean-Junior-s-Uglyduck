@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://dxbagqxb0emjd"]
 
-[ext_resource type="Script" uid="uid://bjakp6k27i16d" path="res://Scripts/Global/textbox.gd" id="1_db1ld"]
-[ext_resource type="Texture2D" uid="uid://wfgd3aii46rv" path="res://Images/Fade Gradient (Vertical).png" id="1_ktxlv"]
+[ext_resource type="Script" uid="uid://bl1tenotaiarq" path="res://Scripts/Global/textbox.gd" id="1_db1ld"]
+[ext_resource type="Texture2D" uid="uid://wjwbtkh2g18f" path="res://Images/Miscellaneous/Effects/Fade Gradient (Vertical).png" id="1_ktxlv"]
 [ext_resource type="FontFile" uid="uid://b7gywp6teg277" path="res://Fonts/Born2bSportyV2.ttf" id="2_db1ld"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ktxlv"]
 font = ExtResource("2_db1ld")
-font_color = Color(0.043137256, 0.23921569, 1, 1)
-outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fuvt8"]
@@ -90,20 +88,18 @@ vertical_alignment = 1
 text_direction = 1
 language = "en_CA"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="OuterContainer/InnerContainer/Panel" unique_id=1266873214]
-visible = false
+[node name="Choice List" type="HBoxContainer" parent="OuterContainer/InnerContainer/Panel" unique_id=1142260961]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
+anchor_bottom = 1.0
+offset_top = -108.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+alignment = 1
 
-[node name="Choices" type="HBoxContainer" parent="OuterContainer/InnerContainer/Panel/VBoxContainer" unique_id=385543442]
-layout_mode = 2
-
-[node name="Yes" type="Button" parent="OuterContainer/InnerContainer/Panel/VBoxContainer/Choices" unique_id=669450535]
+[node name="Choice Button" type="Button" parent="OuterContainer/InnerContainer/Panel/Choice List" unique_id=669450535]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -113,16 +109,4 @@ theme_override_colors/font_disabled_color = Color(0.31764707, 0.27058825, 0, 1)
 theme_override_fonts/font = ExtResource("2_db1ld")
 theme_override_font_sizes/font_size = 32
 text = "Yes"
-flat = true
-
-[node name="Nah" type="Button" parent="OuterContainer/InnerContainer/Panel/VBoxContainer/Choices" unique_id=586030494]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.5803922, 1)
-theme_override_colors/font_disabled_color = Color(0.11320574, 0.094937876, 2.7432517e-08, 1)
-theme_override_fonts/font = ExtResource("2_db1ld")
-theme_override_font_sizes/font_size = 32
-text = "Nah"
 flat = true
